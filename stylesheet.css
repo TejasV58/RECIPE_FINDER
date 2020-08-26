@@ -92,7 +92,7 @@ a{
     height:200px;
 }
 
-input[type="text"]{
+input[class="search"]{
     display:inline-block;
     width:80%;
     padding:2%;
@@ -103,7 +103,7 @@ input[type="text"]{
     outline:none;
 }
 
-input[type="text"]:focus{
+input[class="search"]:focus{
     outline:none;
     border:2px solid #337279;
 }
@@ -128,4 +128,109 @@ input[type="text"]:focus{
 
 button.additem:focus{
     outline:none;
+}
+
+/*Popup start*/
+.popupdiv
+{
+    position:fixed;
+    width: 100%;
+    height:100vh;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.5);
+    visibility:hidden;
+}
+.box
+{
+    margin:10% 33%;
+    padding:2%;
+    width:30%;
+    border-radius:10px;
+    background:#eee;
+    padding-bottom:3%;
+}
+#signupbox
+{
+    margin:3% 33%;
+}
+.heading{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    color:rgba(0,0,0,0.7);
+    margin:2%;
+}
+
+.forminput{
+    background:transparent;
+    border:none;
+    border-bottom:1.3px solid rgba(0,0,0,0.3);
+    width:70%;
+    height:100%;
+    margin:4% 10%;
+    padding:3.5%;
+    color:rgba(0,0,0,0.6);
+    font-size:115%;
+}
+
+input[class=forminput]::placeholder{
+    font-size:17px;
+    color:rgba(0,0,0,0.35);
+}
+
+input[class=forminput]:focus{
+    outline:none;
+}
+
+input[class=forminput]::selection{
+    background:transparent;
+}
+
+a:active,a,a:visited{
+    text-decoration: none;
+    color:rgb(47, 167, 236);
+}
+a:hover{
+    text-decoration: underline;
+}
+
+button[class=popup]{
+    background:rgb(40, 156, 233);
+    border:none;
+    padding:2.5%;
+    width:80%;
+    margin:5%;
+    border-radius:10px;
+    margin-left:10%;
+    font-size:100%;
+    color:white;
+}
+
+button[class=popup]:hover{
+    background:rgba(40, 156, 233, 0.753);
+}
+.small{
+    margin-left: 20%;
+    color:rgba(0,0,0,0.4);
+}
+.cross
+{
+    color:rgba(0,0,0,0.35);
+    font-weight:800;
+    position:absolute;
+    font-size:20px;
+    top:23%;
+    left:64.5%;
+    font-family: 'Baloo Tamma 2', cursive;
+    cursor:pointer;
+}
+#crosssignup
+{
+    top:9%;
+    left:64.5%;
+}
+.cross:hover
+{
+    color:black;
+    border-radius: 40px;
 }
