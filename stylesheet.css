@@ -1,0 +1,131 @@
+body{
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    height:100%;
+    width:100%;
+}
+
+/* Navbar */
+
+.navbar{
+    top:0;
+    left:0;
+    position:fixed;
+    background: white;
+    height: 75px;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav{
+    margin-right: 20px;
+    padding: 0px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.nav-item{
+    font-size:22px;
+    margin:0px;
+    padding: 23px 30px;
+    color: #337279;
+}
+
+.name{
+    font-family: 'Courgette', cursive;
+    padding-top:15px;
+    font-size:230%;
+    margin-left:10%;
+    font-weight:bold;
+    text-shadow:5px 10px 9px rgba(0,0,0,0.3);
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+.logo{
+    border-radius:70px;
+    margin:5px;
+    margin-left:20px;
+}
+
+
+/* Home-background */
+
+.background{
+    margin-top:75px;
+    background:url("images/signin1.jpg");
+    background-size:cover;
+    height:350px;
+    width:100%;
+}
+
+.description{
+    color:white;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 1);
+    font-weight:900;
+    width:45%;
+    padding:5%;
+    margin: auto;
+    font-size: 350%;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+
+}
+
+.small-desc{
+    font-weight:700;
+    font-size: 45%;
+}
+
+
+/* Home-background */
+
+.search-container{
+    margin:4% auto;
+    background:#bbb;
+    width:60%;
+    height:200px;
+}
+
+input[type="text"]{
+    display:inline-block;
+    width:80%;
+    padding:2%;
+    font-size: 130%;
+    margin:2% 5%;
+    margin-right:0;
+    border:2px solid white;
+    outline:none;
+}
+
+input[type="text"]:focus{
+    outline:none;
+    border:2px solid #337279;
+}
+
+.items{
+    background:#eee;
+    padding:2%;
+    margin:5px;
+}
+
+.additem{
+    background:#337279;
+    color:white;
+    border:none;
+    padding:0.6% 1.5%;
+    font-size: 200%;
+    font-weight:700;
+    border-radius:40px;
+    margin-left:-6%;
+}
+
+
+button.additem:focus{
+    outline:none;
+}

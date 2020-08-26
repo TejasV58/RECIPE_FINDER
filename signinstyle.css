@@ -1,0 +1,73 @@
+body{
+        background:#ccc;
+        background-size: cover;
+    }
+
+    .box{
+        margin:10% 35%;
+        padding:2%;
+        background:#eee;
+        border-radius:20px;
+        padding-bottom: 3%;
+    }
+
+    .heading{
+        text-align: center;
+        font-family: 'Varela Round', sans-serif;
+        color:rgba(0,0,0,0.7);
+        margin:2%;
+    }
+
+    .background{
+        height:200px;
+        width:100px;
+        float:left;
+        background-size:cover;
+        background:url("./images/pexels-cottonbro-3992374.jpg");
+    }
+
+    .loginform{
+        
+    }
+
+    input{
+        background:transparent;
+        border:none;
+        border-bottom:2px solid rgba(0,0,0,0.3);
+        width:70%;
+        height:100%;
+        margin:4% 10%;
+        padding:3.5%;
+        color:rgba(0,0,0,0.6);
+        font-size:115%;
+    }
+    
+    input::placeholder{
+        font-size:17px;
+        color:rgba(0,0,0,0.35);
+    }
+
+    a:active,a,a:visited{
+        text-decoration: none;
+        color:rgb(47, 167, 236);
+    }
+
+    .btn{
+        background:rgb(40, 156, 233);
+        border:none;
+        border-radius:10px;
+        padding:2.5%;
+        width:80%;
+        margin:5%;
+        margin-left:10%;
+        font-size:100%;
+        color:white;
+    }
+
+    .btn:hover{
+        background:rgba(40, 156, 233,0.8);
+    }
+    .small{
+        margin-left: 20%;
+        color:rgba(0,0,0,0.7);
+    }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="stylesheet.css">  
+
+    <!-- LOGO -->
+    <link rel="icon" href="images/logo1.png">  
+
+    <!-- SCRIPT -->
+    <script src="Script.js"></script> 
+    
+    
+</head>
+<body>
+        <!-- NAVBAR -->
+
+        <div class='navbar'>
+            <div >
+                <a href="home.html"><img src="images/logo.png" width="70px" height="65px" alt="logo" class="logo"></a>
+            </div>
+            <div class="name nav-item">Recipe Finder</div>
+            <div class="nav" >
+                <a href="#"><h2 class="nav-item">Profile</h2></a>
+                <a href="#"><h2 class="nav-item">Help</h2></a>
+            </div>
+        </div>
+        
+         <!-- WALLPAPER -->
+
+        <div class="background">
+            <div class="description">
+                Recipe Finding Simplified
+                <p class="small-desc description">Lorem ipsum dolor sit amet.</p>
+            </div>
+        </div>
+
+         <!-- SEARCHBOX -->
+
+        <div class="search-container">
+            <form action="#">
+                <input type="text" id="items" placeholder="Input Ingredients to Search Recipes">
+                <span class="outeradd">
+                    <button class="additem" onclick="addItem()">+</button>
+                </span>
+            </form>
+            <div id="itemAdded" class="items-list"></div>
+        </div>
+        
+    
+</body>
+</html>
