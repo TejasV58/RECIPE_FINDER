@@ -83,7 +83,7 @@ a{
 }
 
 
-/* Home-background */
+/* SEARCH BOX */
 
 .search-container{
     margin:4% auto;
@@ -95,7 +95,7 @@ a{
 input[class="search"]{
     display:inline-block;
     width:80%;
-    padding:2%;
+    padding:1.2%;
     font-size: 130%;
     margin:2% 5%;
     margin-right:0;
@@ -118,11 +118,14 @@ input[class="search"]:focus{
     background:#337279;
     color:white;
     border:none;
-    padding:0.6% 1.5%;
+    padding:0.25% 1.4%;
     font-size: 200%;
     font-weight:700;
     border-radius:40px;
+    display:inline-block;
+    margin:30px;
     margin-left:-6%;
+    
 }
 
 
