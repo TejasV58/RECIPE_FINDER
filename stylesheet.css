@@ -98,7 +98,7 @@ input[class="search"]{
     width:80%;
     padding:1.4%;
     font-size: 115%;
-    margin:2% 5%;
+    margin:2% 8.2%;
     margin-right:0;
     border:2px solid white;
     border-radius:5px;
@@ -139,6 +139,14 @@ input[class="search"]:focus{
 
 button.additem:focus{
     outline:none;
+}
+
+.items-list{
+    margin:0 auto;
+    display:flex;
+    width:85%;
+    height:10vh;
+    background:red;
 }
 
 /*Popup start*/
