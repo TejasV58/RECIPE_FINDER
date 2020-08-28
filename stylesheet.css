@@ -17,6 +17,7 @@ body{
     padding: 0;
     display: flex;
     justify-content: space-between;
+    box-shadow:2px 2px 6px rgba(0,0,0,0.35);
 }
 
 .nav{
@@ -100,12 +101,14 @@ input[class="search"]{
     margin:2% 5%;
     margin-right:0;
     border:2px solid white;
+    border-radius:5px;
     outline:none;
+    box-shadow:5px 5px 10px rgba(0,0,0,0.35);
 }
 
 input[class="search"]:focus{
     outline:none;
-    border:2px solid #337279;
+    border:3px solid #337279;
 }
 
 .items{
@@ -124,8 +127,11 @@ input[class="search"]:focus{
     border-radius:40px;
     display:inline-block;
     margin:30px;
-    margin-left:-6%;
-    
+    margin-left:-6%; 
+}
+
+.additem:hover{
+    background:#337279;
 }
 
 
