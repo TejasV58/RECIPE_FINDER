@@ -22,7 +22,7 @@
 
         <div class='navbar'>
             <div >
-                <a href="home.html"><img src="images/logo.png" width="65px" height="62px" alt="logo" class="logo"></a>
+                <a href="home.html"><img src="images/logo.png" width="60px" height="58px" alt="logo" class="logo"></a>
             </div>
             <div class="name nav-item">Recipe Finder</div>
             <div class="nav" >
@@ -50,8 +50,12 @@
             <form action="#" autocomplete="off">
                 <input class=search type="text" id="items" placeholder="Input Ingredients to Search Recipes">
                 <button class="additem" onclick="addItem()">+</button>
+                <button class="searchbtn">Search</button>
             </form>
-            <div id="itemAdded" class="items-list"></div>
+            <div  class="items-list">
+                <span class="items" id="itemAdded" style="display:none;">item<button onclick="removeItem('item')">X</button></span>
+                
+            </div>
         </div>
 
         <!-- SEARCHBOX END-->

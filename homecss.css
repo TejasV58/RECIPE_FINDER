@@ -1,7 +1,7 @@
 /* Home-background */
 
 .background{
-    margin-top:72px;
+    margin-top:68px;
     background:url("images/signin1.jpg");
     background-size:cover;
     height:350px;
@@ -30,10 +30,9 @@
 /* SEARCH BOX */
 
 .search-container{
-    margin:4% auto;
-    background:#bbb;
-    width:60%;
-    height:200px;
+    margin:2% auto;
+    width:70%;
+    padding-bottom:2%;
 }
 
 input[class="search"]{
@@ -46,7 +45,7 @@ input[class="search"]{
     border:2px solid white;
     border-radius:5px;
     outline:none;
-    box-shadow:5px 5px 10px rgba(0,0,0,0.35);
+    box-shadow:5px 5px 15px rgba(0,0,0,0.35);
 }
 
 input[class="search"]:focus{
@@ -54,11 +53,6 @@ input[class="search"]:focus{
     border:3px solid #337279;
 }
 
-.items{
-    background:#eee;
-    padding:2%;
-    margin:5px;
-}
 
 .additem{
     position:relative;
@@ -66,17 +60,36 @@ input[class="search"]:focus{
     background:#337279;
     color:white;
     border:none;
-    padding:0.25% 1.2%;
+    padding:0.25% 1%;
     font-size: 200%;
     font-weight:700;
     border-radius:40px;
     display:inline-block;
-    margin:30px;
-    margin-left:-6%; 
+    margin:10px;
+    margin-left:-14%; 
 }
 
 .additem:hover{
     background:#47959e;
+}
+
+.searchbtn{
+    padding:0.8%;
+    font-size:110%;
+    font-weight:600;
+    background-color:#f78e24;
+    color:white;
+    border-radius:5px;
+    border:none;
+
+}
+
+.searchbtn:hover{
+    background:#f8a047;
+}
+
+.searchbtn:focus{
+    outline:none;
 }
 
 
@@ -86,13 +99,32 @@ button.additem:focus{
 
 .items-list{
     margin:0 auto;
-    display:flex;
     width:85%;
-    height:10vh;
-    background:red;
+}
+
+.items{
+    display:inline-block;
+    background:#06bdff25;
+    padding:1.5%;
+    margin:5px;
+    border-radius:4px;
+}
+
+.crossbtn{
+    background:transparent;
+    border-radius:30px;
+    border:none;
+    color:rgba(0,0,0,0.6)
+;    font-size:110%;
+}
+
+.crossbtn:hover{
+    color:black;
 }
 
 /*Popup start*/
+
+
 .popupdiv
 {
     position:fixed;

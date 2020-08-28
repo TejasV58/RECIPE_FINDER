@@ -17,7 +17,7 @@ function addItem()
         var additem = document.getElementById('itemAdded');
         itemList.push(item);
         document.getElementById('items').value = "";
-        additem.insertAdjacentHTML("afterend",`<span class="items" id="${item}">${item}<button onclick="removeItem('${item}')">X</button></span>`);
+        additem.insertAdjacentHTML("afterend",`<span class="items" id="${item}">${item} <button onclick="removeItem('${item}')"    class="crossbtn">X</button></span>`);
     }
 }
 
