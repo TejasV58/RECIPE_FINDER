@@ -12,7 +12,7 @@ body{
     left:0;
     position:fixed;
     background: white;
-    height: 75px;
+    height: 72px;
     width: 100%;
     padding: 0;
     display: flex;
@@ -28,7 +28,7 @@ body{
 }
 
 .nav-item{
-    font-size:22px;
+    font-size:130%;
     margin:0px;
     padding: 23px 30px;
     color: #337279;
@@ -37,7 +37,7 @@ body{
 .name{
     font-family: 'Courgette', cursive;
     padding-top:15px;
-    font-size:230%;
+    font-size:200%;
     margin-left:10%;
     font-weight:bold;
     text-shadow:5px 10px 9px rgba(0,0,0,0.3);
@@ -58,7 +58,7 @@ a{
 /* Home-background */
 
 .background{
-    margin-top:75px;
+    margin-top:72px;
     background:url("images/signin1.jpg");
     background-size:cover;
     height:350px;
@@ -96,8 +96,8 @@ a{
 input[class="search"]{
     display:inline-block;
     width:80%;
-    padding:1.2%;
-    font-size: 130%;
+    padding:1.4%;
+    font-size: 115%;
     margin:2% 5%;
     margin-right:0;
     border:2px solid white;
@@ -118,10 +118,12 @@ input[class="search"]:focus{
 }
 
 .additem{
+    position:relative;
+    top:4px;
     background:#337279;
     color:white;
     border:none;
-    padding:0.25% 1.4%;
+    padding:0.25% 1.2%;
     font-size: 200%;
     font-weight:700;
     border-radius:40px;
@@ -131,7 +133,7 @@ input[class="search"]:focus{
 }
 
 .additem:hover{
-    background:#337279;
+    background:#47959e;
 }
 
 
