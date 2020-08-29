@@ -8,21 +8,23 @@
      <!-- Stylesheet -->
      <link rel="stylesheet" href="stylesheet.css">
      <link rel="stylesheet" href="profilecss.css"> 
+     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lato&display=swap" rel="stylesheet">
 
      <!-- LOGO -->
      <link rel="icon" href="images/logo1.png">  
  
      <!-- SCRIPT -->
-     <script src="Script.js"></script> 
+     <script src="Script.js"></script>
+     <script src="https://kit.fontawesome.com/a77f5500d1.js" crossorigin="anonymous"></script>
 
-     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lato&display=swap" rel="stylesheet">
+     
 </head>
 <body>
     <!-- NAVBAR -->
 
     <div class='navbar'>
         <div >
-            <a href="home.html"><img src="images/logo.png" width="70px" height="65px" alt="logo" class="logo"></a>
+            <a href="home.html"><img src="images/logo.png" width="60px" height="58px" alt="logo" class="logo"></a>
         </div>
         <div class="name nav-item">Recipe Finder</div>
         <div class="nav" >
@@ -38,7 +40,8 @@
                 <img src="images/defaultprofilepic.png" alt="" class=profilepic>
             </div>
             <div class=profilecontents>
-                <p><b>Name</b></p>
+                <p class=profilename>Sanika Kulkarni</p>
+                 5 <span><i class="fas fa-utensils"></i></span><button class=recipe-btn>Add Recipe</button>
             </div>
             <div class=editprofile>
                 <button class=editprofile-btn>Edit Profile</button>
@@ -46,38 +49,55 @@
         </div>
 
         <div class=profilenavbox>
-            <div class=aboutme>
-                <p>About Me</p>
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, architecto harum! Doloribus earum harum provident doloremque nisi repellendus, inventore ratione dolorem placeat dolore consectetur, voluptates exercitationem non reiciendis maxime modi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, odit voluptatem quaerat vero consectetur fuga esse! Sint sapiente aut quae fugiat natus incidunt omnis. Et ducimus rerum ipsa. Vero, nulla.</p>
-                <p>Connect With Me</p>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt voluptates dignissimos excepturi ducimus nam officia ratione deleniti quo a harum numquam, magnam provident libero enim officiis blanditiis est quia nihil.</p>
+            <div class=aboutmebox>
+                <div class=aboutme>
+                    <p><b>About Me</b></p>
+                    <p>Introduce Yourself</p>
+                    <p><b>Connect With Me</b></p>
+                    <p>Let people connect with you</p>
+                </div>
             </div>
             <div class=profilesections>
-                <div class=navsections>
-                    <div class=navsection>
+                <div class=navsections >
+                    <div class=navsection id=recipenav onclick=recipedisplay()>
                         Personal Recipes
                     </div>
-                    <div class=navsection> 
+                    <div class=navsection id=favnav onclick=favdisplay()> 
                         Favourites
                     </div>
-                    <div class=navsection>
+                    <div class=navsection id=reviewnav onclick=reviewdisplay()>
                         Reviews
                     </div>
-                    <div class=navsection>
-                        Friends
-                    </div>
                 </div>
-                <div class=sectioncontent>
-                    <div class=sectiontile></div>
-                    <div class=sectiontile></div>
+                <div class=sectioncontent id=recipe>
                     <div class=sectiontile></div>
                     <div class=sectiontile></div>
                     <div class=sectiontile></div>
                     <div class=sectiontile></div>
                 </div>
+                <div class=sectioncontent id=fav>
+                    <div class=sectiontile></div>
+                    <div class=sectiontile></div>
+                    <div class=sectiontile></div>
+                    <div class=sectiontile></div>
+                    <div class=sectiontile></div>
 
+                </div>
+                <div class=sectioncontent id=review>
+                    <div class=sectiontile></div>
+                    <div class=sectiontile></div>
+                    <div class=sectiontile></div>
+                    <div class=sectiontile></div>
+                    <div class=sectiontile></div>
+                    <div class=sectiontile></div>
+                </div>
             </div>
         </div>
+    </div>
+
+    <!--FOOTER-->
+    <div class=footer>
+        <p></p>
     </div>
     
 </body>

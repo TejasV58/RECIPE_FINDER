@@ -1,4 +1,3 @@
-
 var itemList = [];
 function addItem()
 {
@@ -54,3 +53,33 @@ function menuhide()
 {
     document.getElementById('dropdownmenu').style.visibility="hidden";
 }
+
+function recipedisplay()
+{
+    document.getElementById('fav').style.display="none";
+    document.getElementById('review').style.display="none";
+    document.getElementById('favnav').style.borderBottom="none";
+    document.getElementById('reviewnav').style.borderBottom="none";
+    document.getElementById('recipe').style.display="block";
+    document.getElementById('recipenav').style.borderBottom="3px solid #337279";
+}
+function favdisplay()
+{
+    document.getElementById('recipe').style.display="none";
+    document.getElementById('review').style.display="none";
+    document.getElementById('recipenav').style.borderBottom="none";
+    document.getElementById('reviewnav').style.borderBottom="none";
+    document.getElementById('fav').style.display="block";
+    document.getElementById('favnav').style.borderBottom="3px solid #337279";
+}
+
+function reviewdisplay()
+{
+    document.getElementById('fav').style.display="none";
+    document.getElementById('recipe').style.display="none";
+    document.getElementById('favnav').style.borderBottom="none";
+    document.getElementById('recipenav').style.borderBottom="none";
+    document.getElementById('review').style.display="block";
+    document.getElementById('reviewnav').style.borderBottom="3px solid #337279";
+}
+

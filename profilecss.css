@@ -1,20 +1,23 @@
+.navbar{
+    z-index:1;
+}
 body{
-    background:#eeeeee;
+    background:#eee;
 }
 .profile
 {
     width:96%;
     margin:auto;
     margin-top:6%;
-    background:white;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    background:transparent;
 }
 .profilebox
 {
-    background:url(images/signin1.jpg);
+    background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.7)),url(images/defaultbackgroundpic.jpeg);
     background-size: cover;
     width:96%;
     padding:2%;
+    border-radius:8px 8px 0 0;
     display:flex;
 }
 .profilepic
@@ -26,63 +29,126 @@ body{
 }
 .profilecontents
 {
-    margin:1.5%;  
+    width:20%;
+    margin:1.5%; 
+    color:#eee;
+    font-size:22px;
+}
+.profilename
+{
+    margin:0;
 }
 .editprofile
 {
     position:absolute;
     right:5%;
 }
-.editprofile-btn
+.editprofile-btn,.recipe-btn
 {
     padding:9%;
-    width:100px;
-    font-size:15px;
+    width:110px;
+    font-size:16px;
+    font-weight:550;
+    background:transparent;
+    border:1px solid white;
+    border-radius:5px;
+    color:white;
+    cursor: pointer;
+    z-index:-1;
+}
+.recipe-btn{
+    padding:4%;
+    width:110px;
+    margin-top:4%;
+    margin-left:6%;
+}
+.editprofile-btn:hover,.recipe-btn:hover{
+    background:rgba(255,255,255,0.3)
+}
+.editprofile-btn:focus,.recipe-btn:focus{
+    outline:none;
 }
 .profilenavbox
 {
     width:96%;
     background:white;
     padding:2%;
-    border-radius:15px;
+    border-radius:15px 15px 0 0;
     display:flex;
     margin-top:-10px;
 }
+.aboutmebox
+{
+    width:23%;
+    margin:0.5%;
+    margin-right:3%;
+}
 .aboutme
 {
-    background:rgba(0,0,0,0.1);
-    width:23%;
-    padding:1.5%;
+    background:#eee;
+    width:100%;
+    padding:6%;
 }
 .profilesections
 {
-    width:70%;
-    margin-left:2%;
+    width:74%;
 }
 .navsections
 {
-    width:80%;
+    width:98%;
     display:flex;
     margin:auto;
-    background:#337279be;
-    justify-content:space-evenly;
+    justify-content:stretch;
     padding:1%;
+    border-radius:10px;
+}
+.navsection{
+    text-align:center;
+    width:33.33%;
+    padding:1.5%;
+    background:#eee;
+    color:#337279;
+    font-weight:600;
 }
 .sectioncontent
 {
-    width:90%;
+    width:98%;
     margin:auto;
     margin-top:2%;
-    border:1px solid rgba(0,0,0,0.2);
 }
 .sectiontile
 {
-    width:25%;
+    width:23.5%;
+    margin-bottom:1.5%;
+    margin-left:0.75%;
     height:35vh;
-    margin:3.5%;
-    margin-bottom:0.1%;
     border:1px solid rgba(0,0,0,0.3);
     display:inline-block;
+}
+#recipenav
+{
+    cursor: pointer;
+    border-bottom:3px solid #337279;
+}
+#reviewnav
+{
+    cursor: pointer;
+}
+#favnav
+{
+    cursor: pointer;
+}
+#recipe
+{
+    display:block;
+}
+#fav
+{
+    display:none;
+}
+#review
+{
+    display:none;
 }
 
 

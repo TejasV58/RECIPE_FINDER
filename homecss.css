@@ -1,5 +1,7 @@
 /* Home-background */
-
+.navbar{
+    z-index:0;
+}
 .background{
     margin-top:68px;
     background:url("images/signin1.jpg");
@@ -172,8 +174,6 @@ button.additem:focus{
 }
 
 /*Popup start*/
-
-
 .popupdiv
 {
     position:fixed;
@@ -183,6 +183,7 @@ button.additem:focus{
     left:0;
     background:rgba(0,0,0,0.5);
     visibility:hidden;
+    z-index:1;
 }
 .box
 {
