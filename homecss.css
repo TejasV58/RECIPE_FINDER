@@ -18,7 +18,6 @@
     font-size: 350%;
     font-family: 'Lato', sans-serif;
     text-align: center;
-
 }
 
 .small-desc{
@@ -29,27 +28,29 @@
 /* SEARCH BOX */
 
 .search-container{
-    margin:2% auto;
+    margin:3% auto;
     width:70%;
-    padding-bottom:2%;
+    padding-bottom:1%;
+    margin-bottom: 1%;
 }
 
 input[class="search"]{
     display:inline-block;
-    width:80%;
+    width:75%;
     padding:1.4%;
     font-size: 115%;
-    margin:2% 8.2%;
+    margin:2% 10.5%;
     margin-right:0;
-    border:2px solid white;
+    border:2.2px solid white;
     border-radius:5px;
     outline:none;
     box-shadow:5px 5px 15px rgba(0,0,0,0.35);
 }
 
+
 input[class="search"]:focus{
     outline:none;
-    border:3px solid #337279;
+    border:2.5px solid #337279;
 }
 
 
@@ -59,13 +60,14 @@ input[class="search"]:focus{
     background:#337279;
     color:white;
     border:none;
-    padding:0.25% 1%;
-    font-size: 200%;
+    padding:0.25% 0.9%;
+    font-size: 170%;
     font-weight:700;
     border-radius:40px;
     display:inline-block;
-    margin:10px;
+    margin:0.8%;
     margin-left:-14%; 
+    z-index: 0;
 }
 
 .additem:hover{
@@ -74,13 +76,12 @@ input[class="search"]:focus{
 
 .searchbtn{
     padding:0.8%;
-    font-size:110%;
-    font-weight:600;
+    font-size:105%;
+    font-weight:10%;
     background-color:#f78e24;
     color:white;
     border-radius:5px;
     border:none;
-
 }
 
 .searchbtn:hover{
@@ -98,7 +99,7 @@ button.additem:focus{
 
 .items-list{
     margin:0 auto;
-    width:85%;
+    width:80%;
 }
 
 .items{
@@ -113,12 +114,61 @@ button.additem:focus{
     background:transparent;
     border-radius:30px;
     border:none;
-    color:rgba(0,0,0,0.6)
-;    font-size:110%;
+    color:rgba(0,0,0,0.6);
+    font-size:110%;
 }
 
 .crossbtn:hover{
     color:black;
+}
+
+.crossbtn:focus{
+    border-style:none;
+    border:none;
+    outline:none;
+}
+
+
+/* Search Result */
+
+.page{
+    padding:1%;
+}
+
+.search-result{
+    box-sizing:border-box;
+    margin:2% auto;
+    padding: 1% 2%;
+    background:white;
+    width:84%;
+}
+.heading1{
+    color:rgba(0,0,0,0.6);
+}
+
+.results{
+    width:22%;
+    height:44vh;
+    margin:2.5% 0.6%;
+    display:inline-block;
+    border:1px solid #aaa;
+}
+
+.image{
+    background-size:contain;
+    margin:0;
+    display:block;
+    width:100%;
+    height:34vh;
+}
+
+.recipe-desc{
+    height:10vh;
+    font:22px;
+    padding:5%;
+    box-sizing:border-box;
+    background:white;
+    
 }
 
 /*Popup start*/
@@ -227,3 +277,8 @@ button[class=popup]:hover{
     color:black;
     border-radius: 40px;
 }
+
+
+
+
+
