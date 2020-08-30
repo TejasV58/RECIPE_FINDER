@@ -83,3 +83,21 @@ function reviewdisplay()
     document.getElementById('reviewnav').style.borderBottom="3px solid #337279";
 }
 
+function editopen()
+{
+    document.getElementById('editprofileback').style.visibility="visible";
+}
+function editclose()
+{
+    document.getElementById('editprofileback').style.visibility="hidden";
+}
+function changeprofilepic()
+{
+    document.getElementById('profilepicdiv').style.background="linearGradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/defaultprofilepic.png));"
+    document.getElementById('editprofilepic').style.visibility="visible"
+}
+function changeprofilepicstop()
+{
+    document.getElementById('profilepicdiv').style.background="url(images/defaultprofilepic.png);"
+    document.getElementById('editprofilepic').style.visibility="hidden"
+}

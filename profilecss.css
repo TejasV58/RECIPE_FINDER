@@ -26,6 +26,7 @@ body{
     width:100px;
     height:100px;
     border-radius:75px;
+    cursor:pointer;
 }
 .profilecontents
 {
@@ -43,6 +44,7 @@ body{
     position:absolute;
     right:5%;
 }
+
 .editprofile-btn,.recipe-btn
 {
     padding:9%;
@@ -121,7 +123,7 @@ body{
     width:23.5%;
     margin-bottom:1.5%;
     margin-left:0.75%;
-    height:35vh;
+    height:44vh;
     border:1px solid rgba(0,0,0,0.3);
     display:inline-block;
 }
@@ -130,11 +132,7 @@ body{
     cursor: pointer;
     border-bottom:3px solid #337279;
 }
-#reviewnav
-{
-    cursor: pointer;
-}
-#favnav
+#reviewnav,#favnav
 {
     cursor: pointer;
 }
@@ -142,13 +140,80 @@ body{
 {
     display:block;
 }
-#fav
+#fav,#review
 {
     display:none;
 }
-#review
+.editprofilebackground
+{
+    position:fixed;
+    width: 100%;
+    height:100vh;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.3);
+    z-index:4;
+    visibility: hidden;
+}
+.editprofileblock
+{
+    background:#eee;
+    width:42%;
+    height:65vh;
+    margin:auto;
+    padding:3%;
+    margin-top:6%;
+    overflow:scroll;
+}
+.editinputabout,.editinputconnect
+{
+    padding:1%;
+    width:100%;
+    height:7vh;
+}
+.editinputname
+{
+    padding:1%;
+    width:100%;
+}
+.editinput
+{
+    outline:none;
+}
+#crossedit
+{
+    position:absolute;
+    top:16%;
+    right:28%;
+    cursor:pointer;
+    color:rgba(0,0,0,0.35);
+    font-weight:800;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+#crossedit:hover
+{
+    color:black;
+}
+#profilephoto
 {
     display:none;
 }
-
-
+#editprofilepic
+{
+    width:7%;
+    position:absolute;
+    font-size:15px;
+    top:23%;
+    right:47%;
+    cursor:pointer;
+    visibility:hidden;
+}
+#profilepicdiv
+{
+    background:url(images/defaultprofilepic.png);
+    background-size: cover;;
+    width:100px;
+    height:100px;
+    border-radius:75px;
+    
+}

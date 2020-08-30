@@ -61,4 +61,15 @@ a{
     height:15vh;
     background:#ccc;
 }
-
+.save
+{
+    padding:1%;
+    width:100px;
+    background:rgba(255, 0, 0, 0.822);
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+.save:focus{
+    outline:none;
+}

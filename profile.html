@@ -44,7 +44,7 @@
                  5 <span><i class="fas fa-utensils"></i></span><button class=recipe-btn>Add Recipe</button>
             </div>
             <div class=editprofile>
-                <button class=editprofile-btn>Edit Profile</button>
+                <button class=editprofile-btn onclick=editopen()>Edit Profile</button>
             </div>
         </div>
 
@@ -94,11 +94,31 @@
             </div>
         </div>
     </div>
-
+    
+    <!--EDIT PROFILE-->
+    <div class=editprofilebackground id=editprofileback>
+        <div class=editprofileblock>
+            <form action="">
+                <center>
+                    <div  id=profilepicdiv onmouseenter=changeprofilepic() onmouseleave=changeprofilepicstop()>
+                    <input type="file" id=profilephoto accept="image/*">
+                    <label id=editprofilepic for="profilephoto"><i class="fas fa-camera"></i> &nbsp; <br>Change Profile Photo</label>
+                    </div>
+                </center>
+                <br>
+                <label class="editlabel">Name</label><br><span onclick="editclose()" id=crossedit>X</span>
+                <input class="editinput editinputname" type="text" value="Sanika Kulkarni"><br><br>
+                <label class="editlabel">About Me</label><br>
+                <textarea class="editinput editinputabout" placeholder="Introduce Yourself"></textarea><br><br>
+                <label class="editlabel">Connect With Me</label><br>
+                <textarea class="editinput  editinputconnect" placeholder="Let people connect with you"></textarea><br><br>
+                <button class=save>Save</button>
+            </form>
+        </div>
+    </div>
     <!--FOOTER-->
     <div class=footer>
         <p></p>
     </div>
-    
 </body>
 </html>
