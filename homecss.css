@@ -33,7 +33,6 @@
     margin:3% auto;
     width:70%;
     padding-bottom:1%;
-    margin-bottom: 1%;
 }
 
 input[class="search"]{
@@ -135,6 +134,8 @@ button.additem:focus{
 
 .page{
     padding:1%;
+    background:#eee;
+    margin:0;
 }
 
 .search-result{
@@ -144,6 +145,7 @@ button.additem:focus{
     background:white;
     width:84%;
 }
+
 .heading1{
     color:rgba(0,0,0,0.6);
 }
@@ -170,10 +172,10 @@ button.additem:focus{
     padding:5%;
     box-sizing:border-box;
     background:white;
-    
 }
 
 /*Popup start*/
+
 .popupdiv
 {
     position:fixed;
