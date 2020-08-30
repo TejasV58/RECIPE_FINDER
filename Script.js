@@ -93,11 +93,11 @@ function editclose()
 }
 function changeprofilepic()
 {
-    document.getElementById('profilepicdiv').style.background="linearGradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/defaultprofilepic.png));"
+    document.getElementById('profilepicdiv').style.background="linearGradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(images/defaultprofilepic1.png));"
     document.getElementById('editprofilepic').style.visibility="visible"
 }
 function changeprofilepicstop()
 {
-    document.getElementById('profilepicdiv').style.background="url(images/defaultprofilepic.png);"
-    document.getElementById('editprofilepic').style.visibility="hidden"
+    document.getElementById('profilepicdiv').style.background="url(images/defaultprofilepic1.png);"
+    document.getElementById('editprofilepic').style.visibility="hidden";
 }

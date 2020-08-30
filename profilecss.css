@@ -141,7 +141,6 @@ body{
     display:block;
 }
 #fav,#review
-<<<<<<< Updated upstream
 {
     display:none;
 }
@@ -196,8 +195,6 @@ body{
     color:black;
 }
 #profilephoto
-=======
->>>>>>> Stashed changes
 {
     display:none;
 }
@@ -206,6 +203,7 @@ body{
     width:7%;
     position:absolute;
     font-size:15px;
+    color:white;
     top:23%;
     right:47%;
     cursor:pointer;
@@ -213,10 +211,14 @@ body{
 }
 #profilepicdiv
 {
-    background:url(images/defaultprofilepic.png);
-    background-size: cover;;
+    background:url(images/defaultprofilepic1.png);
+    background-size: cover;
     width:100px;
     height:100px;
-    border-radius:75px;
-    
+    border-radius:75px;  
+}
+
+#profilepicdiv:hover{
+    background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),url(images/defaultprofilepic1.png);
+    background-size: cover;
 }
