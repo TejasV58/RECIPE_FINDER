@@ -54,9 +54,10 @@ a{
     margin:5px;
     margin-left:20px;
 }
+
 /*FOOTER*/
-.footer
-{
+.footer{
+    margin:0;
     width:100%;
     height:15vh;
     background:#ccc;
