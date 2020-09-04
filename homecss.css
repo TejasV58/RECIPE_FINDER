@@ -142,21 +142,41 @@ button.additem:focus{
     margin:2% auto;
     padding: 1% 2%;
     background:white;
-    width:84%;
+    width:82%;
 }
 
 .heading1{
     color:rgba(0,0,0,0.6);
+    font-family: 'Syne', sans-serif;
 }
 
 .results{
-    width:22%;
-    height:44vh;
-    margin:2.5% 0.6%;
+    width:21.5%;
+    height:45vh;
+    margin:2% 1.2%;
     display:inline-block;
-    border:1px solid #aaa;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:1px 1px 5px rgba(0,0,0,0.2);
+}
+.rating{
+    height:20vh;
+    background:black;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size:14px;
+    color:#aaa;
+}
+.fa-star{
+    color:#ffb91ac2;
+    font-size:18px;
+    margin:0;
 }
 
+.star-null{
+    color:#ddd;
+    font-size:18px;
+    margin:0;
+}
 .image{
     background-size:contain;
     margin:0;
