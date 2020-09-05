@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder | Post Recipe</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="AddRecipes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lato&display=swap" rel="stylesheet">
+
+    <!-- LOGO -->
+    <link rel="icon" href="images/logo1.png">  
+
+    <!-- SCRIPT -->
+    <script src="Script.js"></script>
+    <script src="https://kit.fontawesome.com/a77f5500d1.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+     <!-- NAVBAR START -->
+     <div class='navbar'>
+        <div >
+            <a href="home.html"><img src="images/logo.png" width="60px" height="58px" alt="logo" class="logo"></a>
+        </div>
+        <div class="name nav-item nohover">Recipe Finder</div>
+        <div class="nav" >
+            <a href="#"><h2 class="nav-item" onclick="popup()" style="visibility:hidden;">Profile</h2></a>
+            <a href="#"><h2 class="nav-item">Help</h2></a>
+        </div>
+    </div>
+    <!-- NAVBAR END -->
+
+    <!-- Add Recipe Form Start -->
+
+    
+        <div class="recipedetailspage">
+          
+            <div class="background-div">
+                <img class="profile-img" src="images/defaultprofilepic1.png">
+                <div class=profilecontents>
+                    <p class=profilename>Sanika Kulkarni</p>
+                     5 <span><i class="fas fa-utensils"></i></span>
+                </div>
+            </div>
+            <form action="#">
+            <div class="recipe-details">
+                <div class="main-details">
+                    <label for="name" class="label ">Recipe Title</label>
+                    <input class="input-box title" type="text" id="name" >
+                    <label for="description" class="label">Description</label>
+                    <textarea name="description" class="input-box" id="description" rows="5" placeholder="Description"></textarea>
+                    <label for="ingredients" class="label">Ingredients</label>
+                    <textarea name="Ingredients" class="input-box" id="ingredients" rows="10" placeholder="Enter Each ingredients on new line"></textarea>
+                    <label for="directions" class="label">Directions</label>
+                    <textarea name="directions" id="directions" class="input-box" rows="10" placeholder="Enter each step on new line"></textarea>
+                    <input class="submit-btn" type="submit" value="Create Recipe">
+                </div>
+
+                <div class="small-details">
+
+                    <div class="image-input">
+                        <div class="addimgdiv">
+                            <input id="uploadImage" type="file" accept="image/*" onchange="PreviewImage();" multiple />
+                            <label id=uploadimglabel for="uploadImage"><i class="fas fa-camera"></i> &nbsp; <br>Add a Image</label>
+                        </div>
+                        <div class="previews"><img id="uploadPreview" style="width: 100px; height: 100px; display:none;" ></div>
+                    </div>
+
+                    <div class="outersmalldetails">
+                        <div class="smalldetailsdiv">
+                            <div class="sml-details">
+                                <label class="label">Prep Time</label>
+                                <input class="input-box2" type="text">
+                            </div>
+                            <div class="sml-details">
+                                <label class="label">Cook Time</label>
+                                <input class="input-box2" type="text">
+                            </div>
+                        </div>
+                        <div class="smalldetailsdiv">
+                            <div class="sml-details">
+                                <label class="label">Ready in</label>
+                                <input class="input-box2" type="text">
+                            </div>
+                            <div class="sml-details">
+                                <label class="label">Number of serves</label>
+                                <input class="input-box2" type="text">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+        </form>
+    </div>
+
+    <!-- Add Recipe Form End -->
+
+</body>
+</html>
+

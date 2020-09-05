@@ -1,12 +1,14 @@
 .navbar{
     z-index:1;
 }
+
+
 body{
     background:#eee;
 }
 .profile
 {
-    width:96%;
+    width:90%;
     margin:auto;
     margin-top:6%;
     background:transparent;
@@ -42,7 +44,7 @@ body{
 .editprofile
 {
     position:absolute;
-    right:5%;
+    right:7%;
 }
 
 .editprofile-btn,.recipe-btn
@@ -58,6 +60,11 @@ body{
     cursor: pointer;
     z-index:-1;
 }
+
+a:visited{
+    color:white;
+}
+
 .recipe-btn{
     padding:4%;
     width:45%;
@@ -179,6 +186,15 @@ body{
 .editinput
 {
     outline:none;
+    border:1px solid #bbb;
+    border-radius:4px;
+    padding:1.5%;
+    font-size:16px;
+    margin:4px 0px;
+}
+
+.editlabel{
+    margin:10px 0;
 }
 #crossedit
 {

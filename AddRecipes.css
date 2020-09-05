@@ -1,0 +1,208 @@
+body{
+    background:#eee;
+}
+
+.background-div{
+    width:100%;
+    margin:0 auto;
+    background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.7)),url(images/defaultbackgroundpic.jpeg);
+    box-sizing:border-box;
+    background-size:cover;
+    padding:2%;
+    display:flex;
+    border-radius:10px;
+}
+
+.profile-img{
+    margin:0.5%;
+    margin-top:0.2%;
+    border-radius:60px;
+    background-size:cover;
+    width:100px;
+    height:100px;
+}
+
+.profilename
+{
+    margin:4% 0;
+    margin-top:1%;
+}
+
+.profilecontents
+{
+    width:20%;
+    margin:2% 1%; 
+    color:#eee;
+    font-size:22px;
+    border-radius:5px 5px 0 0;
+}
+
+.recipedetailspage{
+    width:90%;
+    margin:auto;
+    margin-top:6%;
+}
+
+.recipe-details{
+    background:white;
+    margin:0 auto;
+    padding:1%;
+    box-sizing: border-box;
+    display:flex;
+    width:100%;
+    border-radius:15px 15px 0 0;
+    transform:translateY(-18px);
+}
+
+
+
+/* left  section */
+
+.main-details{
+    width:60%;
+    padding:1.5% 3%;
+}
+
+.label{
+    display:block;
+    margin-bottom:1.5%;
+}
+
+.input-box{
+    margin-bottom:4%;
+    width:42.3vw;
+    border:1px solid #bbb;
+    border-radius:4px;
+}
+
+.input-box:focus,.input-box2:focus{
+    outline-color:#439ba5;
+}
+
+.title{
+    width:42.3vw;
+    box-sizing: border-box;
+    padding:1.5%;
+}
+
+textarea{
+    color:rgba(0,0,0,0.5);
+    font-size:16px;
+    
+}
+
+.submit-btn{
+    font-size:18px;
+    padding:2%;
+    color:white;
+    background:#439ba5;
+    border:none;
+    border-radius:2px;
+}
+
+.submit-btn:hover{
+    background:#54c0cc;
+}
+
+
+
+
+/* right section */
+
+.small-details{
+    padding:2%;
+    width:40%;
+}
+
+.addimgdiv{
+    height:15vh;
+    width:30vh;
+    padding:5%;
+    background:#ddd;
+    margin:5% auto;
+    text-align: center;
+    font-size:22px;
+    border-radius:4px;
+    outline:1px dashed #aaa ;
+    outline-offset: 5px;
+}
+
+.previews{
+    margin:10% auto;
+    margin-bottom:0;
+    width:100%;
+    text-align:center;
+}
+
+#uploadImage{
+    display:none;
+}
+
+.fa-camera{
+    font-size:80px;
+    margin-bottom:3%;
+}
+
+#uploadimglabel{
+    color:rgba(0,0,0,0.4);
+}
+#uploadimglabel:hover{
+    color:rgba(0,0,0,0.7);
+}
+
+.preview{
+    display:inline-block;
+    margin:0.5%;
+    height:100px;
+    width:100px;
+    background-size:cover;
+}
+
+.previewimg{
+    margin:0;
+    height:100px;
+    width:100px;
+}
+
+
+.removebtn{
+    transform:translate(35px,-100px);
+    background:rgb(250, 102, 102);
+    border-radius:2px;
+    border:none;
+    color:white;
+    font-size:110%;
+}
+
+.removebtn:hover{
+    background:rgb(230, 109, 109);
+    color:white;
+}
+
+.removebtn:focus{
+    border-style:none;
+    border:none;
+    outline:none;
+}
+
+.input-box2{
+    margin:5% 2%;
+    margin-bottom:2%;
+    width:10vw;
+    height:5vh;
+    border:1px solid #bbb;
+    border-radius:4px;
+}
+
+.smalldetailsdiv{
+    margin:2%;
+    display:flex;
+}
+
+.outersmalldetails{
+    margin-top:12%;
+}
+
+.sml-details{
+    margin:2% 7%;
+}

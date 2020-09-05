@@ -28,7 +28,7 @@
         </div>
         <div class="name nav-item">Recipe Finder</div>
         <div class="nav" >
-            <a href="#"><h2 class="nav-item">Profile</h2></a>
+            <a href="#"><h2 class="nav-item" onclick="popup()" style="visibility:hidden;">Profile</h2></a>
             <a href="#"><h2 class="nav-item">Help</h2></a>
         </div>
     </div>
@@ -41,7 +41,7 @@
             </div>
             <div class=profilecontents>
                 <p class=profilename>Sanika Kulkarni</p>
-                 5 <span><i class="fas fa-utensils"></i></span><button class=recipe-btn>Add Recipe</button>
+                 5 <span><i class="fas fa-utensils"></i></span><button class=recipe-btn ><a href="AddRecipes.html">Add Recipe</a></button>
             </div>
             <div class=editprofile>
                 <button class=editprofile-btn onclick=editopen()>Edit Profile</button>
@@ -112,7 +112,7 @@
                 <textarea class="editinput editinputabout" placeholder="Introduce Yourself"></textarea><br><br>
                 <label class="editlabel">Connect With Me</label><br>
                 <textarea class="editinput  editinputconnect" placeholder="Let people connect with you"></textarea><br><br>
-                <button class=save>Save</button>
+                <button class=submit-btn>Save</button>
             </form>
         </div>
     </div>

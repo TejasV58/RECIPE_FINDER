@@ -35,6 +35,14 @@ body{
     color: #337279;
 }
 
+.nav-item:hover{
+    color:#47959e;
+}
+
+.nohover:hover{
+    color:#337279;
+}
+
 .name{
     font-family: 'Courgette', cursive;
     padding-top:15px;
@@ -62,15 +70,16 @@ a{
     height:15vh;
     background:#ccc;
 }
-.save
-{
-    padding:1%;
-    width:100px;
-    background:rgba(255, 0, 0, 0.822);
+.submit-btn{
+    font-size:18px;
+    padding:2% 4%;
+    color:white;
+    background:#439ba5;
     border:none;
-    border-radius:10px;
-    cursor:pointer;
+    border-radius:2px;
 }
-.save:focus{
-    outline:none;
+
+.submit-btn:hover{
+    background:#54c0cc;
 }
+
