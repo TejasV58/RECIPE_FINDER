@@ -101,3 +101,10 @@ function changeprofilepicstop()
     document.getElementById('profilepicdiv').style.background="url(images/defaultprofilepic1.png);"
     document.getElementById('editprofilepic').style.visibility="hidden";
 }
+
+function feedbackFormOpen(){
+    document.getElementById('box').style.visibility="visible";
+}
+function feedbackFormClose(){
+    document.getElementById('box').style.visibility="hidden";
+}

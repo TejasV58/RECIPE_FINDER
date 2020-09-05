@@ -1,0 +1,258 @@
+body{
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    height:100%;
+    width:100%;
+    background:#eee;
+}
+.navbar{
+    top:0;
+    left:0;
+    position:fixed;
+    background: white;
+    height: 68px;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    box-shadow:2px 2px 6px rgba(0,0,0,0.35);
+}
+
+.nav{
+    margin-right: 20px;
+    padding: 0px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.nav-item{
+    font-size:120%;
+    margin:0px;
+    padding: 23px 30px;
+    color: #337279;
+}
+
+.name{
+    font-family: 'Courgette', cursive;
+    padding-top:15px;
+    font-size:175%;
+    margin-left:10%;
+    font-weight:bold;
+    text-shadow:5px 10px 9px rgba(0,0,0,0.3);
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+.logo{
+    border-radius:70px;
+    margin:5px;
+    margin-left:20px;
+}
+
+.more-details{
+    
+    width:90%;
+    margin:auto;
+    margin-top:4%;
+    padding: 2%
+}
+
+.profilepicdiv{
+    display: flex;
+}
+.author-name{
+    margin-left: 3%;
+}
+
+.profilepic
+{
+    width:60px;
+    height:60px;
+    border-radius:75px;
+    cursor:pointer;
+}
+
+.image-time{
+    display: flex;
+}
+
+.dish{
+    width: 600px;
+    height: 400px;
+    border-radius: 2%;
+    margin:3%;
+}
+
+.time{
+    margin:3%;
+    margin-left: 10%;
+    border-radius: 2%;
+    width: 250px;
+    padding: 1%;
+    font-size: 20px;
+    border: 3px solid gray;
+    box-shadow: 5px 10px 15px 5px #888888;
+}
+
+.clock{
+    width: 70px;
+    height: 50px;
+    margin-left: -120%;
+    margin-top: 30%;
+}
+
+.ingridents-container{
+    margin-top: 1%;
+    width: 57%;
+    padding: 1%;
+}
+
+.ingridents-container p{
+    letter-spacing: 1px;
+    line-height: 180%;
+    word-spacing: 3px;
+}
+
+.ingridents{
+    display: flex;
+    
+}
+
+.ingridents h3{
+    cursor: pointer;
+}
+
+input[type=checkbox]{
+    zoom:1.5;
+    margin-top: 3%;
+    margin-right: 3%;
+    cursor: pointer;
+}
+
+.review-btn{
+    background:orangered;
+    outline: none;
+    border:none;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 3%;
+    margin-top: 0.5%;
+    padding: 0% 3%;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+.review-btn:hover{
+    background: #ff9f1a;    
+}
+
+.box{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 3;
+    visibility: hidden;
+}
+
+.rating-section{
+    display: flex;
+}
+.ratestar{
+    color:lightgrey;
+    font-size: 3.0rem;
+    /* space out the stars */
+  }
+.ratestar::before{
+  content: '\2605';    /* star outline */
+  cursor: pointer;
+}
+.ratestar.rated::before{
+  /* the style for a selected star */
+  content: '\2605';  /* filled star */
+}
+
+.rate-label{
+    font-size: 30px;
+    margin-right: 3%;
+    margin-top: 4%;
+    color:rgba(0,0,0,0.7);
+}
+
+.stars{
+    counter-reset: rateme 0;   
+    font-weight: 200;
+    padding:0;
+    margin:-1.5%;
+    margin-left:0%;
+    margin-bottom:5px;
+    margin-top: 0.5%;
+}
+.ratestar.rated{
+    color:rgba(250, 217, 0, 1);
+    counter-increment: rateme 1;
+}
+.review-popup{
+  background:#eee;
+  padding: 3%;
+  width: 34%;
+  margin: 6% 33%;
+  border-radius:10px;
+  outline: none;
+    
+}
+.review-popup-title{
+    font-size: 40px;
+    margin-top: 1%;
+    color:rgba(0,0,0,0.7);
+}
+.review-text{
+    width:96%;
+    height: 250px;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding: 2%;
+    outline: none;
+    border: none;
+}
+textarea::placeholder{
+    font-size: 18px;
+}
+.cross
+{
+    color:rgba(0,0,0,0.35);
+    font-weight:800;
+    position:absolute;
+    font-size:20px;
+    top: 15%;
+    left: 70%;
+    font-family: 'Baloo Tamma 2', cursive;
+    cursor:pointer;
+}
+.cross:hover
+{
+    color:black;
+}
+
+
+.feedback-other{
+    background: white;
+    width: 350px;
+    height: 350px;
+    margin: 1%;
+    display: inline-block;
+    font-size:20px;
+    font-family: 'Baloo Tamma 2', cursive;
+    padding: 1%;
+}
+.feedback-author{
+    margin: 3% 6%;
+    font-size: 25px;
+}
