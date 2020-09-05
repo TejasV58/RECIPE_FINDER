@@ -58,11 +58,24 @@ a{
     width:90%;
     margin:auto;
     margin-top:4%;
-    padding: 2%
+    padding: 2%;
+}
+
+.time-image{
+    background: white;
+    padding: 2%;
+    border-radius: 30px;
+    width: 90%;
+    box-sizing: border-box;
+    margin-top: 4%;
+}
+.time-image h1{
+    margin-left: 1%;
 }
 
 .profilepicdiv{
     display: flex;
+    margin-left: 1%;
 }
 .author-name{
     margin-left: 3%;
@@ -88,14 +101,14 @@ a{
 }
 
 .time{
-    margin:3%;
-    margin-left: 10%;
+    margin:3% 0% 3% 10%;
     border-radius: 2%;
-    width: 250px;
+    width: 300px;
     padding: 1%;
     font-size: 20px;
     border: 3px solid gray;
     box-shadow: 5px 10px 15px 5px #888888;
+    
 }
 
 .clock{
@@ -108,18 +121,21 @@ a{
 .ingridents-container{
     margin-top: 1%;
     width: 57%;
-    padding: 1%;
+    padding: 2% 3%;
+    background: white;
+    border-radius: 30px;
 }
 
-.ingridents-container p{
+.directions p{
     letter-spacing: 1px;
     line-height: 180%;
     word-spacing: 3px;
+    font-family: 'Roboto', sans-serif;
+    
 }
 
 .ingridents{
     display: flex;
-    
 }
 
 .ingridents h3{
@@ -131,6 +147,14 @@ input[type=checkbox]{
     margin-top: 3%;
     margin-right: 3%;
     cursor: pointer;
+}
+
+.directions{
+    background: white;
+    padding: 2% 3%;
+    border-radius: 30px;
+    margin-bottom: 4%;
+    width: 57%;
 }
 
 .review-btn{
@@ -145,9 +169,11 @@ input[type=checkbox]{
     padding: 0% 3%;
     cursor: pointer;
     transition: 0.2s linear;
+    color: white;
 }
 .review-btn:hover{
     background: #ff9f1a;    
+    
 }
 
 .box{
@@ -246,11 +272,13 @@ textarea::placeholder{
     background: white;
     width: 350px;
     height: 350px;
-    margin: 1%;
+    margin: 2%;
     display: inline-block;
     font-size:20px;
     font-family: 'Baloo Tamma 2', cursive;
     padding: 1%;
+    box-sizing: border-box;
+    border-radius: 30px;
 }
 .feedback-author{
     margin: 3% 6%;
