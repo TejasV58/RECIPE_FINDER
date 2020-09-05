@@ -102,13 +102,6 @@ function changeprofilepicstop()
     document.getElementById('editprofilepic').style.visibility="hidden";
 }
 
-<<<<<<< Updated upstream
-function feedbackFormOpen(){
-    document.getElementById('box').style.visibility="visible";
-}
-function feedbackFormClose(){
-    document.getElementById('box').style.visibility="hidden";
-=======
 
 // Image preview of input images
 var i=0;
@@ -136,5 +129,4 @@ function removeimage(i)
     document.getElementById(i).remove();
     delete filesList[i];
     console.log(filesList);
->>>>>>> Stashed changes
 }
