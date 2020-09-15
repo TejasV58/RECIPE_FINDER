@@ -130,3 +130,13 @@ function removeimage(i)
     delete filesList[i];
     console.log(filesList);
 }
+
+//Feed Back Form popup
+function feedbackFormOpen()
+{
+    document.getElementById('box').style.visibility="visible";
+}
+function feedbackFormClose()
+{
+    document.getElementById('box').style.visibility="hidden";
+}
