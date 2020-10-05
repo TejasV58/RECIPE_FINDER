@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    if(!$_SESSION['userid']){
+        header("Location: ./home.php?error=singinrequired");
+        exit();
+    }
+    else{
+        require 'includes/dbh.php';
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,8 +37,17 @@
         </div>
         <div class="name nav-item nohover">Recipe Finder</div>
         <div class="nav" >
-            <a href="#"><h2 class="nav-item" onclick="popup()" style="visibility:hidden;">Profile</h2></a>
             <a href="#"><h2 class="nav-item">Help</h2></a>
+            <?php
+                    if(isset($_SESSION['userid'])){
+                        echo '<a href="profile.php"><h2 class="nav-item ">Profile</h2></a>';
+                        echo '<a href="includes\logout.php"><h2 class="nav-item nav-btn"><button class="signup-nav">Logout</button></h2></a>';
+                    }
+                    else{
+                        header("Location: ./home.php?error=singinrequired");
+                        exit();
+                    }
+                ?>
         </div>
     </div>
     <!-- NAVBAR END -->
@@ -40,8 +60,27 @@
             <div class="background-div">
                 <img class="profile-img" src="images/defaultprofilepic1.png">
                 <div class=profilecontents>
-                    <p class=profilename>Sanika Kulkarni</p>
-                     5 <span><i class="fas fa-utensils"></i></span>
+                    <p class=profilename>
+                    <?php  
+                        $sql = "SELECT * FROM user WHERE userid=?";
+                        $stmt = mysqli_stmt_init($conn);
+                        if(!mysqli_stmt_prepare($stmt,$sql))
+                        {
+                            header("Location: ./home.php?error=sqlerror");
+                            exit();
+                        }
+                        else
+                        {
+                            mysqli_stmt_bind_param($stmt,"s",$_SESSION['userid']);
+                            mysqli_stmt_execute($stmt);
+                            $result = mysqli_stmt_get_result($stmt);
+                            if($row = mysqli_fetch_assoc($result)){
+                                echo $row['name'];
+                                }
+                        }
+                    ?>
+                    </p>
+                     0 <span><i class="fas fa-utensils"></i></span>
                 </div>
             </div>
             <form action="#">
