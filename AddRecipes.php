@@ -22,7 +22,7 @@
      <!-- NAVBAR START -->
      <div class='navbar'>
         <div >
-            <a href="home.html"><img src="images/logo.png" width="60px" height="58px" alt="logo" class="logo"></a>
+            <a href="home.php"><img src="images/logo.png" width="60px" height="58px" alt="logo" class="logo"></a>
         </div>
         <div class="name nav-item nohover">Recipe Finder</div>
         <div class="nav" >

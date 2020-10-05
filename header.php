@@ -17,14 +17,14 @@
     <!-- SCRIPT -->
     <script src="Script.js"></script>
     <script src="https://kit.fontawesome.com/a77f5500d1.js" crossorigin="anonymous"></script>
-    
-    
+       
 </head>
 <body>
+        
         <!-- NAVBAR START -->
         <div class='navbar'>
             <div >
-                <a href="home.html"><img src="images/logo.png" width="60px" height="58px" alt="logo" class="logo"></a>
+                <a href="home.php"><img src="images/logo.png" width="60px" height="58px" alt="logo" class="logo"></a>
             </div>
             <div class="name nav-item nohover">Recipe Finder</div>
             <div class="nav" >
@@ -32,28 +32,6 @@
                 <a href="#"><h2 class="nav-item">Help</h2></a>
             </div>
         </div>
-        
-        <!-- WALLPAPER START -->
-        <div class="background">
-            <div class="description">
-                Recipe Finding Simplified
-                <p class="small-desc description">Lorem ipsum dolor sit amet.</p>
-            </div>
-        </div>
-        <!-- WALLPAPER END -->
-
-        <!-- SEARCHBOX START-->
-        <div class="search-container">
-            <form action="#" autocomplete="off">
-                    <input class=search type="text" id="items" placeholder="Input Ingredients to Search Recipes">
-                    <button class="additem" onclick="addItem()">+</button>
-                    <button class="searchbtn">Search</button>
-            </form>
-            <div  class="items-list">
-                <span class="items" id="itemAdded" style="display:none;">item<button onclick="removeItem('item')">X</button></span>
-            </div>
-        </div>
-        <!-- SEARCHBOX END-->
 
         <!--Popup Sign in start-->
         <div class=popupdiv id=popupid>
@@ -86,50 +64,3 @@
             </div>
         </div>
         <!--Popup Sign up end-->
-
-        <!-- Search Result Start -->
-        <div class="page">
-            <div class="search-result">
-                <h1 class="heading1">Search results</h1>
-                <hr>
-                <div class="results">
-                    <img src="images/recipe.jpg" alt="" class="image">
-                    <div class="recipe-desc">idli wada</div>
-                    <p class="rating">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star star-null" aria-hidden="true"></i>
-                    </p>
-                </div>
-                <div class="results">
-                    <div class=image></div>
-                    <div class="recipe-desc">idli wada</div>
-                </div>
-                <div class="results">
-                    <div class=image></div>
-                    <div class="recipe-desc">idli wada</div>
-                </div>
-                <div class="results">
-                    <div class=image></div>
-                    <div class="recipe-desc">idli wada</div>
-                </div>
-                <div class="results">
-                    <div class=image></div>
-                    <div class="recipe-desc">idli wada</div>
-                </div>
-                <div class="results">
-                    <div class=image></div>
-                    <div class="recipe-desc">idli wada</div>
-                </div>
-            </div>
-        </div>
-        <!-- Search Result End -->
-
-        <!--FOOTER-->
-        <div class=footer>
-        </div>
-        <!-- FOOTER END -->
-</body>
-</html>

@@ -176,7 +176,7 @@ input[type=checkbox]{
     
 }
 
-.box{
+.rbox{
     position: fixed;
     width: 100%;
     height: 100%;
@@ -251,7 +251,7 @@ input[type=checkbox]{
 textarea::placeholder{
     font-size: 18px;
 }
-.cross
+.rcross
 {
     color:rgba(0,0,0,0.35);
     font-weight:800;
@@ -262,7 +262,7 @@ textarea::placeholder{
     font-family: 'Baloo Tamma 2', cursive;
     cursor:pointer;
 }
-.cross:hover
+.rcross:hover
 {
     color:black;
 }

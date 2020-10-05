@@ -24,9 +24,9 @@
 
     <div class='navbar'>
         <div >
-            <a href="home.html"><img src="images/logo.png" width="60px" height="58px" alt="logo" class="logo"></a>
+            <a href="home.php"><img src="images/logo.png" width="60px" height="58px" alt="logo" class="logo"></a>
         </div>
-        <div class="name nav-item">Recipe Finder</div>
+        <div class="name nav-item nohover">Recipe Finder</div>
         <div class="nav" >
             <a href="#"><h2 class="nav-item" onclick="popup()" style="visibility:hidden;">Profile</h2></a>
             <a href="#"><h2 class="nav-item">Help</h2></a>
@@ -41,7 +41,7 @@
             </div>
             <div class=profilecontents>
                 <p class=profilename>Sanika Kulkarni</p>
-                 5 <span><i class="fas fa-utensils"></i></span><button class=recipe-btn ><a href="AddRecipes.html">Add Recipe</a></button>
+                 5 <span><i class="fas fa-utensils"></i></span><button class=recipe-btn ><a href="AddRecipes.php">Add Recipe</a></button>
             </div>
             <div class=editprofile>
                 <button class=editprofile-btn onclick=editopen()>Edit Profile</button>

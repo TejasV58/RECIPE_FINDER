@@ -134,9 +134,9 @@ function removeimage(i)
 //Feed Back Form popup
 function feedbackFormOpen()
 {
-    document.getElementById('box').style.visibility="visible";
+    document.getElementById('review-box').style.visibility="visible";
 }
 function feedbackFormClose()
 {
-    document.getElementById('box').style.visibility="hidden";
+    document.getElementById('review-box').style.visibility="hidden";
 }

@@ -3,6 +3,10 @@
 }
 
 
+.nohover:hover{
+    color:#337279;
+}
+
 body{
     background:#eee;
 }

@@ -9,25 +9,13 @@
     <link rel="stylesheet" href="more details.css">  
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <!-- LOGO -->
-    <link rel="icon" href="images/logo1.png">  
-
-    <!-- SCRIPT -->
-    <script src="Script.js"></script> 
 </head>
-<body>
-    <!-- NAVBAR -->
 
-    <div class='navbar'>
-        <div>
-            <a href="home.html"><img src="images/logo.png" width="60px" height="58px" alt="logo" class="logo"></a>
-        </div>
-        <div class="name nav-item">Recipe Finder</div>
-        <div class="nav" >
-            <a href="#"><h2 class="nav-item">Profile</h2></a>
-            <a href="#"><h2 class="nav-item">Help</h2></a>
-        </div>
-    </div>
+<?php
+    require "header.php";
+?>
+
+<body>
 
     <div class="more-details">
         
@@ -99,9 +87,9 @@
                     <button class="review-btn" onclick="feedbackFormOpen()">Give Your Review!</button>
                 </div>
             </div>
-            <div class="box" id="box">
+            <div class="rbox" id="review-box">
                 <div class="review-popup">
-                    <center><h2 class="review-popup-title">Review</h2></center><span class="cross" onclick="feedbackFormClose()">X</span><hr>
+                    <center><h2 class="review-popup-title">Review</h2></center><span class="rcross" onclick="feedbackFormClose()">X</span><hr>
                     <div class="rating-section">   
                         <label for="rate" class=rate-label>Rating</label>
                         <div class="stars" data-rating="3">
