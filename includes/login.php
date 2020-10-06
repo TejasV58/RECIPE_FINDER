@@ -30,7 +30,7 @@ if(isset($_POST['signin-btn'])){
                 $_SESSION['userid'] = $row['userid'];
                 $_SESSION['emailid'] = $row['emailid'];
                 
-                header("Location: ../home.php?login=success");
+                header("Location: ../home.php?success=login");
                 exit();
 
             }

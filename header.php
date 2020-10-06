@@ -21,10 +21,14 @@
     <!-- SCRIPT -->
     <script src="Script.js"></script>
     <script src="https://kit.fontawesome.com/a77f5500d1.js" crossorigin="anonymous"></script>
-       
+    <script>
+            setTimeout(() => {
+                let msg = document.querySelector(".msg-outerbox");
+                msg.remove();
+            }, 3000);
+    </script>
 </head>
 <body>
-        
         <!-- NAVBAR START -->
         <div class='navbar'>
             <div >
@@ -51,6 +55,7 @@
 
         <!--Popup Sign in start-->
         <div class=popupdiv id=popupid>
+
             <div class="box">
                 <form action="includes\login.php" method="POST">
                     <h1 class="heading">Sign In</h1><span class="cross" onclick="popupclose()">X</span>
@@ -80,3 +85,40 @@
             </div>
         </div>
         <!--Popup Sign up end-->
+
+        <!-- MESSAGE -->
+        <?php if(isset($_GET['error'])): ?>
+        <div class='msg-outerbox'>
+            <center><div class='msg-container danger'>
+                <?php 
+                if($_GET['error'] == "sqlerror"){
+                    echo "Error!!";
+                }
+                else if($_GET['error'] == "wrongpwd"){
+                    echo "Your Password do not match!!";
+                }
+                else if($_GET['error'] == "passwordcheck"){
+                    echo "Your Password do not match!";
+                }
+                else if($_GET['error'] == "emailtaken"){
+                    echo "Email is already taken!";
+                }
+                ?>
+            </div></center>
+        </div>
+        <?php elseif(isset($_GET['success'])): ?>
+            <div class='msg-outerbox'>
+                <center><div class='msg-container success'>
+                    <?php 
+                    if($_GET['success'] == "login"){
+                        echo "Logged in successfully!";
+                    }
+                    else if($_GET['success'] == "signup"){
+                        echo "signed up successfully!";
+                    }
+                    ?>   
+                </div></center>
+            </div> 
+        <?php endif; ?>
+
+        
