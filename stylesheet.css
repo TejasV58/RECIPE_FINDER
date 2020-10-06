@@ -49,8 +49,7 @@ body{
     font-size:175%;
     margin-left:10%;
     font-weight:bold;
-    text-shadow:5px 10px 9px rgba(0,0,0,0.3);
-    
+    text-shadow:5px 10px 9px rgba(0,0,0,0.3);  
 }
 
 a{
@@ -62,6 +61,45 @@ a{
     margin:5px;
     margin-left:20px;
 }
+
+.nav-btn{
+    padding: 17px 12px;
+}
+
+.signup-nav{
+    padding:11%;
+    font-size:80%;
+    background: #337279;
+    border:2px solid #337279;
+    color:white;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.signup-nav:hover{
+    background:#47959e;
+    border:2px solid #47959e;
+}
+
+
+.login-nav{
+    padding:11%;
+    font-size:80%;
+    font-weight: 600;
+    border:2px solid #337279;
+    background: white;
+    color:#337279;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.login-nav:hover{
+    border:2px solid #47959e;
+    color: #47959e;
+    background: white;
+}
+
+
 
 /*FOOTER*/
 .footer{
