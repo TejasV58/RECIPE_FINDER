@@ -39,6 +39,11 @@ if(isset($_POST['signin-btn'])){
                 exit();
             }
         }
+        else
+        {
+            header("Location: ../home.php?error=nouser");
+            exit();
+        }
     }
 }   
 else{
