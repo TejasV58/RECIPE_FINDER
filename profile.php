@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!$_SESSION['userid']){
-        header("Location: ./home.php?error=singinrequired");
+        header("Location: ./home.php?error=signinrequired");
         exit();
     }
     else{

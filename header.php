@@ -103,6 +103,12 @@
                 else if($_GET['error'] == "emailtaken"){
                     echo "Email is already taken!";
                 }
+                else if($_GET['error'] == "nouser"){
+                    echo "No user found!";
+                }
+                else if($_GET['error'] == "signinrequired"){
+                    echo "Cant access the page. Signin Required";
+                }
                 ?>
             </div></center>
         </div>
@@ -115,6 +121,9 @@
                     }
                     else if($_GET['success'] == "signup"){
                         echo "signed up successfully!";
+                    }
+                    else if($_GET['success'] == "logout"){
+                        echo "logged out successfully!";
                     }
                     ?>   
                 </div></center>
