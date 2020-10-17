@@ -11,6 +11,7 @@ if(isset($_POST['signin-btn'])){
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$sql))
     {
+        $_SESSION['error-message'] = "Error!";
         header("Location: ../home.php?error=sqlerror");
         exit();
     }
@@ -23,24 +24,27 @@ if(isset($_POST['signin-btn'])){
             $pwdCheck = password_verify($password,$row['password']);
             if($pwdCheck == false){
                 header("Location: ../home.php?error=wrongpwd");
+                $_SESSION['error-message'] = "Wrong Password!";
                 exit();
             }
             else if($pwdCheck == true){
                 session_start();
                 $_SESSION['userid'] = $row['userid'];
                 $_SESSION['emailid'] = $row['emailid'];
-                
+                $_SESSION['success-message'] = "Logged in successfully!";
                 header("Location: ../home.php?success=login");
                 exit();
 
             }
             else{
+                $_SESSION['error-message'] = "Wrong Password!";
                 header("Location: ../home.php?error=wrongpwd");
                 exit();
             }
         }
         else
-        {
+        {   
+            $_SESSION['error-message'] = "User not found";
             header("Location: ../home.php?error=nouser");
             exit();
         }

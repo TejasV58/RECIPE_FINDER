@@ -4,4 +4,4 @@ session_start();
 session_unset();
 session_destroy();
 
-header("Location: ../home.php?success=logout");
+header("Location: ../home.php");
