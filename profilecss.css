@@ -242,3 +242,10 @@ a:visited{
     background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),url(images/defaultprofilepic1.png);
     background-size: cover;
 }
+
+.abtme-box{
+    white-space: pre-wrap;
+    word-wrap: normal;
+    width:95%;
+    margin:0.5%;
+}

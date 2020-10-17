@@ -148,9 +148,23 @@
             <div class=aboutmebox>
                 <div class=aboutme>
                     <p><b>About Me</b></p>
-                    <p>Introduce Yourself</p>
+                    <?php if(isset($aboutme)){
+                        echo "<p class=abtme-box>".$aboutme."</p>";
+                    }
+                    else{
+                        echo "<p>Introduce Yourself</p>";
+                    }   
+                    ?>
+                    
                     <p><b>Connect With Me</b></p>
-                    <p>Let people connect with you</p>
+                    <?php if(isset($connect)){
+                        echo "<p class=abtme-box>".$connect."</p>";
+                    }
+                    else{
+                        echo "<p>Let people connect with you</p>";
+                    }   
+                    ?>
+                    
                 </div>
             </div>
             <div class=profilesections>
@@ -195,14 +209,14 @@
     <!--EDIT PROFILE-->
     <div class=editprofilebackground id=editprofileback>
         <div class=editprofileblock>
-            <form action="./includes/updateprofile.php" method="POST">
+            <form action="./includes/updateprofile.php" method="POST" enctype="multipart/form-data">
                 <center>
                     <div  id=profilepicdiv onmouseenter=changeprofilepic() onmouseleave=changeprofilepicstop()
                         <?php if(isset($profileimg))
-                            echo "style='background:url(profile-images/".$profileimg.")'";
+                            echo "style='background:url(./profile-images/".$profileimg.")';";
                         ?>
                     >
-                    <input type="file" id=profilephoto accept="image/*" name="profileimage">
+                    <input type="file" id=profilephoto accept="image/*" name="profilephoto">
                     <label id=editprofilepic for="profilephoto"><i class="fas fa-camera"></i> &nbsp; <br>Change Profile Photo</label>
                     </div>
                 </center>
@@ -213,11 +227,11 @@
 
                 <label class="editlabel">About Me</label><br>
                 <textarea class="editinput editinputabout" placeholder="Introduce Yourself" name="aboutme" 
-                value="<?php if(isset($aboutme)){echo $aboutme;} ?>"></textarea><br><br>
+                ><?php if(isset($aboutme)){echo $aboutme;} ?></textarea><br><br>
 
                 <label class="editlabel">Connect With Me</label><br>
                 <textarea class="editinput  editinputconnect" placeholder="Let people connect with you" name="connectme"
-                value="<?php if(isset($aboutme)){echo $connect;} ?>" ></textarea><br><br>
+                 ><?php if(isset($connect)){echo $connect;} ?></textarea><br><br>
 
                 <button class=submit-btn name="save-profile">Save</button>
 
