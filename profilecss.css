@@ -235,7 +235,9 @@ body{
 #profilepicdiv
 {
     background:url(images/defaultprofilepic1.png);
-    background-size: cover;
+    object-fit: cover;
+    overflow: hidden;
+    box-sizing: border-box;
     width:100px;
     height:100px;
     border-radius:75px;  
