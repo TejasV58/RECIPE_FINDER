@@ -83,9 +83,31 @@
 
     <!-- Add Recipe Form Start -->
 
-    
+    <?php  
+        $sql2 = "SELECT * FROM userdetails WHERE userid=?";
+        $stmt2 = mysqli_stmt_init($conn);
+        if(!mysqli_stmt_prepare($stmt2,$sql2))
+        {
+            header("Location: ./profile.php");
+            $_SESSION['error-message'] = "Error!";
+            exit();
+        }
+        else
+        {
+            mysqli_stmt_bind_param($stmt2,"s",$_SESSION['userid']);
+            mysqli_stmt_execute($stmt2);
+            $details_result = mysqli_stmt_get_result($stmt2);
+            if($details_row = mysqli_fetch_assoc($details_result)){
+                $profileimg = $details_row['profileimg'];
+            }
+        }
+    ?>
         <div class="recipedetailspage">
-          
+            <?php  if(isset($profileimg)): ?>
+                <img src="profile-images/<?php echo $profileimg; ?>" alt="profile-img" class=profilepic>
+            <?php else:?>
+                <img src="profile-images/<?php echo "defaultprofilepic1.png"; ?>" alt="profile-img" class=profilepic>
+            <?php endif;?>
             <div class="background-div">
                 <img class="profile-img" src="images/defaultprofilepic1.png">
                 <div class=profilecontents>
