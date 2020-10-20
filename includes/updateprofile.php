@@ -10,6 +10,7 @@ if(isset($_POST['save-profile'])){
     $name = $_POST['name'];
     $abtme = $_POST['aboutme'];
     $connect = $_POST['connectme'];
+    
     if($_FILES['profilephoto']['size']>0)
     {
         $setflag=1;

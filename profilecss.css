@@ -65,9 +65,12 @@ body{
     z-index:-1;
 }
 
-a:visited{
+.nav-item>a:visited,.nav-item>a:link,.recipe-btn>a:visited,.recipe-btn>a:link,.editprofile-btn>a:visited,.editprofile-btn>a:link{
     color:white;
+    text-decoration: none;
 }
+
+
 
 .recipe-btn{
     padding:4%;

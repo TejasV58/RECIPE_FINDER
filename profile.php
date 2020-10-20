@@ -18,6 +18,7 @@
     <title>Recipe Finder | Profile</title>
 
      <!-- Stylesheet -->
+     <link rel="stylesheet" href="homecss.css">
      <link rel="stylesheet" href="stylesheet.css">
      <link rel="stylesheet" href="profilecss.css"> 
      <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lato&display=swap" rel="stylesheet">
@@ -35,6 +36,17 @@
                 msg.remove();
             }, 3000);
     </script>
+
+    <style>
+        .results{
+            width:21.5%;
+            height:39vh;
+        }
+        .image{
+            width:100%;
+            height:30vh;
+        }
+    </style>
 </head>
 
 <?php  
@@ -180,10 +192,41 @@
                     </div>
                 </div>
                 <div class=sectioncontent id=recipe>
-                    <div class=sectiontile></div>
-                    <div class=sectiontile></div>
-                    <div class=sectiontile></div>
-                    <div class=sectiontile></div>
+                    <?php  
+                        $sql = "SELECT * FROM recipe WHERE userid=?";
+                        $stmt = mysqli_stmt_init($conn);
+                        if(!mysqli_stmt_prepare($stmt,$sql))
+                        {
+                            header("Location: ./profile.php?error=sqlerror");
+                            $_SESSION['error-message'] = "error!";
+                            exit();
+                        }
+                        else
+                        {
+                            mysqli_stmt_bind_param($stmt,"s",$_SESSION['userid']);
+                            mysqli_stmt_execute($stmt);
+                            $reciperesult = mysqli_stmt_get_result($stmt);
+                            while($reciperow = mysqli_fetch_assoc($reciperesult)){
+                                $recipeid = $reciperow['recipeid'];
+                                $recipetitle = $reciperow['recipetitle'];
+                                echo "
+                                        <a href='more details.php?recipeid=$recipeid'>
+                                            <div class='results'>
+                                                <img src='images/default.jpg' alt='' class='image'>
+                                                <div class='recipe-desc'>$recipetitle</div>
+                                                <p class='rating'>
+                                                    <i class='fa fa-star' aria-hidden='true'></i>
+                                                    <i class='fa fa-star' aria-hidden='true'></i>
+                                                    <i class='fa fa-star' aria-hidden='true'></i>
+                                                    <i class='fa fa-star' aria-hidden='true'></i>
+                                                    <i class='fa fa-star star-null' aria-hidden='true'></i>
+                                                </p>
+                                            </div>
+                                        </a>
+                                    ";
+                                }
+                        }
+                    ?>  
                 </div>
                 <div class=sectioncontent id=fav>
                     <div class=sectiontile></div>

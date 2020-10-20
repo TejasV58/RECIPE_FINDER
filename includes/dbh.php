@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $DbUsername = "root";
-$Dbpassword = "password";
+$Dbpassword = "";
 $Dbname = "recipe finder";
 
 $conn = mysqli_connect($servername,$DbUsername,$Dbpassword,$Dbname);
