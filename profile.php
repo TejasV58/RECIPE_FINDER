@@ -261,7 +261,13 @@
             <form action="./includes/updateprofile.php" method="POST" enctype="multipart/form-data">
                 <center>
                     <div  id=profilepicdiv onmouseenter=changeprofilepic() onmouseleave=changeprofilepicstop()                    
-                    ><img src='./profile-images/<?php if(isset($profileimg)){ echo $profileimg; }?>' alt="profile-img" class=profilepic >
+                    ><img src='./profile-images/
+                    <?php  if(isset($profileimg)): ?>
+                        <?php echo $profileimg; ?>
+                    <?php else:?>
+                        <?php echo "defaultprofilepic1.png"; ?>
+                    <?php endif;?>' 
+                    alt="profile-img" class=profilepic >
                     <input type="file" id=profilephoto accept="image/*" name="profilephoto">
                     <label id=editprofilepic for="profilephoto"><i class="fas fa-camera"></i> &nbsp; <br>Change Profile Photo</label>
                     </div>
