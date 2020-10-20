@@ -20,7 +20,11 @@
     <div class="more-details">
         
         <div class="time-image">
-            <h1> Recipe Title</h1>
+            <div class="flexdiv">
+                <h1> Recipe Title</h1>
+                <a href="modifyrecipe.php?recipeid=$recipeid" class=editicon><i class="fas fa-edit"></i></a>
+            </div>
+            
             <div class=profilepicdiv>
                 <img src="images/defaultprofilepic.png" alt="" class=profilepic>
                 <h2 class="author-name">Author's Name</h2>
@@ -44,7 +48,10 @@
         </div><br><br><hr>
 
             <br>
-            <h1>Directions</h1>
+            <div class="flexdiv">
+                <h1>Description</h1>
+                <a href="modifyrecipe.php?recipeid=$recipeid" class=editicon><i class="fas fa-edit"></i></a>
+            </div>
             <div class="directions">
                 <p>Heat olive oil over medium-low heat in a saucepan; stir anchovy fillets into olive oil and cook,
                 stirring often, until the fillets begin to sizzle, about 1 minute. Mix garlic into oil and cook 
@@ -52,8 +59,10 @@
                 is wilted, 2 or 3 more minutes.</p>
             </div>
             <hr><br>
-
-        <h1>Ingridents</h1>
+        <div class="flexdiv">
+            <h1>Ingridents</h1>
+            <a href="modifyrecipe.php?recipeid=$recipeid" class=editicon><i class="fas fa-edit"></i></a>
+        </div>       
         <div class="ingridents-container">
             <div class="ingridents">
                 <input type="checkbox" id="ig1" name = "ig1">
@@ -73,7 +82,11 @@
             </div>
         </div>
             <br><hr><br>
-            <h1>Directions</h1>
+            <div class="flexdiv">
+                <h1>Directions</h1>               
+                <a href="modifyrecipe.php?recipeid=$recipeid" class=editicon><i class="fas fa-edit"></i></a>
+            </div>
+            
             <div class="directions">
                 <h2>Step 1</h2>
                 <p>Heat olive oil over medium-low heat in a saucepan; stir anchovy fillets into olive oil and cook,

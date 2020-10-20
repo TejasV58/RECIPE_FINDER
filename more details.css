@@ -78,7 +78,18 @@ a{
     margin-left: 1%;
 }
 .author-name{
-    margin-left: 3%;
+    margin-left: 1%;
+}
+
+.flexdiv{
+    display:flex;
+}
+
+a.editicon{
+    margin:1%;
+    font-size:28px;
+    padding:0.8%;
+    color:rgba(0,0,0,0.5);
 }
 
 .profilepic
