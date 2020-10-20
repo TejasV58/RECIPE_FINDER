@@ -260,11 +260,8 @@
         <div class=editprofileblock>
             <form action="./includes/updateprofile.php" method="POST" enctype="multipart/form-data">
                 <center>
-                    <div  id=profilepicdiv onmouseenter=changeprofilepic() onmouseleave=changeprofilepicstop()
-                        <?php if(isset($profileimg))
-                            echo "style='background:url(./profile-images/".$profileimg.")';";
-                        ?>
-                    >
+                    <div  id=profilepicdiv onmouseenter=changeprofilepic() onmouseleave=changeprofilepicstop()                    
+                    ><img src='./profile-images/<?php if(isset($profileimg)){ echo $profileimg; }?>' alt="profile-img" class=profilepic >
                     <input type="file" id=profilephoto accept="image/*" name="profilephoto">
                     <label id=editprofilepic for="profilephoto"><i class="fas fa-camera"></i> &nbsp; <br>Change Profile Photo</label>
                     </div>
