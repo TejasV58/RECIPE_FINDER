@@ -42,6 +42,17 @@
                 </div>
             </div>
         </div><br><br><hr>
+
+            <br>
+            <h1>Directions</h1>
+            <div class="directions">
+                <p>Heat olive oil over medium-low heat in a saucepan; stir anchovy fillets into olive oil and cook,
+                stirring often, until the fillets begin to sizzle, about 1 minute. Mix garlic into oil and cook 
+                just until fragrant, 1 minute more. Add fresh oregano and reduce heat to low; cook until oregano 
+                is wilted, 2 or 3 more minutes.</p>
+            </div>
+            <hr><br>
+
         <h1>Ingridents</h1>
         <div class="ingridents-container">
             <div class="ingridents">

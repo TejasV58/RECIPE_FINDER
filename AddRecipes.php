@@ -83,18 +83,18 @@
                      0 <span><i class="fas fa-utensils"></i></span>
                 </div>
             </div>
-            <form action="#">
+            <form action="includes/add.php" method="POST">
             <div class="recipe-details">
                 <div class="main-details">
                     <label for="name" class="label ">Recipe Title</label>
-                    <input class="input-box title" type="text" id="name" >
+                    <input class="input-box title" type="text" id="name" name="name">
                     <label for="description" class="label">Description</label>
                     <textarea name="description" class="input-box" id="description" rows="5" placeholder="Description"></textarea>
                     <label for="ingredients" class="label">Ingredients</label>
-                    <textarea name="Ingredients" class="input-box" id="ingredients" rows="10" placeholder="Enter Each ingredients on new line"></textarea>
+                    <textarea name="ingredients" class="input-box" id="ingredients" rows="10" placeholder="Enter Each ingredients on new line"></textarea>
                     <label for="directions" class="label">Directions</label>
                     <textarea name="directions" id="directions" class="input-box" rows="10" placeholder="Enter each step on new line"></textarea>
-                    <input class="submit-btn" type="submit" value="Create Recipe">
+                    <input class="submit-btn" type="submit" value="Create Recipe" name="create_recipe">
                 </div>
 
                 <div class="small-details">
@@ -111,21 +111,21 @@
                         <div class="smalldetailsdiv">
                             <div class="sml-details">
                                 <label class="label">Prep Time</label>
-                                <input class="input-box2" type="text">
+                                <input class="input-box2" type="text" name="preptime">
                             </div>
                             <div class="sml-details">
                                 <label class="label">Cook Time</label>
-                                <input class="input-box2" type="text">
+                                <input class="input-box2" type="text" name="cooktime">
                             </div>
                         </div>
                         <div class="smalldetailsdiv">
                             <div class="sml-details">
                                 <label class="label">Ready in</label>
-                                <input class="input-box2" type="text">
+                                <input class="input-box2" type="text" name="readyin">
                             </div>
                             <div class="sml-details">
                                 <label class="label">Number of serves</label>
-                                <input class="input-box2" type="text">
+                                <input class="input-box2" type="text" name="serves">
                             </div>
                         </div>
                     </div>
