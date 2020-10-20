@@ -87,44 +87,21 @@
         <!--Popup Sign up end-->
 
         <!-- MESSAGE -->
-        <?php if(isset($_GET['error'])): ?>
+        <?php if(isset($_SESSION['error-message'])): ?>
         <div class='msg-outerbox'>
             <center><div class='msg-container danger'>
                 <?php 
-                if($_GET['error'] == "sqlerror"){
-                    echo "Error!!";
-                }
-                else if($_GET['error'] == "wrongpwd"){
-                    echo "Your Password do not match!!";
-                }
-                else if($_GET['error'] == "passwordcheck"){
-                    echo "Your Password do not match!";
-                }
-                else if($_GET['error'] == "emailtaken"){
-                    echo "Email is already taken!";
-                }
-                else if($_GET['error'] == "nouser"){
-                    echo "No user found!";
-                }
-                else if($_GET['error'] == "signinrequired"){
-                    echo "Cant access the page. Signin Required";
-                }
+                    echo $_SESSION['error-message'];
+                    unset($_SESSION['error-message']);
                 ?>
             </div></center>
         </div>
-        <?php elseif(isset($_GET['success'])): ?>
+        <?php elseif(isset($_SESSION['success-message'])): ?>
             <div class='msg-outerbox'>
                 <center><div class='msg-container success'>
                     <?php 
-                    if($_GET['success'] == "login"){
-                        echo "Logged in successfully!";
-                    }
-                    else if($_GET['success'] == "signup"){
-                        echo "signed up successfully!";
-                    }
-                    else if($_GET['success'] == "logout"){
-                        echo "logged out successfully!";
-                    }
+                        echo $_SESSION['success-message'];
+                        unset($_SESSION['success-message']);
                     ?>   
                 </div></center>
             </div> 

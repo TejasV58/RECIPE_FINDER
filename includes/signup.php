@@ -10,7 +10,8 @@ if(isset($_POST['signup-btn']))
 
    if($password!==$confirmpassword)
    {
-      header("Location:../home.php?error=passwordcheck&fullname=".$fullname."&email=".$email);
+      $_SESSION['error-message'] = "Your Password do not match!";
+      header("Location:../home.php");      
       exit();
    }
    else
@@ -18,7 +19,8 @@ if(isset($_POST['signup-btn']))
       $sql="SELECT emailid FROM user WHERE emailid=?";
       $stmt=mysqli_stmt_init($conn);
       if(!mysqli_stmt_prepare($stmt,$sql))
-      {
+      {  
+         $_SESSION['error-message'] = "error!";
          header("Location:../home.php?error=sqlerror");
          exit();
       }
@@ -29,8 +31,9 @@ if(isset($_POST['signup-btn']))
          mysqli_stmt_store_result($stmt);
          $resultCheck=mysqli_stmt_num_rows($stmt);
          if($resultCheck>0)
-         {
-            header("Location:../home.php?error=emailtaken&fullname=".$fullname);
+         {  
+            $_SESSION['error-message'] = "Email is already taken!";
+            header("Location:../home.php?error=emailtaken&fullname=".$fullname);            
             exit();
          }
          else
@@ -38,17 +41,19 @@ if(isset($_POST['signup-btn']))
                $sql="INSERT INTO user (password,emailid,name) VALUES(?,?,?)";
                $stmt=mysqli_stmt_init($conn);
                if(!mysqli_stmt_prepare($stmt,$sql))
-               {
-                  header("Location:../home.php?error=sqlerror");
+               {  
+                  $_SESSION['error-message'] = "error!";
+                  header("Location:../home.php?error=sqlerror");                 
                   exit();
                }
                else
                {
-                $hashedPwd=password_hash($password, PASSWORD_DEFAULT);
-                mysqli_stmt_bind_param($stmt,"sss",$hashedPwd,$email,$fullname);
-                mysqli_stmt_execute($stmt);
-                header("Location:../home.php?success=signup");
-                exit();
+                  $hashedPwd=password_hash($password, PASSWORD_DEFAULT);
+                  mysqli_stmt_bind_param($stmt,"sss",$hashedPwd,$email,$fullname);
+                  mysqli_stmt_execute($stmt);
+                  $_SESSION['success-message'] = "signed up successfully!";
+                  header("Location:../home.php?success=signup");
+                  exit();
                 }
           }
       }

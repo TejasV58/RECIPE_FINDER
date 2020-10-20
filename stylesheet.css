@@ -156,3 +156,7 @@ a{
     color:rgb(143, 22, 6);
     border:1px solid rgb(150, 11, 6);
 }
+
+.text{
+    white-space: pre;
+}
