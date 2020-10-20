@@ -27,9 +27,38 @@
     <!-- SCRIPT -->
     <script src="Script.js"></script>
     <script src="https://kit.fontawesome.com/a77f5500d1.js" crossorigin="anonymous"></script>
+    <script>
+            setTimeout(() => {
+                let msg = document.querySelector(".msg-outerbox");
+                msg.remove();
+            }, 3000);
+    </script>
 
 </head>
 <body>
+
+    <!-- MESSAGE -->
+    <?php if(isset($_SESSION['error-message'])): ?>
+        <div class='msg-outerbox'>
+            <center><div class='msg-container danger'>
+                <?php 
+                    echo $_SESSION['error-message'];
+                    unset($_SESSION['error-message']);
+                ?>
+            </div></center>
+        </div>
+        <?php elseif(isset($_SESSION['success-message'])): ?>
+            <div class='msg-outerbox'>
+                <center><div class='msg-container success'>
+                    <?php 
+                        echo $_SESSION['success-message'];
+                        unset($_SESSION['success-message']);
+                    ?>   
+            </div></center>
+        </div> 
+    <?php endif; ?>
+
+
      <!-- NAVBAR START -->
      <div class='navbar'>
         <div >
@@ -83,18 +112,46 @@
                      0 <span><i class="fas fa-utensils"></i></span>
                 </div>
             </div>
-            <form action="includes/add.php" method="POST">
+            <?php  
+
+                $recipeid = 1/*$_GET['recipeid']*/;
+                $sql = "SELECT * FROM recipe WHERE recipeid=?";
+                $stmt = mysqli_stmt_init($conn);
+                if(!mysqli_stmt_prepare($stmt,$sql))
+                {
+                    header("Location: ./profile.php?error=sqlerror");
+                    $_SESSION['error-message'] = "error!";
+                    exit();
+                }
+                else
+                {
+                    mysqli_stmt_bind_param($stmt,"s",$recipeid);
+                    mysqli_stmt_execute($stmt);
+                    $reciperesult = mysqli_stmt_get_result($stmt);
+                    if($reciperow = mysqli_fetch_assoc($reciperesult)){
+                        $recipetitle = $reciperow['recipetitle'];
+                        $description = $reciperow['description'];
+                        $ingredients = $reciperow['ingredients'];
+                        $directions = $reciperow['directions'];
+                        $preptime = $reciperow['preptime'];
+                        $cooktime = $reciperow['cooktime'];
+                        $servings = $reciperow['servings'];
+                        $readyin = $reciperow['readyin'];
+                    }
+                }
+            ?> 
+            <form action="includes/editrecipe.php?recipeid=<?php echo $recipeid; ?>" method="POST">
             <div class="recipe-details">
                 <div class="main-details">
                     <label for="name" class="label ">Recipe Title</label>
-                    <input class="input-box title" type="text" id="name" name="name">
+                    <input class="input-box title" type="text" id="name" name="name" value="<?php echo $recipetitle; ?>">
                     <label for="description" class="label">Description</label>
-                    <textarea name="description" class="input-box" id="description" rows="5" placeholder="Description"></textarea>
+                    <textarea name="description" class="input-box" id="description" rows="5" placeholder="Description"><?php echo $description; ?></textarea>
                     <label for="ingredients" class="label">Ingredients</label>
-                    <textarea name="ingredients" class="input-box" id="ingredients" rows="10" placeholder="Enter Each ingredients on new line"></textarea>
+                    <textarea name="ingredients" class="input-box" id="ingredients" rows="10" placeholder="Enter Each ingredients on new line"><?php echo $ingredients; ?></textarea>
                     <label for="directions" class="label">Directions</label>
-                    <textarea name="directions" id="directions" class="input-box" rows="10" placeholder="Enter each step on new line"></textarea>
-                    <input class="submit-btn" type="submit" value="Create Recipe" name="create_recipe">
+                    <textarea name="directions" id="directions" class="input-box" rows="10" placeholder="Enter each step on new line"><?php echo $directions; ?></textarea>
+                    <input class="submit-btn" type="submit" value="Save" name="save-recipe">
                 </div>
 
                 <div class="small-details">
@@ -111,21 +168,21 @@
                         <div class="smalldetailsdiv">
                             <div class="sml-details">
                                 <label class="label">Prep Time</label>
-                                <input class="input-box2" type="text" name="preptime">
+                                <input class="input-box2" type="text" name="preptime" value="<?php echo $preptime; ?>">
                             </div>
                             <div class="sml-details">
                                 <label class="label">Cook Time</label>
-                                <input class="input-box2" type="text" name="cooktime">
+                                <input class="input-box2" type="text" name="cooktime" value="<?php echo $cooktime; ?>">
                             </div>
                         </div>
                         <div class="smalldetailsdiv">
                             <div class="sml-details">
                                 <label class="label">Ready in</label>
-                                <input class="input-box2" type="text" name="readyin">
+                                <input class="input-box2" type="text" name="readyin" value="<?php echo $readyin; ?>">
                             </div>
                             <div class="sml-details">
                                 <label class="label">Number of serves</label>
-                                <input class="input-box2" type="text" name="serves">
+                                <input class="input-box2" type="text" name="serves" value="<?php echo $servings; ?>">
                             </div>
                         </div>
                     </div>
