@@ -1,0 +1,50 @@
+body{
+    background:#eee;
+}
+.bucket{
+    margin: 3%;
+    margin-top: 6%;
+}
+.top-image{
+    border-radius: 30px;
+    margin-left: 3%;
+}
+
+.container{
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 3%;
+    margin-top: 0%;
+    padding: 2%;
+    border-radius: 30px;
+    transform: translateY(-70%);
+}
+table{
+    
+    width: 80%;
+    text-align: center;
+    background-color: #b2bec3;
+    border-collapse: collapse;
+    font-size: 20px;
+    border-radius: 10px;
+}
+th,td{
+    margin: 40px;
+    border-bottom: 1px solid white;
+    padding: 2%;
+    border-radius: 20px;
+}
+.del{
+    width: 30%;
+    height: 40px;
+    font-size: 20px;
+    background-color: #eb2f06;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+h1{
+    color: #0d4b52;
+    margin-top: 0px;
+    margin-bottom: 2%;
+}

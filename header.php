@@ -1,7 +1,5 @@
-<?php
-    session_start();
+<?php session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +36,11 @@
             <div class="nav" >
                 <a href="#"><h2 class="nav-item">Help</h2></a>
             <?php
+                 if(isset($_SESSION['emailid'])){
+                    if($_SESSION['emailid'] == 'admin@gmail.com'){
+                        echo '<a href="delete_recipe.php"><h2 class="nav-item ">Delete Recipe</h2></a>';
+                    }
+                 }
                 if(isset($_SESSION['userid'])){
                     echo '<a href="profile.php"><h2 class="nav-item ">Profile</h2></a>';
                     echo '<a href="includes\logout.php"><h2 class="nav-item nav-btn"><button class="signup-nav">Logout</button></h2></a>';

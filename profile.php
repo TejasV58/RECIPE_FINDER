@@ -209,8 +209,14 @@
                             while($reciperow = mysqli_fetch_assoc($reciperesult)){
                                 $recipeid = $reciperow['recipeid'];
                                 $recipetitle = $reciperow['recipetitle'];
+                                $description = $reciperow['description'];
+                                $directions = $reciperow['directions'];
+                                $preptime = $reciperow['preptime'];
+                                $cooktime = $reciperow['cooktime'];
+                                $readyin = $reciperow['readyin'];
+                                $servings = $reciperow['servings'];
                                 echo "
-                                        <a href='more details.php?recipeid=$recipeid'>
+                                        <a href='more details.php?recipeid=$recipeid&recipetitle=$recipetitle&description=$description&directions=$directions&preptime=$preptime&cooktime=$cooktime&readyin=$readyin&servings=$servings'>
                                             <div class='results'>
                                                 <img src='images/default.jpg' alt='' class='image'>
                                                 <div class='recipe-desc'>$recipetitle</div>

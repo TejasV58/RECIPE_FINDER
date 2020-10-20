@@ -21,7 +21,9 @@
         
         <div class="time-image">
             <div class="flexdiv">
-                <h1> Recipe Title</h1>
+                <?php
+                    echo "<h1>".$_GET['recipetitle']."</h1>";
+                ?>
                 <a href="modifyrecipe.php?recipeid=$recipeid" class=editicon><i class="fas fa-edit"></i></a>
             </div>
             
@@ -34,12 +36,11 @@
                     <img src="images/dish 1.jpg" class="dish">
                 </div>
                 <div class="time">
-                    <p><b>Prep :</b> 10 min</p>
-                    <p><b>Cook :</b> 45 min</p>
-                    <p><b>Total :</b> 55 min</p>
-                    <p><b>Serving :</b> 8 min</p>
-                    <p><b>Serving :</b> 8 min</p>
-                    <p><b>Yield :</b> 8 servings</p>
+                    <p><b>Prep :</b> <?php echo "<p>".$_GET['preptime']."</p>";?></p>
+                    <p><b>Cook :</b> <?php echo "<p>".$_GET['cooktime']."</p>";?></p>
+                    <p><b>Total :</b> <?php echo "<p>".$_GET['readyin']."</p>";?></p>
+                    <p><b>Serving :</b> <?php echo "<p>".$_GET['servings']."</p>";?></p>
+                    <!--<p><b>Yield :</b> 8 servings</p> -->
                 </div>
                 <div>
                     <img src="images/clock.jpg" class="clock">
@@ -53,10 +54,9 @@
                 <a href="modifyrecipe.php?recipeid=$recipeid" class=editicon><i class="fas fa-edit"></i></a>
             </div>
             <div class="directions">
-                <p>Heat olive oil over medium-low heat in a saucepan; stir anchovy fillets into olive oil and cook,
-                stirring often, until the fillets begin to sizzle, about 1 minute. Mix garlic into oil and cook 
-                just until fragrant, 1 minute more. Add fresh oregano and reduce heat to low; cook until oregano 
-                is wilted, 2 or 3 more minutes.</p>
+                <?php
+                    echo "<p>".$_GET['description']."</p>";
+                ?>
             </div>
             <hr><br>
         <div class="flexdiv">
@@ -89,10 +89,9 @@
             
             <div class="directions">
                 <h2>Step 1</h2>
-                <p>Heat olive oil over medium-low heat in a saucepan; stir anchovy fillets into olive oil and cook,
-                stirring often, until the fillets begin to sizzle, about 1 minute. Mix garlic into oil and cook 
-                just until fragrant, 1 minute more. Add fresh oregano and reduce heat to low; cook until oregano 
-                is wilted, 2 or 3 more minutes.</p>
+                <?php
+                    echo "<p>".$_GET['directions']."</p>";
+                ?>
 
                 <h2>Step 2</h2>
                 <p>Mix red pepper flakes, dried oregano, and tomatoes into olive oil mixture. Bring sauce to a 
