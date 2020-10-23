@@ -137,22 +137,23 @@ a{
     padding:1.5%;
     text-align: center;
     display:inline-block;
-    margin:5% auto;
+    margin:0% auto;
     border-radius: 5px;
     position:fixed;
+    top:78px;
     left:32%;
     right:32%;
     z-index:10;
 }
 
 .success{
-    background:rgba(197, 255, 197, 0.87);
+    background:rgb(197, 255, 197);
     color:rgb(5, 102, 21);
-    border:1px solid rgb(6, 150, 30);
+    border:1px solid rgb(5, 109, 23);
 }
 
 .danger{
-    background:rgba(253, 217, 211, 0.87);
+    background:rgb(255, 203, 193);
     color:rgb(143, 22, 6);
     border:1px solid rgb(150, 11, 6);
 }
