@@ -61,7 +61,7 @@
 
      <!-- NAVBAR START -->
      <div class='navbar'>
-        <div >
+        <div>
             <a href="home.php"><img src="images/logo.png" width="60px" height="58px" alt="logo" class="logo"></a>
         </div>
         <div class="name nav-item nohover">Recipe Finder</div>
@@ -127,16 +127,31 @@
                             $result = mysqli_stmt_get_result($stmt);
                             if($row = mysqli_fetch_assoc($result)){
                                 echo $row['name'];
-                                }
+                            }
                         }
+
+                        //Counting total recipes uploaded by user.
+                        $sql = "SELECT * FROM recipe WHERE userid=?";
+                        $statement = mysqli_stmt_init($conn);
+                        if(!mysqli_stmt_prepare($statement, $sql)){
+                            header("Location: ../signup.html?error=sqlerror");
+                            exit();
+                        }
+                        else{
+                            mysqli_stmt_bind_param($statement,"s", $_SESSION['userid']);
+                            mysqli_stmt_execute($statement);
+                            mysqli_stmt_store_result($statement);
+                            $resultCheck = mysqli_stmt_num_rows($statement);
+                            }
                     ?>
                     </p>
-                     0 <span><i class="fas fa-utensils"></i></span>
+                    <span><?php echo $resultCheck ?>   <i class="fas fa-utensils"></i></span>
                 </div>
             </div>
             <?php  
 
-                $recipeid = 1/*$_GET['recipeid']*/;
+                $recipeid = $_GET['recipeid'];
+                //echo $recipeid;
                 $sql = "SELECT * FROM recipe WHERE recipeid=?";
                 $stmt = mysqli_stmt_init($conn);
                 if(!mysqli_stmt_prepare($stmt,$sql))

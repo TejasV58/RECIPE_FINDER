@@ -239,7 +239,7 @@ input[type=checkbox]{
   background:#eee;
   padding: 3%;
   width: 34%;
-  margin: 6% 33%;
+  margin: 3% 33%;
   border-radius:10px;
   outline: none;
     
@@ -294,4 +294,17 @@ textarea::placeholder{
 .feedback-author{
     margin: 3% 6%;
     font-size: 25px;
+}
+
+.submit_feedback{
+    font-size: 20px;
+    padding: 2%;
+    width: 40%;
+    outline: none;
+    border: none;
+    background-color: #2980b9;
+    border-radius: 10px;
+}
+.submit_feedback:hover{
+    background-color: #3498db;
 }

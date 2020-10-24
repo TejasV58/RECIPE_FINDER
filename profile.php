@@ -147,9 +147,23 @@
                                 echo $row['name'];
                                 }
                         }
+
+                        //Counting total recipes uploaded by user.
+                        $sql = "SELECT * FROM recipe WHERE userid=?";
+                        $statement = mysqli_stmt_init($conn);
+                        if(!mysqli_stmt_prepare($statement, $sql)){
+                            header("Location: ../signup.html?error=sqlerror");
+                            exit();
+                        }
+                        else{
+                            mysqli_stmt_bind_param($statement,"s", $_SESSION['userid']);
+                            mysqli_stmt_execute($statement);
+                            mysqli_stmt_store_result($statement);
+                            $resultCheck = mysqli_stmt_num_rows($statement);
+                        }
                     ?>
                 </p>
-                 0 <span><i class="fas fa-utensils"></i></span><button class=recipe-btn ><a href="AddRecipes.php">Add Recipe</a></button>
+                 <span><?php echo $resultCheck ?>   <i class="fas fa-utensils"></i></span><button class=recipe-btn ><a href="AddRecipes.php">Add Recipe</a></button>
             </div>
             <div class=editprofile>
                 <button class=editprofile-btn onclick=editopen()>Edit Profile</button>
@@ -209,14 +223,8 @@
                             while($reciperow = mysqli_fetch_assoc($reciperesult)){
                                 $recipeid = $reciperow['recipeid'];
                                 $recipetitle = $reciperow['recipetitle'];
-                                $description = $reciperow['description'];
-                                $directions = $reciperow['directions'];
-                                $preptime = $reciperow['preptime'];
-                                $cooktime = $reciperow['cooktime'];
-                                $readyin = $reciperow['readyin'];
-                                $servings = $reciperow['servings'];
                                 echo "
-                                        <a href='more details.php?recipeid=$recipeid&recipetitle=$recipetitle&description=$description&directions=$directions&preptime=$preptime&cooktime=$cooktime&readyin=$readyin&servings=$servings'>
+                                        <a href='more details.php?recipeid=$recipeid'>
                                             <div class='results'>
                                                 <img src='images/default.jpg' alt='' class='image'>
                                                 <div class='recipe-desc'>$recipetitle</div>

@@ -13,18 +13,45 @@
 
 <?php
     require "header.php";
+    require "includes/dbh.php";
 ?>
 
 <body>
+
+    <?php 
+        $recipeid = $_GET['recipeid'];  
+        $sql = "SELECT * FROM recipe WHERE recipeid=?";
+        $stmt = mysqli_stmt_init($conn);
+        if(!mysqli_stmt_prepare($stmt,$sql))
+        {
+            header("Location: ./profile.php?error=sqlerror");
+            $_SESSION['error-message'] = "error!";
+            exit();
+        }
+        else{
+            mysqli_stmt_bind_param($stmt,"s",$recipeid);
+            mysqli_stmt_execute($stmt);
+            $reciperesult = mysqli_stmt_get_result($stmt);
+            $reciperow = mysqli_fetch_assoc($reciperesult);
+            $recipetitle = $reciperow['recipetitle'];
+            $description = $reciperow['description'];
+            $ingredients = $reciperow['ingredients'];
+            $directions = $reciperow['directions'];
+            $preptime = $reciperow['preptime'];
+            $cooktime = $reciperow['cooktime'];
+            $readyin = $reciperow['readyin'];
+            $servings = $reciperow['servings'];
+        }
+    ?>
 
     <div class="more-details">
         
         <div class="time-image">
             <div class="flexdiv">
                 <?php
-                    echo "<h1>".$_GET['recipetitle']."</h1>";
+                    echo "<h1>".$recipetitle."</h1>";
                 ?>
-                <a href="modifyrecipe.php?recipeid=$recipeid" class=editicon><i class="fas fa-edit"></i></a>
+                <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
             </div>
             
             <div class=profilepicdiv>
@@ -36,10 +63,10 @@
                     <img src="images/dish 1.jpg" class="dish">
                 </div>
                 <div class="time">
-                    <p><b>Prep :</b> <?php echo "<p>".$_GET['preptime']."</p>";?></p>
-                    <p><b>Cook :</b> <?php echo "<p>".$_GET['cooktime']."</p>";?></p>
-                    <p><b>Total :</b> <?php echo "<p>".$_GET['readyin']."</p>";?></p>
-                    <p><b>Serving :</b> <?php echo "<p>".$_GET['servings']."</p>";?></p>
+                    <p><b>Prep :</b> <?php echo $preptime?></p>
+                    <p><b>Cook :</b> <?php echo $cooktime?></p>
+                    <p><b>Total :</b> <?php echo $readyin?></p>
+                    <p><b>Serving :</b> <?php echo $servings?></p>
                     <!--<p><b>Yield :</b> 8 servings</p> -->
                 </div>
                 <div>
@@ -51,17 +78,17 @@
             <br>
             <div class="flexdiv">
                 <h1>Description</h1>
-                <a href="modifyrecipe.php?recipeid=$recipeid" class=editicon><i class="fas fa-edit"></i></a>
+                <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
             </div>
             <div class="directions">
                 <?php
-                    echo "<p>".$_GET['description']."</p>";
+                    echo "<p>".$description."</p>";
                 ?>
             </div>
             <hr><br>
         <div class="flexdiv">
             <h1>Ingridents</h1>
-            <a href="modifyrecipe.php?recipeid=$recipeid" class=editicon><i class="fas fa-edit"></i></a>
+            <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
         </div>       
         <div class="ingridents-container">
             <div class="ingridents">
@@ -84,14 +111,12 @@
             <br><hr><br>
             <div class="flexdiv">
                 <h1>Directions</h1>               
-                <a href="modifyrecipe.php?recipeid=$recipeid" class=editicon><i class="fas fa-edit"></i></a>
+                <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
             </div>
             
             <div class="directions">
                 <h2>Step 1</h2>
-                <?php
-                    echo "<p>".$_GET['directions']."</p>";
-                ?>
+                <p>Heat olive oil over medium-low heat in a saucepan; stir anchovy fillets into olive oil and cook, stirring often, until the fillets begin to sizzle, about 1 minute. Mix garlic into oil and cook just until fragrant, 1 minute more. Add fresh oregano and reduce heat to low; cook until oregano is wilted, 2 or 3 more minutes.</p>
 
                 <h2>Step 2</h2>
                 <p>Mix red pepper flakes, dried oregano, and tomatoes into olive oil mixture. Bring sauce to a 
@@ -110,29 +135,30 @@
                     <button class="review-btn" onclick="feedbackFormOpen()">Give Your Review!</button>
                 </div>
             </div>
-            <div class="rbox" id="review-box">
-                <div class="review-popup">
-                    <center><h2 class="review-popup-title">Review</h2></center><span class="rcross" onclick="feedbackFormClose()">X</span><hr>
-                    <div class="rating-section">   
-                        <label for="rate" class=rate-label>Rating</label>
-                        <div class="stars" data-rating="3">
-                            <span class="ratestar"></span>
-                            <span class="ratestar"></span>
-                            <span class="ratestar"></span>
-                            <span class="ratestar"></span>
-                            <span class="ratestar"></span>
+            <form action="includes/feedback.php?recipeid=<?php echo $recipeid; ?>" method="POST">
+                <div class="rbox" id="review-box">
+                    <div class="review-popup">
+                        <center><h2 class="review-popup-title">Review</h2></center><span class="rcross" onclick="feedbackFormClose()">X</span><hr>
+                        <div class="rating-section">   
+                            <label for="rate" class=rate-label>Rating</label>
+                            <div class="stars" data-rating="3">
+                                <span class="ratestar"></span>
+                                <span class="ratestar"></span>
+                                <span class="ratestar"></span>
+                                <span class="ratestar"></span>
+                                <span class="ratestar"></span>
+                            </div>
                         </div>
-                    </div>
-                    <div>    
-                        <input class="rate" type="hidden" name="rating" value="3">
-                    </div> 
-                    <form> 
+                        <div>    
+                            <input class="rate" type="hidden" name="rating" value="3">
+                        </div>  
                         <div>
-                            <textarea placeholder="What did you think about this recipe? Did you improvise it" class="review-text"></textarea>
-                        </div>
-                    </form> 
+                            <textarea placeholder="What did you think about this recipe? Did you improvise it" class="review-text" name="comment"></textarea>
+                        </div><br>
+                        <center><button type="submit" class="submit_feedback"  name="submitFeedback">Submit</button></center> 
+                    </div>
                 </div>
-            </div>
+            </form>
 
             <br><br>
 
