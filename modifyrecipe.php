@@ -103,13 +103,13 @@
         }
     ?>
         <div class="recipedetailspage">
-            <?php  if(isset($profileimg)): ?>
-                <img src="profile-images/<?php echo $profileimg; ?>" alt="profile-img" class=profilepic>
-            <?php else:?>
-                <img src="profile-images/<?php echo "defaultprofilepic1.png"; ?>" alt="profile-img" class=profilepic>
-            <?php endif;?>
+            
             <div class="background-div">
-                <img class="profile-img" src="images/defaultprofilepic1.png">
+                <?php  if(isset($profileimg)): ?>
+                    <img src="profile-images/<?php echo $profileimg; ?>" alt="profile-img" class=profilepic>
+                <?php else:?>
+                    <img src="profile-images/<?php echo "defaultprofilepic1.png"; ?>" alt="profile-img" class=profilepic>
+                <?php endif;?>
                 <div class=profilecontents>
                     <p class=profilename>
                     <?php  

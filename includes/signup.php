@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 if(isset($_POST['signup-btn']))
 {
    require 'dbh.php';
