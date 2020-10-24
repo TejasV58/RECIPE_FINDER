@@ -34,7 +34,7 @@
             <div class=container>
                 <center><h1>Delete Recipe<center></h1>
                 <table>
-                    <tr>
+                    <tr class=thead>
                         <th>Recipe Title</th>
                         <th>Delete Recipe</th>
                     </tr>

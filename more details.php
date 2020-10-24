@@ -33,6 +33,7 @@
             mysqli_stmt_execute($stmt);
             $reciperesult = mysqli_stmt_get_result($stmt);
             $reciperow = mysqli_fetch_assoc($reciperesult);
+            $recipeid = $reciperow['recipeid'];
             $recipetitle = $reciperow['recipetitle'];
             $description = $reciperow['description'];
             $ingredients = $reciperow['ingredients'];

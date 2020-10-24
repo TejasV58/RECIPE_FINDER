@@ -34,14 +34,24 @@ th,td{
     padding: 2%;
     border-radius: 20px;
 }
+
+th{
+    font-size:20px;
+}
+
 .del{
     width: 30%;
     height: 40px;
     font-size: 20px;
     background-color: #eb2f06;
+    color:rgba(255, 255, 255, 0.788);
     outline: none;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+}
+.del:hover{
+    background: #ac2405;
 }
 h1{
     color: #0d4b52;
