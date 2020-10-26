@@ -95,12 +95,6 @@
         
             <br><br><hr>
              
-            <div class="ingridents-container">
-                <div class="flexdiv">
-                    <img src="images/list.png" alt="" style="height:50px;width:50px;margin:10px 0px" class="details-icon" >
-                    <h1>Ingridents</h1>
-                    <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
-                </div>  
         <div class="ingridents-container">
             <div class="flexdiv">
                 <img src="images/list.png" alt="" style="height:50px;width:50px;margin:15px 5px" class="details-icon" >
