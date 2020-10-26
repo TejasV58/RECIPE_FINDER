@@ -194,21 +194,7 @@
                             }
                         ?>
                     </span>
-                </div>
-                <form action="includes/feedback.php?recipeid=<?php echo $recipeid; ?>" method="POST">
-                    <div class="rbox" id="review-box">
-                        <div class="review-popup">
-                            <center><h2 class="review-popup-title">Review</h2></center><span class="rcross" onclick="feedbackFormClose()">X</span><hr>
-                            <div class="rating-section">   
-                                <label for="rate" class=rate-label>Rating</label>
-                                <div class="stars" data-rating="3">
-                                    <span class="ratestar"></span>
-                                    <span class="ratestar"></span>
-                                    <span class="ratestar"></span>
-                                    <span class="ratestar"></span>
-                                    <span class="ratestar"></span>
-                                </div>
-            </div>
+                </div>       
             <form action="includes/feedback.php?recipeid=<?php echo $recipeid; ?>" method="POST">
                 <div class="rbox" id="review-box">
                     <div class="review-popup">
@@ -231,80 +217,12 @@
                             <center><button type="submit" class="submit_feedback"  name="submitFeedback">Submit</button></center> 
                         </div>
                     </div>
-                </form>
-
+                </div>
+            </form>
             <br>
 
-            <h1 class=review-heading style='margin:2.5%;'>Top Reviews</h1>
-            <div class="feedback">
-                <div class="feedback-other">
-                    <div class=profilepicdiv>
-                        <img src="images/defaultprofilepic.png" alt="" class=profilepic>
-                        <h2 class="feedback-author">Bill Gates</h2>
-                    </div>
-                    <div class="feedback-text">
-                        <p>I used to go to a pizza joint in Dallas the made the best pizza ever.
-                            Their sauce made the pizza. When they closed because of the death of the owner, 
-                            I asked one of the son's what made their sauce to good.</p>
-                    </div>
-                </div>
-                <div class="feedback-other">
-                    <div class=profilepicdiv>
-                        <img src="images/defaultprofilepic.png" alt="" class=profilepic>
-                        <h2 class="feedback-author">Elon Musk</h2>
-                    </div>
-                    <div class="feedback-text">
-                        <p>I used to go to a pizza joint in Dallas the made the best pizza ever.
-                            Their sauce made the pizza. When they closed because of the death of the owner, 
-                            I asked one of the son's what made their sauce to good.</p>
-                    </div>
-                </div>
-                <div class="feedback-other">
-                    <div class=profilepicdiv>
-                        <img src="images/defaultprofilepic.png" alt="" class=profilepic>
-                        <h2 class="feedback-author">Mark Zuckerberg</h2>
-                    </div>
-                    <div class="feedback-text">
-                        <p>I used to go to a pizza joint in Dallas the made the best pizza ever.
-                            Their sauce made the pizza. When they closed because of the death of the owner, 
-                            I asked one of the son's what made their sauce to good.</p>
-                    </div>
-                </div>
-                <div class="feedback-other">
-                    <div class=profilepicdiv>
-                        <img src="images/defaultprofilepic.png" alt="" class=profilepic>
-                        <h2 class="feedback-author">Binod</h2>
-                    </div>
-                    <div class="feedback-text">
-                        <p>I used to go to a pizza joint in Dallas the made the best pizza ever.
-                            Their sauce made the pizza. When they closed because of the death of the owner, 
-                            I asked one of the son's what made their sauce to good.</p>
-                    </div>
-                </div>
-                <div class="feedback-other">
-                    <div class=profilepicdiv>
-                        <img src="images/defaultprofilepic.png" alt="" class=profilepic>
-                        <h2 class="feedback-author">Pappu</h2>
-                    </div>
-                    <div class="feedback-text">
-                        <p>I used to go to a pizza joint in Dallas the made the best pizza ever.
-                            Their sauce made the pizza. When they closed because of the death of the owner, 
-                            I asked one of the son's what made their sauce to good.</p>
-                    </div>
-                </div>
-                <div class="feedback-other">
-                    <div class=profilepicdiv>
-                        <img src="images/defaultprofilepic.png" alt="" class=profilepic>
-                        <h2 class="feedback-author">Baburao</h2>
-                    </div>
-                    <div class="feedback-text">
-                        <p>I used to go to a pizza joint in Dallas the made the best pizza ever.
-                            Their sauce made the pizza. When they closed because of the death of the owner, 
-                            I asked one of the son's what made their sauce to good.</p>
-                    </div>
-                </div>
-            </div>
-            <h1 class=greenheading>Review</h1>
+            <h1 class="greenheading" style='margin:2.5%;'>Top Reviews</h1>
+            <div class='feedback'>
             <?php
                 $sql3="SELECT * FROM review r JOIN userdetails u ON r.userid=u.userid JOIN user u2 ON r.userid=u2.userid WHERE recipeid=?";
                 $stmt3= mysqli_stmt_init($conn);
@@ -326,7 +244,6 @@
                         $name=$reviewrow['name'];
                         $ratings=$reviewrow['ratings'];
                         echo"
-                            <div class='feedback'>
                                 <div class='feedback-other'>
                                     <div class=profilepicdiv>
                                         <img src='./profile-images/$profileimg' class=profilepic>
@@ -346,16 +263,14 @@
                                     <div class='feedback-text'>
                                         <p>$review</p>
                                     </div>
-                                </div>
-                            </div>";
+                                </div>";
                     }
-                }
-                    
+                }      
             ?>
+            </div>
         </div>
     </div>
-
-    </div>
+</div>
 
     <script>
         
