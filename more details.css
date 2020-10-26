@@ -323,3 +323,24 @@ textarea::placeholder{
     height:35px;
     width:35px;
 }
+
+.addlikes
+{
+    color:grey;
+}
+.removelikes
+{
+    color:blue;
+}
+
+.like-btn
+{
+    background:none;
+    border:none;
+    cursor: pointer;
+}
+.like-btn:focus
+{
+    outline:none;
+    
+}
