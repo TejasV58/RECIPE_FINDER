@@ -48,7 +48,6 @@
     ?>
 
     <div class="more-details">
-        
         <div class="time-image">
             <div class="flexdiv">
                 <?php
@@ -73,7 +72,7 @@
                     <!--<p><b>Yield :</b> 8 servings</p> -->
                 </div>
                 <div>
-                    <img src="images/clock.jpg" class="clock">
+                    <img src="images/chronometer.png" class="clock">
                 </div>
             </div>
         </div><br><br><hr>
@@ -89,10 +88,7 @@
                 ?>
             </div>
             <hr><br>
-        <div class="flexdiv">
-            <h1>Ingridents</h1>
-            <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
-        </div>       
+             
         <div class="ingridents-container">
         <?php for ($i=0; $i<count($array); $i++){
             echo'
@@ -116,21 +112,23 @@
             </div> -->
         </div>
             <br><hr><br>
-            <div class="flexdiv">
-                <h1>Directions</h1>               
-                <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
-            </div>
+            
             
             <div class="directions">
-                <h2>Step 1</h2>
+                <div class="flexdiv">
+                    <img src="images/recipe.png" alt="" class="details-icon" >
+                    <h1>Directions</h1>               
+                    <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
+                </div>
+                <h2 class=steps-head><i class="fa fa-check-circle" aria-hidden="true"></i>Step 1</h2>
                 <p>Heat olive oil over medium-low heat in a saucepan; stir anchovy fillets into olive oil and cook, stirring often, until the fillets begin to sizzle, about 1 minute. Mix garlic into oil and cook just until fragrant, 1 minute more. Add fresh oregano and reduce heat to low; cook until oregano is wilted, 2 or 3 more minutes.</p>
 
-                <h2>Step 2</h2>
+                <h2 class=steps-head><i class="fa fa-check-circle" aria-hidden="true"></i>Step 2</h2>
                 <p>Mix red pepper flakes, dried oregano, and tomatoes into olive oil mixture. Bring sauce to a 
                     simmer and season with salt, sugar, and black pepper. Turn heat to low; simmer sauce until 
                     thickened and oil rises to the top, 35 to 40 minutes, stirring occasionally.</p>
 
-                <h2>Step 3</h2>
+                <h2 class=steps-head><i class="fa fa-check-circle" aria-hidden="true" ></i>Step 3</h2>
                 <p>Stir baking soda into pizza sauce, mixing until thoroughly combined.</p>
             </div>
             <hr><br><br><br>
