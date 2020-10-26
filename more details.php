@@ -90,7 +90,7 @@
                 
                 <div class=profilepicdiv>
                     <img src="images/defaultprofilepic.png" alt="" class=profilepic>
-                    <h2 class="author-name"> <span class="small-txt2">By</span> Author's Name</h2>
+                    <h2 class="author-name"> <span class="small-txt2">By</span> <?php echo $name ?></h2>
                 </div>
                 <div class="image-time">
                     <div class="dish-image">
