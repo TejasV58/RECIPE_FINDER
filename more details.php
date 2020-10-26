@@ -206,14 +206,14 @@
                                 <span class="ratestar"></span>
                                 <span class="ratestar"></span>
                             </div>
-                            <div>    
-                                <input class="rate" type="hidden" name="rating" value="3">
-                            </div>  
-                            <div>
-                                <textarea placeholder="What did you think about this recipe? Did you improvise it" class="review-text" name="comment"></textarea>
-                            </div><br>
-                            <center><button type="submit" class="submit_feedback"  name="submitFeedback">Submit</button></center> 
                         </div>
+                        <div>    
+                            <input class="rate" type="hidden" name="rating" value="3">
+                        </div>  
+                        <div>
+                            <textarea placeholder="What did you think about this recipe? Did you improvise it" class="review-text" name="comment"></textarea>
+                        </div><br>
+                        <center><button type="submit" class="submit_feedback"  name="submitFeedback">Submit</button></center>  
                     </div>
                 </div>
             </form>
@@ -270,9 +270,9 @@
     </div>
 </div>
 
-    <script>
+<script>
         
-        initial setup
+        //initial setup
         document.addEventListener('DOMContentLoaded', function(){
             let stars = document.querySelectorAll('.ratestar');
             stars.forEach(function(star){
