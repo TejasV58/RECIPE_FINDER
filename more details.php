@@ -42,6 +42,8 @@
             $cooktime = $reciperow['cooktime'];
             $readyin = $reciperow['readyin'];
             $servings = $reciperow['servings'];
+
+            $array = explode("\n", $ingredients);
         }
     ?>
 
@@ -92,11 +94,15 @@
             <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
         </div>       
         <div class="ingridents-container">
+        <?php for ($i=0; $i<count($array); $i++){
+            echo'
             <div class="ingridents">
                 <input type="checkbox" id="ig1" name = "ig1">
-                <label for="ig1"><h3>anchovies anchovy fillets</h3></label>
-            </div>
-            <div class="ingridents">
+                <label for="ig1"><h3>'.$array[$i].'</h3></label>
+            </div>' ;
+            }
+        ?>
+            <!--<div class="ingridents">
                 <input type="checkbox" id="ig2" name = "ig2">
                 <label for="ig2"><h3>3 cloves garlic, minced</h3></label>
             </div>
@@ -107,7 +113,7 @@
             <div class="ingridents">
                 <input type="checkbox" id="ig4" name = "ig4">
                 <label for="ig4"><h3>½ teaspoon dried oregano</h3></label>
-            </div>
+            </div> -->
         </div>
             <br><hr><br>
             <div class="flexdiv">
