@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>More Details</title>
+    <title>Recipe Finder | More Details</title>
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="more details.css">  
@@ -13,11 +13,10 @@
 
 <?php
     require "header.php";
-    require "includes/dbh.php";
+    require "./includes/dbh.php";
 ?>
 
 <body>
-
     <?php 
         $recipeid = $_GET['recipeid'];  
         $sql = "SELECT * FROM recipe WHERE recipeid=?";
@@ -54,6 +53,43 @@
                     echo "<h1>".$recipetitle."</h1>";
                 ?>
                 <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon style='margin:1%;'><i class="fas fa-edit"></i></a>
+                <span>
+                    <?php
+                        if(isset($_SESSION['userid']))
+                        {
+                            $sql2="SELECT * FROM userlikes WHERE recipeid=? and userid=?";
+                            $stmt2= mysqli_stmt_init($conn);
+                             if(!mysqli_stmt_prepare($stmt2,$sql2))
+                            {
+                                header("Location: ./profile.php?error=sqlerror");
+                                $_SESSION['error-message'] = "error!";
+                                exit();
+                            }
+                            else
+                            {
+                                mysqli_stmt_bind_param($stmt2,"ss",$recipeid,$_SESSION['userid']);
+                                mysqli_stmt_execute($stmt2);
+                                $userlikesresult = mysqli_stmt_get_result($stmt2);
+                                $userlikesrow = mysqli_fetch_assoc($userlikesresult);
+                                if($userlikesrow===null)
+                                {
+                                    echo "
+                                            <form action='./includes/userlikesaddinc.php?recipeid=$recipeid' method='POST'>
+                                                <button class=like-btn type=submit name='userlikesadd-btn'><i class='fas fa-thumbs-up fa-2x addlikes'></i></button>
+                                            </form>";
+                                }
+                                else
+                                {
+                                    echo "
+                                            <form action='./includes/userlikesremoveinc.php?recipeid=$recipeid' method=POST>
+                                                <button class=like-btn type=submit name='userlikesremove-btn'><i class='fas fa-thumbs-up fa-2x removelikes'></i></button>
+                                            </form>";
+                                }
+                                
+                            }
+                        }
+                    ?>
+                </span>
             </div>
             
             <div class=profilepicdiv>
