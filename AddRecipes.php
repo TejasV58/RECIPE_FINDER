@@ -106,10 +106,10 @@
                      0 <span><i class="fas fa-utensils"></i></span>
                 </div>
             </div>
-            <form action="includes/add.php" method="POST">
+            <form action="includes/add.php" method="POST" enctype="multipart/form-data">
             <div class="recipe-details">
                 <div class="main-details">
-                    <label for="name" class="label ">Recipe Title</label>
+                    <label for="name" class="label" >Recipe Title</label>
                     <input class="input-box title" type="text" id="name" name="name">
                     <label for="description" class="label">Description</label>
                     <textarea name="description" class="input-box" id="description" rows="5" placeholder="Description"></textarea>
@@ -124,7 +124,7 @@
 
                     <div class="image-input">
                         <div class="addimgdiv">
-                            <input id="uploadImage" type="file" accept="image/*" onchange="PreviewImage();" multiple />
+                            <input id="uploadImage" type="file" accept="image/*" onchange="PreviewImage();" multiple  name='recipe-image'>
                             <label id=uploadimglabel for="uploadImage"><i class="fas fa-camera"></i> &nbsp; <br>Add a Image</label>
                         </div>
                         <div class="previews"><img id="uploadPreview" style="width: 100px; height: 100px; display:none;" ></div>

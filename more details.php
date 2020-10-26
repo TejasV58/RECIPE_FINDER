@@ -258,7 +258,7 @@
             <hr>
         
         
-            <div class="feedback-container">
+        <div class="feedback-container">
                 <div class=profilepicdiv>
                     <img src="images/defaultprofilepic.png" alt="" class=profilepic>                
                     <button class="review-btn" onclick="feedbackFormOpen()">Give Your Review!</button>
