@@ -72,8 +72,8 @@ body{
     width:40px;
 }
 
-.small-txt{
-    font-size: 12px;
+.small-txt2{
+    font-size: 18px;
     font-weight: 300;
     color:rgba(0,0,0,0.4);
 }
@@ -95,7 +95,7 @@ a{
 }
 
 .more-details{
-    width:90%;
+    width:85%;
     margin:auto;
     padding: 2%;
 }
@@ -114,9 +114,12 @@ a{
 
 .profilepicdiv{
     display: flex;
-    margin-left: 1%;
+    margin: 2%;
 }
 
+.start-details{
+    margin:2%;
+}
 
 .flexdiv{
     display:flex;
@@ -136,6 +139,10 @@ a.editicon{
     font-size:28px;
     padding:0.8%;
     color:rgba(0,0,0,0.5);
+}
+
+hr{
+    width:95%;
 }
 
 .profilepic
@@ -161,10 +168,10 @@ a.editicon{
     margin:3% 0% 3% 10%;
     border-radius: 2%;
     width: 300px;
-    padding: 1%;
-    font-size: 20px;
-    box-shadow: 5px 10px 15px 5px #bbb9b9;
-    
+    padding: 2%;
+    font-size: 18px;
+    box-shadow: 5px 10px 15px 5px #bbb9b9; 
+    box-sizing: border-box;
 }
 
 .clock{
@@ -225,6 +232,7 @@ input[type=checkbox]{
 .text-contain{
     width:50vw;
     word-wrap: break-word;
+    margin:1%;
 }
 .review-btn{
     background:orangered;

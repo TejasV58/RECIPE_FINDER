@@ -49,78 +49,81 @@
 
     <div class="more-details">
         <div class="time-image">
-            <div class="flexdiv">
-                <?php echo "<h1 class=recipe-title>".$recipetitle."</h1>"; ?>
-                <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon style='margin:0%;'><i class="fas fa-edit"></i></a>
-            </div>
-            <div class="reciperating">
-                <span class="rating">
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star star-null" aria-hidden="true"></i>
-                </span>
-                <span class=small-txt2>30 Reviews</span>
-            </div>
-            <div class="desc-div">
-                <img src='images\left-quotes-sign.png' class=quotes>
-                <?php
-                    echo "<p class=recipe-description> ".$description."</p>";
-                ?>
-            </div>
-            
-            
-            <div class=profilepicdiv>
-                <img src="images/defaultprofilepic.png" alt="" class=profilepic>
-                <h2 class="author-name"> <span class="small-txt">By</span> Author's Name</h2>
-            </div>
-            <div class="image-time">
-                <div class="dish-image">
-                    <img src="images/dish 1.jpg" class="dish">
+            <div class="start-details">
+                <div class="flexdiv">
+                    <?php echo "<h1 class=recipe-title>".$recipetitle."</h1>"; ?>
+                    <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon style='margin:0%;'><i class="fas fa-edit"></i></a>
                 </div>
-                <div class="time">
-                    <p><b>Prep :</b> <?php echo $preptime?></p>
-                    <p><b>Cook :</b> <?php echo $cooktime?></p>
-                    <p><b>Total :</b> <?php echo $readyin?></p>
-                    <p><b>Serving :</b> <?php echo $servings?></p>
-                    <!--<p><b>Yield :</b> 8 servings</p> -->
+                <div class="reciperating">
+                    <span class="rating">
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" ></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star star-null" aria-hidden="true"></i>
+                    </span>
+                    <span class=small-txt2>30 Reviews</span>
                 </div>
-                <div>
-                    <img src="images/chronometer.png" class="clock">
+                <div class="desc-div">
+                    <img src='images\left-quotes-sign.png' class=quotes>
+                    <?php
+                        echo "<p class=recipe-description> ".$description."</p>";
+                    ?>
+                </div>
+                
+                
+                <div class=profilepicdiv>
+                    <img src="images/defaultprofilepic.png" alt="" class=profilepic>
+                    <h2 class="author-name"> <span class="small-txt2">By</span> Author's Name</h2>
+                </div>
+                <div class="image-time">
+                    <div class="dish-image">
+                        <img src="images/dish 1.jpg" class="dish">
+                    </div>
+                    <div class="time">
+                        <p><b>Prep :</b> <?php echo $preptime?></p>
+                        <p><b>Cook :</b> <?php echo $cooktime?></p>
+                        <p><b>Total :</b> <?php echo $readyin?></p>
+                        <p><b>Serving :</b> <?php echo $servings?></p>
+                        <!--<p><b>Yield :</b> 8 servings</p> -->
+                    </div>
+                    <div>
+                        <img src="images/chronometer.png" class="clock">
+                    </div>
                 </div>
             </div>
-        </div><br><br><hr>
+        
+            <br><br><hr>
              
-        <div class="ingridents-container">
-            <div class="flexdiv">
-                <img src="images/list.png" alt="" style="height:50px;width:50px;margin:15px 5px" class="details-icon" >
-                <h1>Ingridents</h1>
-                <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
-            </div>  
+            <div class="ingridents-container">
+                <div class="flexdiv">
+                    <img src="images/list.png" alt="" style="height:50px;width:50px;margin:10px 0px" class="details-icon" >
+                    <h1>Ingridents</h1>
+                    <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
+                </div>  
 
-            <?php for ($i=0; $i<count($array); $i++){
-                echo'
+                <?php for ($i=0; $i<count($array); $i++){
+                    echo'
+                    <div class="ingridents">
+                            <input type="checkbox" id="ig'.$i.'" >
+                            <label for="ig'.$i.'"><h3 class=ingredient-item>'.$array[$i].'</h3></label>
+                    </div>' ;
+                    }
+                ?>
+                <!--<div class="ingridents">
+                    <input type="checkbox" id="ig2" name = "ig2">
+                    <label for="ig2"><h3>3 cloves garlic, minced</h3></label>
+                </div>
                 <div class="ingridents">
-                        <input type="checkbox" id="ig'.$i.'" >
-                        <label for="ig'.$i.'"><h3 class=ingredient-item>'.$array[$i].'</h3></label>
-                </div>' ;
-                }
-            ?>
-            <!--<div class="ingridents">
-                <input type="checkbox" id="ig2" name = "ig2">
-                <label for="ig2"><h3>3 cloves garlic, minced</h3></label>
+                    <input type="checkbox" id="ig3" name = "ig3">
+                    <label for="ig3"><h3>½ teaspoon red pepper flakes</h3></label>
+                </div>
+                <div class="ingridents">
+                    <input type="checkbox" id="ig4" name = "ig4">
+                    <label for="ig4"><h3>½ teaspoon dried oregano</h3></label>
+                </div> -->
             </div>
-            <div class="ingridents">
-                <input type="checkbox" id="ig3" name = "ig3">
-                <label for="ig3"><h3>½ teaspoon red pepper flakes</h3></label>
-            </div>
-            <div class="ingridents">
-                <input type="checkbox" id="ig4" name = "ig4">
-                <label for="ig4"><h3>½ teaspoon dried oregano</h3></label>
-            </div> -->
-        </div>
-            <br><hr><br>
+            <br><hr>
             
             
             <div class="directions">
@@ -140,13 +143,12 @@
                 <h2 class=steps-head><i class="fa fa-check-circle" aria-hidden="true" ></i>Step 3</h2>
                 <p class=text-contain>Stir baking soda into pizza sauce, mixing until thoroughly combined.</p>
             </div>
-            <hr><br><br><br>
+            <hr>
         
-        <div class="feedback-container">
-            <div class="user-review">
+        
+            <div class="feedback-container">
                 <div class=profilepicdiv>
-                    <img src="images/defaultprofilepic.png" alt="" class=profilepic>
-                    
+                    <img src="images/defaultprofilepic.png" alt="" class=profilepic>                
                     <button class="review-btn" onclick="feedbackFormOpen()">Give Your Review!</button>
 
                     <span>
@@ -187,35 +189,34 @@
                         ?>
                     </span>
                 </div>
-            </div>
-            <form action="includes/feedback.php?recipeid=<?php echo $recipeid; ?>" method="POST">
-                <div class="rbox" id="review-box">
-                    <div class="review-popup">
-                        <center><h2 class="review-popup-title">Review</h2></center><span class="rcross" onclick="feedbackFormClose()">X</span><hr>
-                        <div class="rating-section">   
-                            <label for="rate" class=rate-label>Rating</label>
-                            <div class="stars" data-rating="3">
-                                <span class="ratestar"></span>
-                                <span class="ratestar"></span>
-                                <span class="ratestar"></span>
-                                <span class="ratestar"></span>
-                                <span class="ratestar"></span>
+                <form action="includes/feedback.php?recipeid=<?php echo $recipeid; ?>" method="POST">
+                    <div class="rbox" id="review-box">
+                        <div class="review-popup">
+                            <center><h2 class="review-popup-title">Review</h2></center><span class="rcross" onclick="feedbackFormClose()">X</span><hr>
+                            <div class="rating-section">   
+                                <label for="rate" class=rate-label>Rating</label>
+                                <div class="stars" data-rating="3">
+                                    <span class="ratestar"></span>
+                                    <span class="ratestar"></span>
+                                    <span class="ratestar"></span>
+                                    <span class="ratestar"></span>
+                                    <span class="ratestar"></span>
+                                </div>
                             </div>
+                            <div>    
+                                <input class="rate" type="hidden" name="rating" value="3">
+                            </div>  
+                            <div>
+                                <textarea placeholder="What did you think about this recipe? Did you improvise it" class="review-text" name="comment"></textarea>
+                            </div><br>
+                            <center><button type="submit" class="submit_feedback"  name="submitFeedback">Submit</button></center> 
                         </div>
-                        <div>    
-                            <input class="rate" type="hidden" name="rating" value="3">
-                        </div>  
-                        <div>
-                            <textarea placeholder="What did you think about this recipe? Did you improvise it" class="review-text" name="comment"></textarea>
-                        </div><br>
-                        <center><button type="submit" class="submit_feedback"  name="submitFeedback">Submit</button></center> 
                     </div>
-                </div>
-            </form>
+                </form>
 
-            <br><br>
+            <br>
 
-            <h1>Review</h1>
+            <h1 class=review-heading style='margin:2.5%;'>Top Reviews</h1>
             <div class="feedback">
                 <div class="feedback-other">
                     <div class=profilepicdiv>
@@ -285,6 +286,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
     </div>
 
