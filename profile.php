@@ -227,7 +227,10 @@
                                         <a href='more details.php?recipeid=$recipeid'>
                                             <div class='results'>
                                                 <img src='images/default.jpg' alt='' class='image'>
-                                                <div class='recipe-desc'>$recipetitle</div>
+                                                <div class='title-icon'>
+                                                    <div class='recipe-desc'>$recipetitle</div>
+                                                    <a href='includes/user-del.php?rid=$recipeid'><div class='delete_icon'><i class='fas fa-trash-alt'></i></div></a>
+                                                </div>
                                                 <p class='rating'>
                                                     <i class='fa fa-star' aria-hidden='true'></i>
                                                     <i class='fa fa-star' aria-hidden='true'></i>

@@ -254,3 +254,14 @@ body{
     width:95%;
     margin:0.5%;
 }
+
+.title-icon{
+    display: flex;
+    justify-content: space-between;
+}
+.delete_icon{
+    font-size: 22px;
+    margin-top: 5px;
+    margin-right: 5px;
+    color: black;
+}

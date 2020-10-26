@@ -43,16 +43,64 @@
             $readyin = $reciperow['readyin'];
             $servings = $reciperow['servings'];
 
-            $array = explode("\n", $ingredients);
+            $array_ingredients = explode("\n", $ingredients);
+            $array_directions = explode("\n", $directions);
+        }
+        $sql2 = "SELECT * FROM recipe r JOIN user u ON r.userid = u.userid WHERE recipeid=?";
+        $stmt = mysqli_stmt_init($conn);
+        if(!mysqli_stmt_prepare($stmt,$sql2))
+        {
+            header("Location: ./home.php?error=sqlerror");
+            $_SESSION['error-message'] = "error!";
+            exit();
+        }
+        else{
+            mysqli_stmt_bind_param($stmt,"s",$recipeid);
+            mysqli_stmt_execute($stmt);
+            $authorresult = mysqli_stmt_get_result($stmt);
+            $authorrow = mysqli_fetch_assoc($authorresult);
+            $name = $authorrow['name'];
         }
     ?>
 
     <div class="more-details">
         <div class="time-image">
+<<<<<<< Updated upstream
             <div class="start-details">
                 <div class="flexdiv">
                     <?php echo "<h1 class=recipe-title>".$recipetitle."</h1>"; ?>
                     <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon style='margin:0%;'><i class="fas fa-edit"></i></a>
+||||||| constructed merge base
+            <div class="flexdiv">
+                <?php
+                    echo "<h1>".$recipetitle."</h1>";
+                ?>
+                <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon style='margin:1%;'><i class="fas fa-edit"></i></a>
+            </div>
+            
+            <div class=profilepicdiv>
+                <img src="images/defaultprofilepic.png" alt="" class=profilepic>
+                <h2 class="author-name">Author's Name</h2>
+            </div>
+            <div class="image-time">
+                <div class="dish-image">
+                    <img src="images/dish 1.jpg" class="dish">
+=======
+            <div class="flexdiv">
+                <?php
+                    echo "<h1>".$recipetitle."</h1>";
+                ?>
+                <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon style='margin:1%;'><i class="fas fa-edit"></i></a>
+            </div>
+            
+            <div class=profilepicdiv>
+                <img src="images/defaultprofilepic.png" alt="" class=profilepic>
+                <h2 class="author-name"><?php echo $name; ?></h2>
+            </div>
+            <div class="image-time">
+                <div class="dish-image">
+                    <img src="images/dish 1.jpg" class="dish">
+>>>>>>> Stashed changes
                 </div>
                 <div class="reciperating">
                     <span class="rating">
@@ -102,6 +150,7 @@
                 <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
             </div>  
 
+<<<<<<< Updated upstream
                 <?php for ($i=0; $i<count($array); $i++){
                     echo'
                     <div class="ingridents">
@@ -114,7 +163,15 @@
                     <input type="checkbox" id="ig2" name = "ig2">
                     <label for="ig2"><h3>3 cloves garlic, minced</h3></label>
                 </div>
+||||||| constructed merge base
+            <?php for ($i=0; $i<count($array); $i++){
+                echo'
+=======
+            <?php for ($i=0; $i<count($array_ingredients); $i++){
+                echo'
+>>>>>>> Stashed changes
                 <div class="ingridents">
+<<<<<<< Updated upstream
                     <input type="checkbox" id="ig3" name = "ig3">
                     <label for="ig3"><h3>½ teaspoon red pepper flakes</h3></label>
                 </div>
@@ -124,6 +181,36 @@
                 </div> -->
             </div>
             <br><hr>
+||||||| constructed merge base
+                    <input type="checkbox" id="ig1" name = "ig1">
+                    <label for="ig1"><h3>'.$array[$i].'</h3></label>
+                </div>' ;
+                }
+            ?>
+            <!--<div class="ingridents">
+                <input type="checkbox" id="ig2" name = "ig2">
+                <label for="ig2"><h3>3 cloves garlic, minced</h3></label>
+            </div>
+            <div class="ingridents">
+                <input type="checkbox" id="ig3" name = "ig3">
+                <label for="ig3"><h3>½ teaspoon red pepper flakes</h3></label>
+            </div>
+            <div class="ingridents">
+                <input type="checkbox" id="ig4" name = "ig4">
+                <label for="ig4"><h3>½ teaspoon dried oregano</h3></label>
+            </div> -->
+        </div>
+            <br><hr><br>
+=======
+                    <input type="checkbox" id="ig1" name = "ig1">
+                    <label for="ig1"><h3>'.$array_ingredients[$i].'</h3></label>
+                </div>' ;
+                }
+            ?>
+            
+        </div>
+            <br><hr><br>
+>>>>>>> Stashed changes
             
             
             <div class="directions">
@@ -132,16 +219,41 @@
                     <h1 class=greenheading>Directions</h1>               
                     <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
                 </div>
+<<<<<<< Updated upstream
                 <h2 class=steps-head><i class="fa fa-check-circle" aria-hidden="true"></i>Step 1</h2>
                 <p class=text-contain>Heat olive oil over medium-low heat in a saucepan; stir anchovy fillets into olive oil and cook, stirring often, until the fillets begin to sizzle, about 1 minute. Mix garlic into oil and cook just until fragrant, 1 minute more. Add fresh oregano and reduce heat to low; cook until oregano is wilted, 2 or 3 more minutes.</p>
 
                 <h2 class=steps-head><i class="fa fa-check-circle" aria-hidden="true"></i>Step 2</h2>
                 <p class=text-contain>Mix red pepper flakes, dried oregano, and tomatoes into olive oil mixture. Bring sauce to a 
+||||||| constructed merge base
+                <h2 class=steps-head><i class="fa fa-check-circle" aria-hidden="true"></i>Step 1</h2>
+                <p>Heat olive oil over medium-low heat in a saucepan; stir anchovy fillets into olive oil and cook, stirring often, until the fillets begin to sizzle, about 1 minute. Mix garlic into oil and cook just until fragrant, 1 minute more. Add fresh oregano and reduce heat to low; cook until oregano is wilted, 2 or 3 more minutes.</p>
+
+                <h2 class=steps-head><i class="fa fa-check-circle" aria-hidden="true"></i>Step 2</h2>
+                <p>Mix red pepper flakes, dried oregano, and tomatoes into olive oil mixture. Bring sauce to a 
+=======
+                <?php
+                    for($i=0; $i<count($array_directions); $i++){
+        
+                        echo 
+                        '<h2 class=steps-head><i class="fa fa-check-circle" aria-hidden="true"></i>Step '.($i+1).'</h2>
+                        <p>'.$array_directions[$i].'</p>';
+                    }
+                ?>
+                <!--<h2 class=steps-head><i class="fa fa-check-circle" aria-hidden="true"></i>Step 2</h2>
+                <p>Mix red pepper flakes, dried oregano, and tomatoes into olive oil mixture. Bring sauce to a 
+>>>>>>> Stashed changes
                     simmer and season with salt, sugar, and black pepper. Turn heat to low; simmer sauce until 
                     thickened and oil rises to the top, 35 to 40 minutes, stirring occasionally.</p>
 
                 <h2 class=steps-head><i class="fa fa-check-circle" aria-hidden="true" ></i>Step 3</h2>
+<<<<<<< Updated upstream
                 <p class=text-contain>Stir baking soda into pizza sauce, mixing until thoroughly combined.</p>
+||||||| constructed merge base
+                <p>Stir baking soda into pizza sauce, mixing until thoroughly combined.</p>
+=======
+                <p>Stir baking soda into pizza sauce, mixing until thoroughly combined.</p> -->
+>>>>>>> Stashed changes
             </div>
             <hr>
         
