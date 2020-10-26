@@ -33,14 +33,55 @@ body{
     color: #337279;
 }
 
-.name{
-    font-family: 'Courgette', cursive;
-    padding-top:15px;
-    font-size:175%;
-    margin-left:10%;
-    font-weight:bold;
-    text-shadow:5px 10px 9px rgba(0,0,0,0.3);
-    
+.recipe-description{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:18px;
+    margin:20px 8px;
+    transform:translateY(-20px);
+    margin-bottom:0;
+    letter-spacing: 1px;
+    word-spacing:1.5px;
+}
+
+.recipe-title{
+    font-family: 'Ruda', sans-serif;
+    font-size:35px;
+    color:rgba(0,0,0,0.8);
+    margin:0;
+    padding:0;
+}
+
+.reciperating{
+    margin:0 1.3%;
+}
+
+.small-txt2{
+    color:rgba(0,0,0,0.5);
+}
+
+.desc-div{
+    display:flex;
+    margin:2% 1%;
+    width:70%;
+    margin-bottom:8px;
+}
+
+.quotes{
+    opacity: 0.4;
+    height:40px;
+    width:40px;
+}
+
+.small-txt{
+    font-size: 12px;
+    font-weight: 300;
+    color:rgba(0,0,0,0.4);
+}
+
+.author-name{
+    margin-left: 1%;
+    font-size:20px;
+    color:#0d9eca;
 }
 
 a{
@@ -54,10 +95,8 @@ a{
 }
 
 .more-details{
-    
     width:90%;
     margin:auto;
-    margin-top:4%;
     padding: 2%;
 }
 
@@ -67,7 +106,7 @@ a{
     border-radius: 20px;
     width: 90%;
     box-sizing: border-box;
-    margin-top: 4%;
+    margin-top: 70px;
 }
 .time-image h1{
     margin-left: 1%;
@@ -77,9 +116,7 @@ a{
     display: flex;
     margin-left: 1%;
 }
-.author-name{
-    margin-left: 1%;
-}
+
 
 .flexdiv{
     display:flex;
@@ -145,7 +182,7 @@ a.editicon{
     border-radius: 20px;
 }
 
-.directions p{
+.directions>p{
     letter-spacing: 1px;
     line-height: 180%;
     word-spacing: 3px;
@@ -156,8 +193,6 @@ a.editicon{
 .ingridents{
     display:flex;
     width:100%;
-    word-wrap: break-word;
-    padding:0;
 }
 
 .ingredient-item{
@@ -345,14 +380,17 @@ textarea::placeholder{
 }
 .removelikes
 {
-    color:blue;
+    color:#3498db;
 }
 
 .like-btn
 {
-    background:none;
+    background:white;
     border:none;
     cursor: pointer;
+    border-radius: 30px;
+    padding:7px;
+    margin:10px 15px;
 }
 .like-btn:focus
 {

@@ -22,7 +22,7 @@ if(isset($_POST['save-recipe'])){
     if(!mysqli_stmt_prepare($stmt,$sql))
     {
         $_SESSION['error-message'] = "Error!";
-        header("Location: ../modifyrecipe.php?recipeid=$recipeid&error=sqlerror");                   
+        header("Location: ../more details.php?recipeid=$recipeid&error=sqlerror");                   
         exit();
     }
     else
@@ -30,13 +30,13 @@ if(isset($_POST['save-recipe'])){
         mysqli_stmt_bind_param($stmt,"sssssssss",$recipetitle,$description,$ingredients,$directions,$preptime,$cooktime,$servings,$readyin,$recipeid);
         mysqli_stmt_execute($stmt);      
         $_SESSION['success-message'] = "Recipe updated successfully!";
-        header("Location:../modifyrecipe.php?recipeid=$recipeid&success=editrecipe");
+        header("Location:../more details.php?recipeid=$recipeid&success=editrecipe");
         exit();
     }
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
 }
 else{
-    header("Location:../modifyrecipe.php?recipeid=$recipeid&error");
+    header("Location:../more details.php?recipeid=$recipeid&error");
     exit();
  }

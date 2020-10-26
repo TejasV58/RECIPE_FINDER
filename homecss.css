@@ -180,8 +180,8 @@ button.additem:focus{
 }
 
 .small-txt{
-    font-size: 12px;
-    color:rgba(0,0,0,0.4);
+    font-size: 14px;
+    color:rgba(0,0,0,0.6);
 }
 
 .fa-star{
