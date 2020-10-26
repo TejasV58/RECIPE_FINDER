@@ -101,6 +101,12 @@
                     <h1>Ingridents</h1>
                     <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
                 </div>  
+        <div class="ingridents-container">
+            <div class="flexdiv">
+                <img src="images/list.png" alt="" style="height:50px;width:50px;margin:15px 5px" class="details-icon" >
+                <h1 class=greenheading>Ingridents</h1>
+                <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
+            </div>  
 
                 <?php for ($i=0; $i<count($array); $i++){
                     echo'
@@ -129,7 +135,7 @@
             <div class="directions">
                 <div class="flexdiv">
                     <img src="images/recipe.png" alt="" class="details-icon" >
-                    <h1>Directions</h1>               
+                    <h1 class=greenheading>Directions</h1>               
                     <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
                 </div>
                 <h2 class=steps-head><i class="fa fa-check-circle" aria-hidden="true"></i>Step 1</h2>
@@ -202,6 +208,19 @@
                                     <span class="ratestar"></span>
                                     <span class="ratestar"></span>
                                 </div>
+            </div>
+            <form action="includes/feedback.php?recipeid=<?php echo $recipeid; ?>" method="POST">
+                <div class="rbox" id="review-box">
+                    <div class="review-popup">
+                        <center><h2 class="review-popup-title greenheading" >Review</h2></center><span class="rcross" onclick="feedbackFormClose()">X</span><hr>
+                        <div class="rating-section">   
+                            <label for="rate" class=rate-label>Rating</label>
+                            <div class="stars" data-rating="3">
+                                <span class="ratestar"></span>
+                                <span class="ratestar"></span>
+                                <span class="ratestar"></span>
+                                <span class="ratestar"></span>
+                                <span class="ratestar"></span>
                             </div>
                             <div>    
                                 <input class="rate" type="hidden" name="rating" value="3">
@@ -285,6 +304,54 @@
                     </div>
                 </div>
             </div>
+            <h1 class=greenheading>Review</h1>
+            <?php
+                $sql3="SELECT * FROM review r JOIN userdetails u ON r.userid=u.userid JOIN user u2 ON r.userid=u2.userid WHERE recipeid=?";
+                $stmt3= mysqli_stmt_init($conn);
+                if(!mysqli_stmt_prepare($stmt3,$sql3))
+                {
+                    header("Location: ./profile.php?error=sqlerror");
+                    $_SESSION['error-message'] = "error!";
+                    exit();
+                }
+                else
+                {
+                    mysqli_stmt_bind_param($stmt3,"s",$recipeid);
+                    mysqli_stmt_execute($stmt3);
+                    $reviewresult = mysqli_stmt_get_result($stmt3);
+                    while($reviewrow = mysqli_fetch_assoc($reviewresult))
+                    {
+                        $review=$reviewrow['review'];
+                        $profileimg=$reviewrow['profileimg'];
+                        $name=$reviewrow['name'];
+                        $ratings=$reviewrow['ratings'];
+                        echo"
+                            <div class='feedback'>
+                                <div class='feedback-other'>
+                                    <div class=profilepicdiv>
+                                        <img src='./profile-images/$profileimg' class=profilepic>
+                                        <h3 class='feedback-author'>$name</h3>
+                                    </div>
+                                    <p>";
+                                            for($i=1;$i<=$ratings;$i++)
+                                            {
+                                                echo "<i class='fa fa-star star-icon' aria-hidden='true'></i>";
+                                            }
+                                            for($i=1;$i<=5-$ratings;$i++)
+                                            {
+                                                echo "<i class='fa fa-star star-null star-icon'  aria-hidden='true'></i>";
+                                            }
+                                            echo "
+                                    </p>
+                                    <div class='feedback-text'>
+                                        <p>$review</p>
+                                    </div>
+                                </div>
+                            </div>";
+                    }
+                }
+                    
+            ?>
         </div>
     </div>
 

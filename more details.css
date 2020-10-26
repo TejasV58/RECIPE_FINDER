@@ -404,3 +404,8 @@ textarea::placeholder{
 {
     outline:none;
 }
+
+.greenheading
+{
+    color: #337279;
+}
