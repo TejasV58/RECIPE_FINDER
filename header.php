@@ -13,15 +13,16 @@ session_start();
     <!-- Stylesheet -->
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="homecss.css">  
+    <script src="https://kit.fontawesome.com/a77f5500d1.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     
     <!-- LOGO -->
     <link rel="icon" href="images/logo1.png">  
 
     <!-- SCRIPT -->
     <script src="Script.js"></script>
-    <script src="https://kit.fontawesome.com/a77f5500d1.js" crossorigin="anonymous"></script>
     <script>
             setTimeout(() => {
                 let msg = document.querySelector(".msg-outerbox");

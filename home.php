@@ -40,34 +40,73 @@
                 <hr>
                 <div class="results">
                     <img src="images/recipe.jpg" alt="" class="image">
-                    <div class="recipe-desc">idli wada</div>
-                    <p class="rating">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star star-null" aria-hidden="true"></i>
-                    </p>
+                    <div class="recipe-desc">
+                        <p class="recipe-name">Paneer Tikka</p>
+                        <span class="rating">
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star star-null" aria-hidden="true"></i>
+                        </span>
+                        <span class=small-txt>30 Reviews</span>
+                    </div>
                 </div>
                 <div class="results">
-                    <div class=image></div>
-                    <div class="recipe-desc">idli wada</div>
+                    <img src="images/dish 1.jpg" alt="" class="image">
+                    <div class="recipe-desc">
+                        <p class="recipe-name">Paneer Tikka</p>
+                        <span class="rating">
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star star-null" aria-hidden="true"></i>
+                        </span>
+                        <span class=small-txt>30 Reviews</span>
+                    </div>
                 </div>
                 <div class="results">
-                    <div class=image></div>
-                    <div class="recipe-desc">idli wada</div>
+                    <img src="images\pexels-cottonbro-3992374.jpg" alt="" class="image">
+                    <div class="recipe-desc">
+                        <p class="recipe-name">Paneer Tikka</p>
+                        <span class="rating">
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star star-null" aria-hidden="true"></i>
+                        </span>
+                        <span class=small-txt>30 Reviews</span>
+                    </div>
                 </div>
                 <div class="results">
-                    <div class=image></div>
-                    <div class="recipe-desc">idli wada</div>
+                    <img src="images/dish.jpg" alt="" class="image">
+                    <div class="recipe-desc">
+                        <p class="recipe-name">Paneer Tikka</p>
+                        <span class="rating">
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star star-null" aria-hidden="true"></i>
+                        </span>
+                        <span class=small-txt>30 Reviews</span>
+                    </div>
                 </div>
                 <div class="results">
-                    <div class=image></div>
-                    <div class="recipe-desc">idli wada</div>
-                </div>
-                <div class="results">
-                    <div class=image></div>
-                    <div class="recipe-desc">idli wada</div>
+                    <img src="images\pexels-lumn-604969.jpg" alt="" class="image">
+                    <div class="recipe-desc">
+                        <p class="recipe-name">Paneer Tikka</p>
+                        <span class="rating">
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star star-null" aria-hidden="true"></i>
+                        </span>
+                        <span class=small-txt>30 Reviews</span>
+                    </div>
                 </div>
             </div>
         </div>
