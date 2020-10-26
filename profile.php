@@ -212,7 +212,7 @@
                         if(!mysqli_stmt_prepare($stmt,$sql))
                         {
                             header("Location: ./profile.php?error=sqlerror");
-                            $_SESSION['error-message'] = "error!";
+                            $_SESSION['error-message'] = "error1!";
                             exit();
                         }
                         else
@@ -243,20 +243,77 @@
                     ?>  
                 </div>
                 <div class=sectioncontent id=fav>
-                    <div class=sectiontile></div>
-                    <div class=sectiontile></div>
-                    <div class=sectiontile></div>
-                    <div class=sectiontile></div>
-                    <div class=sectiontile></div>
-
+                <?php  
+                        $sql2 = "SELECT * FROM userlikes u JOIN recipe r ON u.recipeid=r.recipeid WHERE u.userid=?";
+                        $stmt2 = mysqli_stmt_init($conn);
+                        if(!mysqli_stmt_prepare($stmt2,$sql2))
+                        {
+                            header("Location: ./profile.php?error=sqlerror");
+                            $_SESSION['error-message'] = "error2!";
+                            exit();
+                        }
+                        else
+                        {
+                            mysqli_stmt_bind_param($stmt2,"s",$_SESSION['userid']);
+                            mysqli_stmt_execute($stmt2);
+                            $reciperesult2 = mysqli_stmt_get_result($stmt2);
+                            while($reciperow = mysqli_fetch_assoc($reciperesult2)){
+                                $recipeid = $reciperow['recipeid'];
+                                $recipetitle = $reciperow['recipetitle'];
+                                echo "
+                                        <a href='more details.php?recipeid=$recipeid'>
+                                            <div class='results'>
+                                                <img src='images/default.jpg' alt='' class='image'>
+                                                <div class='recipe-desc'>$recipetitle</div>
+                                                <p class='rating'>
+                                                    <i class='fa fa-star' aria-hidden='true'></i>
+                                                    <i class='fa fa-star' aria-hidden='true'></i>
+                                                    <i class='fa fa-star' aria-hidden='true'></i>
+                                                    <i class='fa fa-star' aria-hidden='true'></i>
+                                                    <i class='fa fa-star star-null' aria-hidden='true'></i>
+                                                </p>
+                                            </div>
+                                        </a>
+                                    ";
+                                }
+                        }
+                    ?>  
                 </div>
                 <div class=sectioncontent id=review>
-                    <div class=sectiontile></div>
-                    <div class=sectiontile></div>
-                    <div class=sectiontile></div>
-                    <div class=sectiontile></div>
-                    <div class=sectiontile></div>
-                    <div class=sectiontile></div>
+                    <?php  
+                        $sql3= "SELECT * FROM review WHERE userid=?";
+                        $stmt3 = mysqli_stmt_init($conn);
+                        if(!mysqli_stmt_prepare($stmt3,$sql3))
+                        {
+                            header("Location: ./profile.php?error=sqlerror");
+                            $_SESSION['error-message'] = "error3!";
+                            exit();
+                        }
+                        else
+                        {
+                            mysqli_stmt_bind_param($stmt3,"s",$_SESSION['userid']);
+                            mysqli_stmt_execute($stmt3);
+                            $reviewresult= mysqli_stmt_get_result($stmt3);
+                            while($reviewrow = mysqli_fetch_assoc($reviewresult)){
+                                $review=$reviewrow['review'];
+                                $recipeid=$reviewrow['recipeid'];
+                                $ratings=$reviewrow['ratings'];
+                                echo " <a href='more details.php?recipeid=$recipeid'>
+                                            <div class='results'>
+                                                <p>$review</p>
+                                                <p class='rating'>
+                                                    <i class='fa fa-star' aria-hidden='true'></i>
+                                                    <i class='fa fa-star' aria-hidden='true'></i>
+                                                    <i class='fa fa-star' aria-hidden='true'></i>
+                                                    <i class='fa fa-star' aria-hidden='true'></i>
+                                                    <i class='fa fa-star star-null' aria-hidden='true'></i>
+                                                </p>
+                                            </div>
+                                        </a>
+                                    ";
+                                }
+                        }
+                    ?>  
                 </div>
             </div>
         </div>
