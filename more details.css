@@ -154,8 +154,18 @@ a.editicon{
 }
 
 .ingridents{
-    display: flex;
+    display:flex;
+    width:100%;
+    word-wrap: break-word;
+    padding:0;
 }
+
+.ingredient-item{
+    width:45vw;
+    word-wrap: break-word;
+    font-weight:400;
+}
+
 
 .ingridents h3{
     cursor: pointer;
@@ -176,6 +186,11 @@ input[type=checkbox]{
     width: 57%;
 }
 
+
+.text-contain{
+    width:50vw;
+    word-wrap: break-word;
+}
 .review-btn{
     background:orangered;
     outline: none;
