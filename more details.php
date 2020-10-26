@@ -53,7 +53,7 @@
                 <?php
                     echo "<h1>".$recipetitle."</h1>";
                 ?>
-                <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
+                <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon style='margin:1%;'><i class="fas fa-edit"></i></a>
             </div>
             
             <div class=profilepicdiv>
@@ -78,11 +78,12 @@
         </div><br><br><hr>
 
             <br>
-            <div class="flexdiv">
-                <h1>Description</h1>
-                <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
-            </div>
+           
             <div class="directions">
+                <div class="flexdiv">
+                    <h1>Description</h1>
+                    <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
+                </div>
                 <?php
                     echo "<p>".$description."</p>";
                 ?>
@@ -90,14 +91,20 @@
             <hr><br>
              
         <div class="ingridents-container">
-        <?php for ($i=0; $i<count($array); $i++){
-            echo'
-            <div class="ingridents">
-                <input type="checkbox" id="ig1" name = "ig1">
-                <label for="ig1"><h3>'.$array[$i].'</h3></label>
-            </div>' ;
-            }
-        ?>
+            <div class="flexdiv">
+                <img src="images/list.png" alt="" style="height:50px;width:50px;margin:15px 5px" class="details-icon" >
+                <h1>Ingridents</h1>
+                <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
+            </div>  
+
+            <?php for ($i=0; $i<count($array); $i++){
+                echo'
+                <div class="ingridents">
+                    <input type="checkbox" id="ig1" name = "ig1">
+                    <label for="ig1"><h3>'.$array[$i].'</h3></label>
+                </div>' ;
+                }
+            ?>
             <!--<div class="ingridents">
                 <input type="checkbox" id="ig2" name = "ig2">
                 <label for="ig2"><h3>3 cloves garlic, minced</h3></label>
