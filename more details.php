@@ -42,6 +42,8 @@
             $cooktime = $reciperow['cooktime'];
             $readyin = $reciperow['readyin'];
             $servings = $reciperow['servings'];
+            $avgratings = $reciperow['avg_ratings'];
+            $totalreviews = $reciperow['total_reviews'];
             $img1 = $reciperow['img1'];
             $img2 = $reciperow['img2'];
             $img3 = $reciperow['img3'];
@@ -76,13 +78,18 @@
                 </div>
                 <div class="reciperating">
                     <span class="rating">
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" ></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star star-null" aria-hidden="true"></i>
+                    <?php
+                        for($i=1;$i<=$avgratings;$i++)
+                        {
+                            echo "<i class='fa fa-star star-icon' aria-hidden='true'></i>";
+                        }
+                        for($i=1;$i<=5-$avgratings;$i++)
+                        {
+                            echo "<i class='fa fa-star star-null star-icon'  aria-hidden='true'></i>";
+                        }
+                    ?>
                     </span>
-                    <span class=small-txt2>30 Reviews</span>
+                    <span class=small-txt2><?php echo $totalreviews; ?> Reviews</span>
                 </div>
                 <div class="desc-div">
                     <img src='images\left-quotes-sign.png' class=quotes>

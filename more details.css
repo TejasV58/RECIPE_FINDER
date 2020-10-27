@@ -425,6 +425,7 @@ textarea::placeholder{
     width:80%;
     height:65vh;
     margin:2%;
+    border-radius: 5px;
 }
 
 .smallpic
