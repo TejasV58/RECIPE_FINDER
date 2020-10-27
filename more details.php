@@ -93,12 +93,29 @@
                 
                 
                 <div class=profilepicdiv>
-                    <img src="images/defaultprofilepic.png" alt="" class=profilepic>
+                    <?php
+                        $sql4="SELECT * from userdetails where userid=?";
+                        $stmt4= mysqli_stmt_init($conn);
+                        if(!mysqli_stmt_prepare($stmt4,$sql4))
+                        {
+                            header("Location: ./profile.php?error=sqlerror");
+                            $_SESSION['error-message'] = "error!";
+                            exit();
+                        }
+                        else{
+                            mysqli_stmt_bind_param($stmt4,"s",$_SESSION['userid']);
+                            mysqli_stmt_execute($stmt4);
+                            $profilepicresult = mysqli_stmt_get_result($stmt4);
+                            $profilepicrow = mysqli_fetch_assoc($profilepicresult);
+                            $profileimg=$profilepicrow['profileimg'];
+                            echo"<img src='./profile-images/$profileimg' class=profilepic>";
+                        }
+                    ?>
                     <h2 class="author-name"> <span class="small-txt2">By</span> <?php echo $name ?></h2>
                 </div>
                 <div class="image-time">
-                    <div class="dish-image">
-                        <img src="recipe-images/<?php echo $img1 ?> " class="dish">
+                    <div class="dish-image" id=bigpicdiv style='background:url("<?php echo "./recipe-images/".$img1; ?>")'>
+                        
                     </div>
                     <div class="time">
                         <p><b>Prep :</b> <?php echo $preptime?></p>
@@ -112,8 +129,14 @@
                     </div>
                 </div>
             </div>
-        
-            <br><br><hr>
+
+            <div class='smallpicdiv'>
+                <div><img  src="<?php echo "./recipe-images/".$img1; ?>" onclick='picboxdisplay("smallpicid1","smallpicid2","smallpicid3","smallpicid4")' id=smallpicid1 class=smallpic></div>
+                <div><img  src="<?php echo "./recipe-images/".$img2; ?>" onclick='picboxdisplay("smallpicid2","smallpicid1","smallpicid3","smallpicid4")' id=smallpicid2 class=smallpic></div>
+                <div><img  src="<?php echo "./recipe-images/".$img3; ?>" onclick='picboxdisplay("smallpicid3","smallpicid2","smallpicid1","smallpicid4")' id=smallpicid3 class=smallpic></div>
+                <div><img  src="<?php echo "./recipe-images/".$img4; ?>" onclick='picboxdisplay("smallpicid4","smallpicid2","smallpicid3","smallpicid1")' id=smallpicid4 class=smallpic></div>
+            </div>
+            <hr>
              
         <div class="ingridents-container">
             <div class="flexdiv">
@@ -156,9 +179,29 @@
         
         <div class="feedback-container">
                 <div class=profilepicdiv>
-                    <img src="images/defaultprofilepic.png" alt="" class=profilepic>                
-                    <button class="review-btn" onclick="feedbackFormOpen()">Give Your Review!</button>
-
+                <?php
+                        $sql4="SELECT * from recipe r JOIN userdetails u ON r.userid=u.userid where recipeid=?";
+                        $stmt4= mysqli_stmt_init($conn);
+                        if(!mysqli_stmt_prepare($stmt4,$sql4))
+                        {
+                            header("Location: ./profile.php?error=sqlerror");
+                            $_SESSION['error-message'] = "error!";
+                            exit();
+                        }
+                        else{
+                            mysqli_stmt_bind_param($stmt4,"s",$recipeid);
+                            mysqli_stmt_execute($stmt4);
+                            $profilepicresult = mysqli_stmt_get_result($stmt4);
+                            $profilepicrow = mysqli_fetch_assoc($profilepicresult);
+                            if($profilepicrow!==null)
+                            {
+                                $profileimg=$profilepicrow['profileimg'];
+                                echo"<img src='./profile-images/$profileimg' class=profilepic>";
+                            }  
+                        }
+                    if(isset($_SESSION['userid']))?>
+                    <button class='review-btn' onclick="feedbackFormOpen()">Give Your Review!</button>
+          
                     <span>
                         <?php
                             if(isset($_SESSION['userid']))

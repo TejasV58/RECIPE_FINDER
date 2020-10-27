@@ -140,3 +140,15 @@ function feedbackFormClose()
 {
     document.getElementById('review-box').style.visibility="hidden";
 }
+
+//img onclick
+
+function picboxdisplay(smallpicid1,smallpicid2,smallpicid3,smallpicid4)
+{
+    var sourceimg=document.getElementById(smallpicid1).src;
+    document.getElementById(smallpicid1).style.border="2px solid #337279";
+    document.getElementById(smallpicid2).style.border="none";
+    document.getElementById(smallpicid3).style.border="none";
+    document.getElementById(smallpicid4).style.border="none";
+    document.getElementById('bigpicdiv').style.backgroundImage="url('"+sourceimg+"')";
+}
