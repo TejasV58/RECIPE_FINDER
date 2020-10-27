@@ -288,29 +288,120 @@
                         $profileimg=$reviewrow['profileimg'];
                         $name=$reviewrow['name'];
                         $ratings=$reviewrow['ratings'];
-                        echo"
-                                <div class='feedback-other'>
-                                    <div class=profilepicdiv>
-                                        <img src='./profile-images/$profileimg' class=profilepic>
+                            echo"
+                            <div class='feedback-other'>
+                                <div class=profilepicdiv>
+                                    <img src='./profile-images/$profileimg' class=profilepic>
+                                    <div class='userinfo'>
                                         <h3 class='feedback-author'>$name</h3>
-                                    </div>
-                                    <p>";
-                                            for($i=1;$i<=$ratings;$i++)
-                                            {
-                                                echo "<i class='fa fa-star star-icon' aria-hidden='true'></i>";
-                                            }
-                                            for($i=1;$i<=5-$ratings;$i++)
-                                            {
-                                                echo "<i class='fa fa-star star-null star-icon'  aria-hidden='true'></i>";
-                                            }
-                                            echo "
-                                    </p>
-                                    <div class='feedback-text'>
-                                        <p>$review</p>
-                                    </div>
-                                </div>";
+                                        <div class=review-rating>";
+                                                for($i=1;$i<=$ratings;$i++)
+                                                {
+                                                    echo "<i class='fa fa-star star-icon' aria-hidden='true'></i>";
+                                                }
+                                                for($i=1;$i<=5-$ratings;$i++)
+                                                {
+                                                    echo "<i class='fa fa-star star-null star-icon'  aria-hidden='true'></i>";
+                                                }
+                                                echo "
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div >     
+                                    <p class='feedback-text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, non optio libero eveniet laborum nostrum laboriosam?</p>
+                                </div>
+                            </div>
+                            <div class='feedback-other'>
+                                <div class=profilepicdiv>
+                                    <img src='./profile-images/$profileimg' class=profilepic>
+                                    <div class='userinfo'>
+                                        <h3 class='feedback-author'>$name</h3>
+                                        <div class=review-rating>";
+                                                for($i=1;$i<=$ratings;$i++)
+                                                {
+                                                    echo "<i class='fa fa-star star-icon' aria-hidden='true'></i>";
+                                                }
+                                                for($i=1;$i<=5-$ratings;$i++)
+                                                {
+                                                    echo "<i class='fa fa-star star-null star-icon'  aria-hidden='true'></i>";
+                                                }
+                                                echo "
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div >     
+                                    <p class='feedback-text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, non optio libero eveniet laborum nostrum laboriosam?</p>
+                                </div>
+                            </div>
+                            <div class='feedback-other'>
+                                <div class=profilepicdiv>
+                                    <img src='./profile-images/$profileimg' class=profilepic>
+                                    <div class='userinfo'>
+                                        <h3 class='feedback-author'>$name</h3>
+                                        <div class=review-rating>";
+                                                for($i=1;$i<=$ratings;$i++)
+                                                {
+                                                    echo "<i class='fa fa-star star-icon' aria-hidden='true'></i>";
+                                                }
+                                                for($i=1;$i<=5-$ratings;$i++)
+                                                {
+                                                    echo "<i class='fa fa-star star-null star-icon'  aria-hidden='true'></i>";
+                                                }
+                                                echo "
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div >     
+                                    <p class='feedback-text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, non optio libero eveniet laborum nostrum laboriosam?</p>
+                                </div>
+                            </div>
+                            <div class='feedback-other'>
+                                <div class=profilepicdiv>
+                                    <img src='./profile-images/$profileimg' class=profilepic>
+                                    <div class='userinfo'>
+                                        <h3 class='feedback-author'>$name</h3>
+                                        <div class=review-rating>";
+                                                for($i=1;$i<=$ratings;$i++)
+                                                {
+                                                    echo "<i class='fa fa-star star-icon' aria-hidden='true'></i>";
+                                                }
+                                                for($i=1;$i<=5-$ratings;$i++)
+                                                {
+                                                    echo "<i class='fa fa-star star-null star-icon'  aria-hidden='true'></i>";
+                                                }
+                                                echo "
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div >     
+                                    <p class='feedback-text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, non optio libero eveniet laborum nostrum laboriosam?</p>
+                                </div>
+                            </div>
+                            <div class='feedback-other'>
+                                <div class=profilepicdiv>
+                                    <img src='./profile-images/$profileimg' class=profilepic>
+                                    <div class='userinfo'>
+                                        <h3 class='feedback-author'>$name</h3>
+                                        <div class=review-rating>";
+                                                for($i=1;$i<=$ratings;$i++)
+                                                {
+                                                    echo "<i class='fa fa-star star-icon' aria-hidden='true'></i>";
+                                                }
+                                                for($i=1;$i<=5-$ratings;$i++)
+                                                {
+                                                    echo "<i class='fa fa-star star-null star-icon'  aria-hidden='true'></i>";
+                                                }
+                                                echo "
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div >     
+                                    <p class='feedback-text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque, non optio libero eveniet laborum nostrum laboriosam?</p>
+                                </div>
+                            </div>";
+                        
                     }
-                }      
+                }     
             ?>
             </div>
         </div>

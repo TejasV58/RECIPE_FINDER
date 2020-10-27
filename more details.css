@@ -104,7 +104,7 @@ a{
     background: white;
     padding: 2%;
     border-radius: 20px;
-    width: 90%;
+    width: 94%;
     box-sizing: border-box;
     margin-top: 70px;
 }
@@ -344,22 +344,24 @@ textarea::placeholder{
     color:black;
 }
 
-
 .feedback-other{
+    display:inline-block;
     background: white;
-    width: 350px;
-    height: 350px;
-    margin: 2%;
-    display: inline-block;
-    font-size:20px;
+    width: 320px;
+    height: 200px;
+    margin: 1%;
+    font-size:16px;
     font-family: 'Baloo Tamma 2', cursive;
     padding: 1%;
     box-sizing: border-box;
     border-radius: 30px;
+    border:1px solid #33727986;
+    
 }
 .feedback-author{
-    margin: 3% 6%;
-    font-size: 25px;
+    margin: 3%;
+    margin-bottom:0;
+    font-size: 19px;
 }
 
 .submit_feedback{
@@ -422,8 +424,8 @@ textarea::placeholder{
 {
     background-size:cover;
     text-align:center;
-    width:80%;
-    height:65vh;
+    width:550px;
+    height:400px;
     margin:2%;
 }
 
@@ -438,4 +440,32 @@ textarea::placeholder{
 #smallpicid1
 {
     border:2px solid #337279;
+}
+
+.feedback-text
+{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow:auto;
+    height:90px;
+    padding:0 4%;
+}
+
+.profilepic
+{
+    margin:1%;
+}
+.profilepicdiv
+{
+    display: flex;
+    height:70px;
+}
+.userinfo
+{
+    width:80%;
+}
+
+.review-rating
+{
+    margin:0% 3%;
 }
