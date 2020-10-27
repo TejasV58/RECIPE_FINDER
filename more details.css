@@ -409,3 +409,33 @@ textarea::placeholder{
 {
     color: #337279;
 }
+
+.smallpicdiv
+{
+    text-align:center;
+    width:15%;
+    margin:2%;
+    display:flex;
+}
+
+#bigpicdiv
+{
+    background-size:cover;
+    text-align:center;
+    width:80%;
+    height:65vh;
+    margin:2%;
+}
+
+.smallpic
+{
+    width:80px;
+    height:80px;
+    margin:2px;
+    border:1px solid rgba(0,0,0,0.4);
+    display:inline-block;
+}
+#smallpicid1
+{
+    border:2px solid #337279;
+}
