@@ -18,10 +18,9 @@
             $readyin = $_POST["readyin"];
             $serves = $_POST["serves"];
             $recipearray=[];
-            if($_FILES['recipe-image']['size']>0)
+            for($i=0;$i<4;$i++)
             {
-                for($i=0;$i<4;$i++)
-                {
+                if(!empty($_FILES['recipe-image']['name'][$i])){
                     if(isset($_FILES['recipe-image']['name'][$i]))
                     {
                         $recipeimg=$title."_".$i."_".$_FILES['recipe-image']['name'][$i];
@@ -32,14 +31,14 @@
                             exit();
                         }
                     }
-                    else
-                    {
-                        $recipeimg="default.jpg";
-                    }
-                    array_push($recipearray,$recipeimg);
                 }
-
+                else
+                {
+                    $recipeimg="default.jpg";
+                }
+                array_push($recipearray,$recipeimg);
             }
+
     
             $sql = "INSERT INTO recipe(userid, recipetitle, description, ingredients, directions, preptime, cooktime, readyin, servings,img1,img2,img3,img4) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $statement = mysqli_stmt_init($conn);  

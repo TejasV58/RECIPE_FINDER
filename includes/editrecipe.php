@@ -16,30 +16,28 @@ if(isset($_POST['save-recipe'])){
     $cooktime = $_POST['cooktime'];
     $servings = $_POST['serves'];
     $readyin = $_POST['readyin'];
-
     $recipearray=[];
-    if($_FILES['recipe-image']['size']>0)
-    {
-        for($i=0;$i<4;$i++)
-        {
+    for($i=0;$i<4;$i++)
+    {   
+        if(!empty($_FILES['recipe-image']['name'][$i])){
             if(isset($_FILES['recipe-image']['name'][$i]))
             {
-                $recipeimg=$title."_".$i.$i."_".$_FILES['recipe-image']['name'][$i];
+                $recipeimg=$recipetitle."_".$i."_".$_FILES['recipe-image']['name'][$i];
                 if(!(move_uploaded_file($_FILES['recipe-image']['tmp_name'][$i],'../recipe-images/'.$recipeimg)))
                 {
                     $_SESSION['error-message'] = "Failed to uplaod";
-                    header("Location:../AddRecipes.php?error=sqlerror1");
+                    header("Location:../modifyrecipe.php?recipeid=$recipeid&error=sqlerror1");
                     exit();
                 }
             }
-            else
-            {
-                $recipeimg="default.jpg";
-            }
-            array_push($recipearray,$recipeimg);
         }
-
+        else
+        {
+            $recipeimg="default.jpg";
+        }
+        array_push($recipearray,$recipeimg);
     }
+
     
     $sql="UPDATE recipe SET recipetitle=?, description=?, ingredients=?, directions=?, preptime=?, cooktime=?,servings=?, readyin=?, img1 = ?,img2=? , img3=?, img4=? WHERE recipeid=?";
     $stmt=mysqli_stmt_init($conn);

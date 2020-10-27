@@ -95,23 +95,28 @@ session_start();
 
         <!-- MESSAGE -->
         <?php if(isset($_SESSION['error-message'])): ?>
-        <div class='msg-outerbox'>
-            <center><div class='msg-container danger'>
-                <?php 
-                    echo $_SESSION['error-message'];
-                    unset($_SESSION['error-message']);
-                ?>
-            </div></center>
-        </div>
+            <div class='msg-outerbox'>
+                <center><div class='msg-container'>
+                    <p class="msg-danger">
+                        <i class="fas fa-times-circle"></i>
+                        <?php 
+                            echo $_SESSION['error-message'];
+                            unset($_SESSION['error-message']);
+                        ?>
+                    </p>
+                </div></center>
+            </div> 
         <?php elseif(isset($_SESSION['success-message'])): ?>
             <div class='msg-outerbox'>
-                <center><div class='msg-container success'>
-                    <?php 
-                        echo $_SESSION['success-message'];
-                        unset($_SESSION['success-message']);
-                    ?>   
+                <center><div class='msg-container'>
+                    <p class="msg-success">
+                        <i class="fas fa-check-circle"></i>
+                        <?php 
+                            echo $_SESSION['success-message'];
+                            unset($_SESSION['success-message']);
+                        ?>
+                    </p>
                 </div></center>
             </div> 
         <?php endif; ?>
 
-    
