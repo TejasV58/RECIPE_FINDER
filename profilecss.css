@@ -70,7 +70,10 @@ body{
     text-decoration: none;
 }
 
-
+a.results:link,a.results:visited{
+    color:none;
+    text-decoration: none;
+}
 
 .recipe-btn{
     padding:4%;

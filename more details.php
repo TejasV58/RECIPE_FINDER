@@ -42,6 +42,10 @@
             $cooktime = $reciperow['cooktime'];
             $readyin = $reciperow['readyin'];
             $servings = $reciperow['servings'];
+            $img1 = $reciperow['img1'];
+            $img2 = $reciperow['img2'];
+            $img3 = $reciperow['img3'];
+            $img4 = $reciperow['img4'];
 
             $array_ingredients = explode("\n", $ingredients);
             $array_directions = explode("\n", $directions);
@@ -94,7 +98,7 @@
                 </div>
                 <div class="image-time">
                     <div class="dish-image">
-                        <img src="images/dish 1.jpg" class="dish">
+                        <img src="recipe-images/<?php echo $img1 ?> " class="dish">
                     </div>
                     <div class="time">
                         <p><b>Prep :</b> <?php echo $preptime?></p>
@@ -114,7 +118,7 @@
         <div class="ingridents-container">
             <div class="flexdiv">
                 <img src="images/list.png" alt="" style="height:50px;width:50px;margin:15px 5px" class="details-icon" >
-                <h1 class=greenheading>Ingridents</h1>
+                <h1 class=greenheading>Ingredients</h1>
                 <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
             </div>  
 

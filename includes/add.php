@@ -28,7 +28,7 @@
                         if(!(move_uploaded_file($_FILES['recipe-image']['tmp_name'][$i],'../recipe-images/'.$recipeimg)))
                         {
                             $_SESSION['error-message'] = "Failed to uplaod";
-                            header("Location:../AddRecipes.php?error=sqlerror");
+                            header("Location:../AddRecipes.php?error=sqlerror1");
                             exit();
                         }
                     }
@@ -38,6 +38,7 @@
                     }
                     array_push($recipearray,$recipeimg);
                 }
+
             }
     
             $sql = "INSERT INTO recipe(userid, recipetitle, description, ingredients, directions, preptime, cooktime, readyin, servings,img1,img2,img3,img4) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";

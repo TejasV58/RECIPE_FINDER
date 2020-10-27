@@ -124,7 +124,8 @@
 
                     <div class="image-input">
                         <div class="addimgdiv">
-                            <input id="uploadImage" type="file" accept="image/*" onchange="PreviewImage();" multiple  name='recipe-image'>
+                            <input id="uploadImage" type="file" accept="image/*" onchange="PreviewImage();" multiple  
+                            name='recipe-image[]'>
                             <label id=uploadimglabel for="uploadImage"><i class="fas fa-camera"></i> &nbsp; <br>Add a Image</label>
                         </div>
                         <div class="previews"><img id="uploadPreview" style="width: 100px; height: 100px; display:none;" ></div>

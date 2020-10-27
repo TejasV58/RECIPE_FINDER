@@ -223,10 +223,11 @@
                             while($reciperow = mysqli_fetch_assoc($reciperesult)){
                                 $recipeid = $reciperow['recipeid'];
                                 $recipetitle = $reciperow['recipetitle'];
+                                $img1 = $reciperow['img1'];
                                 echo "
-                                        <a href='more details.php?recipeid=$recipeid'>
+                                        <a href='more details.php?recipeid=$recipeid' class=recipe-links>
                                             <div class='results'>
-                                                <img src='images/default.jpg' alt='' class='image'>
+                                                <img src='recipe-images/$img1' alt='' class='image'>
                                                 <div class='title-icon'>
                                                     <div class='recipe-desc'>$recipetitle</div>
                                                     <a href='includes/user-del.php?rid=$recipeid'><div class='delete_icon'><i class='fas fa-trash-alt'></i></div></a>
@@ -263,10 +264,11 @@
                             while($reciperow = mysqli_fetch_assoc($reciperesult2)){
                                 $recipeid = $reciperow['recipeid'];
                                 $recipetitle = $reciperow['recipetitle'];
+                                $img1 = $reciperow['img1'];
                                 echo "
-                                        <a href='more details.php?recipeid=$recipeid'>
+                                        <a href='more details.php?recipeid=$recipeid' class=recipe-links>
                                             <div class='results'>
-                                                <img src='images/default.jpg' alt='' class='image'>
+                                                <img src='recipe-images/$img1' alt='' class='image'>
                                                 <div class='recipe-desc'>$recipetitle</div>
                                                 <p class='rating'>
                                                     <i class='fa fa-star' aria-hidden='true'></i>

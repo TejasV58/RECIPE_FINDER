@@ -177,7 +177,7 @@
                     }
                 }
             ?> 
-            <form action="includes/editrecipe.php?recipeid=<?php echo $recipeid; ?>" method="POST">
+            <form action="includes/editrecipe.php?recipeid=<?php echo $recipeid; ?>" method="POST" enctype="multipart/form-data">
             <div class="recipe-details">
                 <div class="main-details">
                     <label for="name" class="label ">Recipe Title</label>
@@ -195,7 +195,7 @@
 
                     <div class="image-input">
                         <div class="addimgdiv">
-                            <input id="uploadImage" type="file" accept="image/*" onchange="PreviewImage();" multiple />
+                            <input id="uploadImage" type="file" accept="image/*" onchange="PreviewImage();" name='recipe-image[]' multiple> 
                             <label id=uploadimglabel for="uploadImage"><i class="fas fa-camera"></i> &nbsp; <br>Add a Image</label>
                         </div>
                         <div class="previews"><img id="uploadPreview" style="width: 100px; height: 100px; display:none;" ></div>

@@ -317,3 +317,8 @@ button[class=popup]:hover{
     color:black;
 }
 
+.recipe-links:visited,.recipe-links:link{
+    color:black;
+    text-decoration: none;
+}
+
