@@ -112,11 +112,6 @@ a{
     margin-left: 1%;
 }
 
-.profilepicdiv{
-    display: flex;
-    margin: 2%;
-}
-
 .start-details{
     margin:2%;
 }
@@ -344,6 +339,10 @@ textarea::placeholder{
     color:black;
 }
 
+.profilepicdiv{
+    display: flex;
+    margin: 2%;
+}
 .feedback-other{
     display:inline-block;
     background: white;

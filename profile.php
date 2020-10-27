@@ -238,13 +238,6 @@
                                                     <div class='recipe-desc'>$recipetitle</div>
                                                     <a href='includes/user-del.php?rid=$recipeid'><div class='delete_icon'><i class='fas fa-trash-alt'></i></div></a>
                                                 </div>
-                                                <p class='rating'>
-                                                    <i class='fa fa-star' aria-hidden='true'></i>
-                                                    <i class='fa fa-star' aria-hidden='true'></i>
-                                                    <i class='fa fa-star' aria-hidden='true'></i>
-                                                    <i class='fa fa-star' aria-hidden='true'></i>
-                                                    <i class='fa fa-star star-null' aria-hidden='true'></i>
-                                                </p>
                                             </div>
                                         </a>
                                     ";
@@ -276,13 +269,6 @@
                                             <div class='results'>
                                                 <img src='recipe-images/$img1' alt='' class='image'>
                                                 <div class='recipe-desc'>$recipetitle</div>
-                                                <p class='rating'>
-                                                    <i class='fa fa-star' aria-hidden='true'></i>
-                                                    <i class='fa fa-star' aria-hidden='true'></i>
-                                                    <i class='fa fa-star' aria-hidden='true'></i>
-                                                    <i class='fa fa-star' aria-hidden='true'></i>
-                                                    <i class='fa fa-star star-null' aria-hidden='true'></i>
-                                                </p>
                                             </div>
                                         </a>
                                     ";
@@ -291,40 +277,53 @@
                     ?>  
                 </div>
                 <div class=sectioncontent id=review>
-                    <?php  
-                        $sql3= "SELECT * FROM review WHERE userid=?";
-                        $stmt3 = mysqli_stmt_init($conn);
-                        if(!mysqli_stmt_prepare($stmt3,$sql3))
+                <?php
+                    $sql4="SELECT * FROM review r1 JOIN recipe r2 ON r1.recipeid=r2.recipeid where r1.userid=?";
+                    $stmt4= mysqli_stmt_init($conn);
+                    if(!mysqli_stmt_prepare($stmt4,$sql4))
+                    {
+                        header("Location: ./profile.php?error=sqlerror");
+                        $_SESSION['error-message'] = "error!";
+                        exit();
+                    }
+                    else
+                    {
+                        mysqli_stmt_bind_param($stmt4,"s",$_SESSION['userid']);
+                        mysqli_stmt_execute($stmt4);
+                        $reviewresult = mysqli_stmt_get_result($stmt4);
+                        while($reviewrow = mysqli_fetch_assoc($reviewresult))
                         {
-                            header("Location: ./profile.php?error=sqlerror");
-                            $_SESSION['error-message'] = "error3!";
-                            exit();
+                            $review=$reviewrow['review'];
+                            $recipetitle=$reviewrow['recipetitle'];
+                            $ratings=$reviewrow['ratings'];
+                            $recipeid=$reviewrow['recipeid'];
+                                echo"
+                                <a href='more details.php?recipeid=$recipeid' class=review-links>
+                                    <div class='feedback-other'>
+                                        <div class=profilepicdiv>
+                                            <div class='userinfo'>
+                                                <h3 class='feedback-author'>$recipetitle</h3>
+                                                <div class=review-rating>";
+                                                        for($i=1;$i<=$ratings;$i++)
+                                                        {
+                                                            echo "<i class='fa fa-star star-icon' aria-hidden='true'></i>";
+                                                        }
+                                                        for($i=1;$i<=5-$ratings;$i++)
+                                                        {
+                                                            echo "<i class='fa fa-star star-null star-icon'  aria-hidden='true'></i>";
+                                                        }
+                                                        echo "
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div >     
+                                            <p class='feedback-text'>$review</p>
+                                        </div>
+                                    </div>
+                            </a>";    
                         }
-                        else
-                        {
-                            mysqli_stmt_bind_param($stmt3,"s",$_SESSION['userid']);
-                            mysqli_stmt_execute($stmt3);
-                            $reviewresult= mysqli_stmt_get_result($stmt3);
-                            while($reviewrow = mysqli_fetch_assoc($reviewresult)){
-                                $review=$reviewrow['review'];
-                                $recipeid=$reviewrow['recipeid'];
-                                $ratings=$reviewrow['ratings'];
-                                echo " <a href='more details.php?recipeid=$recipeid'>
-                                            <div class='results'>
-                                                <p>$review</p>
-                                                <p class='rating'>
-                                                    <i class='fa fa-star' aria-hidden='true'></i>
-                                                    <i class='fa fa-star' aria-hidden='true'></i>
-                                                    <i class='fa fa-star' aria-hidden='true'></i>
-                                                    <i class='fa fa-star' aria-hidden='true'></i>
-                                                    <i class='fa fa-star star-null' aria-hidden='true'></i>
-                                                </p>
-                                            </div>
-                                        </a>
-                                    ";
-                                }
-                        }
-                    ?>  
+                    }     
+                ?>
                 </div>
             </div>
         </div>
