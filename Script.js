@@ -20,6 +20,15 @@ function addItem()
     }
 }
 
+function passItems(){
+    link = document.getElementById('searchBtn');
+    var strItem =  JSON.stringify(itemList);
+    window.location.href="http://localhost/RECIPE_FINDER/includes/displayRecipes.php?j="+strItem;
+    //link.setAttribute('formaction', "http://localhost/RECIPE_FINDER/includes/displayRecipes.php?j="+strItem);
+    console.log(itemList);
+    console.log(strItem);
+}
+
 function removeItem(item)
 {
     document.getElementById(item).remove();

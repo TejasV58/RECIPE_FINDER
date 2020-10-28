@@ -24,7 +24,8 @@
             <form action="javascript:void(0)" autocomplete="off">
                     <input class=search type="text" id="items" placeholder="Input Ingredients to Search Recipes">
                     <button class="additem" onclick="addItem()">+</button>
-                    <button class="searchbtn">Search</button>
+                    <button class="searchbtn" onclick="passItems()" id="searchBtn">Search</button>
+
             </form>
             <div  class="items-list">
                 <span class="items" id="itemAdded" style="display:none;">item<button onclick="removeItem('item')">X</button></span>
