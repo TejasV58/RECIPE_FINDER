@@ -100,24 +100,26 @@
                 
                 
                 <div class=profilepicdiv2>
-                    <?php
-                        $sql4="SELECT * from userdetails where userid=?";
-                        $stmt4= mysqli_stmt_init($conn);
-                        if(!mysqli_stmt_prepare($stmt4,$sql4))
-                        {
-                            header("Location: ./profile.php?error=sqlerror");
-                            $_SESSION['error-message'] = "error!";
-                            exit();
-                        }
-                        else{
-                            mysqli_stmt_bind_param($stmt4,"s",$_SESSION['userid']);
-                            mysqli_stmt_execute($stmt4);
-                            $profilepicresult = mysqli_stmt_get_result($stmt4);
-                            $profilepicrow = mysqli_fetch_assoc($profilepicresult);
-                            $profileimg=$profilepicrow['profileimg'];
-                            echo"<img src='./profile-images/$profileimg' class=profilepic1>";
-                        }
-                    ?>
+
+                <?php
+                    $sql4="SELECT * from recipe r JOIN userdetails u ON r.userid=u.userid where recipeid=?";
+                    $stmt4= mysqli_stmt_init($conn);
+                    if(!mysqli_stmt_prepare($stmt4,$sql4))
+                    {
+                        header("Location: ./profile.php?error=sqlerror");
+                        $_SESSION['error-message'] = "error!";
+                        exit();
+                    }
+                    else
+                    {
+                        mysqli_stmt_bind_param($stmt4,"s",$recipeid);
+                        mysqli_stmt_execute($stmt4);
+                        $profilepicresult = mysqli_stmt_get_result($stmt4);
+                        $profilepicrow = mysqli_fetch_assoc($profilepicresult);
+                        $profileimg=$profilepicrow['profileimg'];
+                        echo"<img src='./profile-images/$profileimg' class=profilepic1>";
+                    }
+                ?>
                     <h2 class="author-name"> <span class="small-txt2">By</span> <?php echo $name ?></h2>
                 </div>
                 <div class="image-time">
@@ -159,12 +161,9 @@
                     <label for="'.$i.'"><h3>'.$array_ingredients[$i].'</h3></label>
                 </div>' ;
                 }
-            ?>
-            
+            ?>   
         </div>
             <br><hr><br>
-            
-            
             <div class="directions">
                 <div class="flexdiv">
                     <img src="images/recipe.png" alt="" class="details-icon" >
@@ -178,38 +177,36 @@
                         '<h2 class=steps-head><i class="fa fa-check-circle" aria-hidden="true"></i>Step '.($i+1).'</h2>
                         <p class=text-contain>'.$array_directions[$i].'</p>';
                     }
-                ?>
-                
+                ?>  
             </div>
             <hr>
-        
-        
         <div class="feedback-container">
-                <div class=profilepicdiv>
                 <?php
-                        $sql4="SELECT * from recipe r JOIN userdetails u ON r.userid=u.userid where recipeid=?";
-                        $stmt4= mysqli_stmt_init($conn);
-                        if(!mysqli_stmt_prepare($stmt4,$sql4))
+                    if(isset($_SESSION['userid']))
+                    {
+                        $sql5="SELECT * from userdetails where userid=?";
+                        $stmt5= mysqli_stmt_init($conn);
+                        if(!mysqli_stmt_prepare($stmt5,$sql5))
                         {
                             header("Location: ./profile.php?error=sqlerror");
                             $_SESSION['error-message'] = "error!";
                             exit();
                         }
-                        else{
-                            mysqli_stmt_bind_param($stmt4,"s",$recipeid);
-                            mysqli_stmt_execute($stmt4);
-                            $profilepicresult = mysqli_stmt_get_result($stmt4);
+                        else
+                        {
+                            mysqli_stmt_bind_param($stmt5,"s",$_SESSION['userid']);
+                            mysqli_stmt_execute($stmt5);
+                            $profilepicresult = mysqli_stmt_get_result($stmt5);
                             $profilepicrow = mysqli_fetch_assoc($profilepicresult);
-                            if($profilepicrow!==null)
-                            {
-                                $profileimg=$profilepicrow['profileimg'];
-                                echo"<img src='./profile-images/$profileimg' class=profilepic1>";
-                            }  
+                            $profileimg=$profilepicrow['profileimg'];
+                            $profileimg=$profilepicrow['profileimg'];
+                            echo"<div class=profilepicdiv>
+                                <img src='./profile-images/$profileimg' class=profilepic1>";
                         }
-                    if(isset($_SESSION['userid']))?>
+                    }
+                    if(isset($_SESSION['userid'])):?>
                     <button class='review-btn' onclick="feedbackFormOpen()">Give Your Review!</button>
-          
-                    <span>
+                    <?php endif; ?>
                         <?php
                             if(isset($_SESSION['userid']))
                             {
@@ -229,24 +226,24 @@
                                     $userlikesrow = mysqli_fetch_assoc($userlikesresult);
                                     if($userlikesrow===null)
                                     {
-                                        echo "
+                                        echo "<span>
                                                 <form action='./includes/userlikesaddinc.php?recipeid=$recipeid' method='POST'>
                                                     <button class=like-btn type=submit name='userlikesadd-btn'><i class='fas fa-thumbs-up fa-2x addlikes'></i></button>
-                                                </form>";
+                                                </form> </span></div>";
                                     }
                                     else
                                     {
-                                        echo "
+                                        echo "<span>
                                                 <form action='./includes/userlikesremoveinc.php?recipeid=$recipeid' method=POST>
                                                     <button class=like-btn type=submit name='userlikesremove-btn'><i class='fas fa-thumbs-up fa-2x removelikes'></i></button>
-                                                </form>";
-                                    }
-                                        
+                                                </form> </span></div>";
+                                    }      
                                 }
+
                             }
+                              
                         ?>
-                    </span>
-                </div>       
+                    
             <form action="includes/feedback.php?recipeid=<?php echo $recipeid; ?>" method="POST">
                 <div class="rbox" id="review-box">
                     <div class="review-popup">

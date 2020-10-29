@@ -18,12 +18,13 @@ function addItem()
         document.getElementById('items').value = "";
         additem.insertAdjacentHTML("afterend",`<span class="items" id="${item}">${item} <button onclick="removeItem('${item}')"    class="crossbtn">X</button></span>`);
     }
+    console.log(itemList);
 }
 
 function passItems(){
     link = document.getElementById('searchBtn');
     var strItem =  JSON.stringify(itemList);
-    window.location.href="http://localhost/RECIPE_FINDER/includes/displayRecipes.php?j="+strItem;
+    window.location.href="http://localhost/RECIPE_FINDER/displayRecipes.php?j="+strItem;
     //link.setAttribute('formaction', "http://localhost/RECIPE_FINDER/includes/displayRecipes.php?j="+strItem);
     console.log(itemList);
     console.log(strItem);

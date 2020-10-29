@@ -1,8 +1,10 @@
 /* Home-background */
-.navbar{
+.navbar
+{
     z-index:2;
 }
-.background{
+.background
+{
     margin-top:68px;
     background:url("images/signin1.jpg");
     background-size:cover;
@@ -54,7 +56,6 @@ input[class="search"]:focus{
     border:2.5px solid #337279;
 }
 
-
 .additem{
     position:relative;
     top:4px;
@@ -100,7 +101,7 @@ button.additem:focus{
 
 .items-list{
     margin:0 auto;
-    width:80%;
+    width:95%;
 }
 
 .items{
@@ -128,12 +129,15 @@ button.additem:focus{
     outline:none;
 }
 
-
+.inline-search
+{
+    display: flex;
+}
 /* Search Result */
 
 .page{
-    padding:1%;
-    background:#eee;
+    padding:0 1%;
+    background:white;
     margin:0;
 }
 
@@ -145,14 +149,19 @@ button.additem:focus{
     width:82%;
 }
 
-.heading1{
+.heading1
+{
     color:rgba(0,0,0,0.6);
     font-family: 'Syne', sans-serif;
+    font-size:24px;
+    font-weight:600;
+    width:140px;
+    padding:1%;
 }
 
 .results{
     width:21.5%;
-    height:45vh;
+    height:50vh;
     margin:2% 1.2%;
     display:inline-block;
     border-radius:8px;
@@ -167,7 +176,7 @@ button.additem:focus{
 
 .recipe-name{
     margin:2px 0;
-    font-size:20px;
+    font-size:17px;
     font-family: 'Nunito', sans-serif;
 }
 
@@ -209,6 +218,11 @@ button.additem:focus{
     padding:5%;
     box-sizing:border-box;
     background:white;
+}
+
+a.results:link,a.results:visited{
+    color:none;
+    text-decoration: none;
 }
 
 /*Popup start*/
