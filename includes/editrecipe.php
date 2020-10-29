@@ -30,12 +30,14 @@ if(isset($_POST['save-recipe'])){
                     exit();
                 }
             }
+            
         }
         else
         {
             $recipeimg="default.jpg";
         }
         array_push($recipearray,$recipeimg);
+        
     }
 
     
