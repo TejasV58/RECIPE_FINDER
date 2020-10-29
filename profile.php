@@ -126,7 +126,7 @@
     <!--PROFILE-->
     <div class=profile>
         <div class=profilebox>
-            <div class=profilepicdiv>
+            <div class=profilepicdiv1>
                     <?php  if(isset($profileimg)): ?>
                         <img src="profile-images/<?php echo $profileimg; ?>" alt="profile-img" class=profilepic>
                     <?php else:?>
@@ -169,7 +169,7 @@
                         }
                     ?>
                 </p>
-                 <span><?php echo $resultCheck ?>   <i class="fas fa-utensils"></i></span><button class=recipe-btn ><a href="AddRecipes.php">Add Recipe</a></button>
+                 <span><?php echo $resultCheck ?><i class="fas fa-utensils"></i></span><button class=recipe-btn ><a href="AddRecipes.php">Add Recipe</a></button>
             </div>
             <div class=editprofile>
                 <button class=editprofile-btn onclick=editopen()>Edit Profile</button>

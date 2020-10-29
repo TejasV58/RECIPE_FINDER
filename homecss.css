@@ -255,6 +255,9 @@ button.additem:focus{
     color:rgba(0,0,0,0.6);
     font-size:115%;
 }
+.forminput:focus{
+    border-bottom:3px solid rgb(47, 167, 236);
+}
 
 input[class=forminput]::placeholder{
     font-size:17px;

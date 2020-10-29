@@ -239,7 +239,7 @@ a>.feedback-other:visited,a>.feedback-other:link
     cursor:pointer;
     visibility:hidden;
 }
-#profilepicdiv
+#profilepicdiv1
 {
     background:url(images/defaultprofilepic1.png);
     object-fit: cover;

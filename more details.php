@@ -99,7 +99,7 @@
                 </div>
                 
                 
-                <div class=profilepicdiv>
+                <div class=profilepicdiv2>
                     <?php
                         $sql4="SELECT * from userdetails where userid=?";
                         $stmt4= mysqli_stmt_init($conn);
@@ -115,7 +115,7 @@
                             $profilepicresult = mysqli_stmt_get_result($stmt4);
                             $profilepicrow = mysqli_fetch_assoc($profilepicresult);
                             $profileimg=$profilepicrow['profileimg'];
-                            echo"<img src='./profile-images/$profileimg' class=profilepic>";
+                            echo"<img src='./profile-images/$profileimg' class=profilepic1>";
                         }
                     ?>
                     <h2 class="author-name"> <span class="small-txt2">By</span> <?php echo $name ?></h2>
@@ -203,7 +203,7 @@
                             if($profilepicrow!==null)
                             {
                                 $profileimg=$profilepicrow['profileimg'];
-                                echo"<img src='./profile-images/$profileimg' class=profilepic>";
+                                echo"<img src='./profile-images/$profileimg' class=profilepic1>";
                             }  
                         }
                     if(isset($_SESSION['userid']))?>
@@ -298,7 +298,7 @@
                             echo"
                             <div class='feedback-other'>
                                 <div class=profilepicdiv>
-                                    <img src='./profile-images/$profileimg' class=profilepic>
+                                    <img src='./profile-images/$profileimg' class=profilepic1>
                                     <div class='userinfo'>
                                         <h3 class='feedback-author'>$name</h3>
                                         <div class=review-rating>";
