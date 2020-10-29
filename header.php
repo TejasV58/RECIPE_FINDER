@@ -24,12 +24,11 @@ session_start();
     <!-- SCRIPT -->
     <script src="Script.js"></script>
     <script>
-        if(document.querySelector(".msg-outerbox") != null){
-            setTimeout(() => {
-                let msg = document.querySelector(".msg-outerbox");
-                msg.remove();
-            }, 3000);
-        }
+        
+        setTimeout(() => {
+            let msg = document.querySelector(".msg-outerbox");
+            msg.remove();
+        }, 3000);
     </script>
 </head>
 <body>
