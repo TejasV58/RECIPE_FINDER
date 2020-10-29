@@ -250,7 +250,7 @@ a>.feedback-other:visited,a>.feedback-other:link
     border-radius:75px;  
 }
 
-#profilepicdiv:hover{
+#profilepicdiv1:hover{
     background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),url(images/defaultprofilepic1.png);
     background-size: cover;
 }
