@@ -5,9 +5,6 @@
     $item = json_decode($var);
     $matcharr = [];
     $nonmatcharr = [];
-    //for($i=0; $i<count($item); $i++){
-    //    echo $item[$i]."\n";
-    //}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +14,8 @@
     <title>Recipe Finder | Homepage</title>
     <!-- Stylesheet -->
     <link rel="stylesheet" href="stylesheet.css">
-    <link rel="stylesheet" href="homecss.css">  
+    <link rel="stylesheet" href="homecss.css">
+    <link rel="stylesheet" href="displayrecipe.css">
     <script src="https://kit.fontawesome.com/a77f5500d1.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">
@@ -34,78 +32,6 @@
             msg.remove();
         }, 3000);
     </script>
-    <style>
-        .searchnavbardiv
-        {
-            display:flex;
-            height:68px;
-            width:40%;
-        }
-        .name
-        {
-            left:0%;
-            margin-left:65px;
-        }
-        .search-container
-        {
-            margin-top:5%;
-        }
-        .searchnavbardiv
-        {
-            width:80%;
-            margin:0.5% 13%;
-        }
-        input[class="search"]{
-            display:inline-block;
-            width:100%;
-            font-size: 115%;
-            margin:2% 10.5%;
-            margin-right:0;
-            border-radius:5px;
-            outline:none;
-            border:1px solid #337279;
-            box-shadow:none;
-        }
-        input[class="search"]:focus{
-            outline:none;
-            border:2px solid #337279;
-        }
-        .searchbtn{
-            display:inline-block;
-            padding:0.8%;
-            font-size:105%;
-            font-weight:10%;
-            background-color:#f78e24;
-            color:white;
-            border-radius:5px;
-            border:none;
-        }
-        .searchbtn:hover{
-            background:#f8a047;
-        }
-        .searchbtn:focus{
-            outline:none;
-        }
-        button.additem:focus{
-            outline:none;
-        }
-        .additem{
-            position:relative;
-            top:-40px;
-            left:380px;
-            background:#337279;
-            color:white;
-            border:none;
-            padding:0.5% 1%;
-            font-size: 170%;
-            font-weight:700;
-            border-radius:40px;
-            display:inline-block;
-            margin:0.8%;
-            margin-left:-14%; 
-            z-index: 1;
-        }
-   </style>
 </head>
 <body>
         <!-- NAVBAR START -->
@@ -114,13 +40,14 @@
                 <a href="home.php"><img src="images/logo.png" width="60px" height="58px" alt="logo" class="logo"></a>
                 <a href="home.php"><span class="name nav-item nohover">Recipe Finder</span></a>
             </div>
-            <div class=searchnavbardiv>
-                <form action="javascript:void(0)" autocomplete="off">
+            <form action="javascript:void(0)" autocomplete="off">
+                <div class=searchnavbardiv>
                     <input class=search type="text" id="items" placeholder="Input Ingredients to Search Recipes">
                     <button class="additem" onclick="addItem()">+</button>
-                    <button class="searchbtn" onclick="passItems()" id="searchBtn">Search</button>
-                </form>
-            </div>
+                    <button class="searchbtn" onclick="initialiseList(<?php echo $var;?>);passItems();" id="searchBtn">Search</button>
+                </div>
+            </form>
+            
             <div class="nav" >
                 <a href="#"><h2 class="nav-item">Help</h2></a>
             <?php

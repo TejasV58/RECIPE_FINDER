@@ -18,9 +18,13 @@ function addItem()
         document.getElementById('items').value = "";
         additem.insertAdjacentHTML("afterend",`<span class="items" id="${item}">${item} <button onclick="removeItem('${item}')"    class="crossbtn">X</button></span>`);
     }
-    console.log(itemList);
 }
-
+function initialiseList(item)
+{
+    console.log(item);
+    ingredients=JSON.parse(item);
+    itemList.merge(ingredients);
+}
 function passItems(){
     link = document.getElementById('searchBtn');
     var strItem =  JSON.stringify(itemList);
