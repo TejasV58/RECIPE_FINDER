@@ -2,6 +2,49 @@
 <html lang="en">
 <head>
     <title>Recipe Finder | Homepage</title>
+    <script>
+    var itemList=[];
+    function addItem()
+    {
+        var item = (document.getElementById('items').value).toLowerCase();
+        if(item === "")
+        {
+            alert("Insert an ingredient!!");
+        }
+        else if(itemList.includes(item))
+        {
+            alert("Item already Added !!");
+            document.getElementById('items').value = "";
+        }
+        else{
+            var additem = document.getElementById('itemAdded');
+            itemList.push(item);
+            document.getElementById('items').value = "";
+            additem.insertAdjacentHTML("afterend",`<span class="items" id="${item}">${item} <button onclick="removeItem('${item}')"    class="crossbtn">X</button></span>`);
+        }
+    }
+    function passItems()
+    {
+        if(itemList.length==0)
+        {
+            alert("Insert an ingredient!!");
+        }
+        else
+        {
+            link = document.getElementById('searchBtn');
+            var strItem =  JSON.stringify(itemList);
+            window.location.href="http://localhost/RECIPE_FINDER/displayRecipes.php?j="+strItem;
+            console.log(itemList);
+            console.log(strItem);
+        }
+    }
+    function removeItem(item)
+    {
+        document.getElementById(item).remove();
+        var index = itemList.indexOf(item);
+        itemList.splice(index,1);
+    }
+    </script>
 </head>
 
 <?php

@@ -26,14 +26,61 @@
 
     <!-- SCRIPT -->
     <script src="Script.js"></script>
-    <script>
+    <script> 
         setTimeout(() => {
             let msg = document.querySelector(".msg-outerbox");
             msg.remove();
         }, 3000);
+        var itemList = [];
+        var ingredients=JSON.parse('<?php echo $var;?>');
+        itemList=itemList.concat(ingredients);
+        function addItem()
+        {
+            console.log(ingredients);
+            console.log(itemList);
+            var item = (document.getElementById('items').value).toLowerCase();
+            if(item === "")
+            {
+                alert("Insert an ingredient!!");
+            }
+            else if(itemList.includes(item))
+            {
+                alert("Item already Added !!");
+                document.getElementById('items').value = "";
+            }
+            else{
+                var additem = document.getElementById('itemAdded');
+                itemList.push(item);
+                document.getElementById('items').value = "";
+                additem.insertAdjacentHTML("afterend",`<span class="items" id="${item}">${item} <button onclick="removeItem('${item}')"    class="crossbtn">X</button></span>`);
+            }
+        }
+        function passItems()
+        {
+            if(itemList.length==0)
+            {
+                alert("Insert an ingredient!!");
+            }
+            else
+            {
+                link = document.getElementById('searchBtn');
+                var strItem = JSON.stringify(itemList);
+                window.location.href="http://localhost/RECIPE_FINDER/displayRecipes.php?j="+strItem;
+                console.log(itemList);
+                console.log(strItem);
+            }
+        }
+
+        function removeItem(item)
+        {
+            document.getElementById(item).remove();
+            var index = itemList.indexOf(item);
+            itemList.splice(index,1);
+        }
+
     </script>
 </head>
-<body>
+<body id="recipedisplay">
         <!-- NAVBAR START -->
         <div class='navbar'>
             <div class=logotitle>
@@ -44,7 +91,7 @@
                 <div class=searchnavbardiv>
                     <input class=search type="text" id="items" placeholder="Input Ingredients to Search Recipes">
                     <button class="additem" onclick="addItem()">+</button>
-                    <button class="searchbtn" onclick="initialiseList(<?php echo $var;?>);passItems();" id="searchBtn">Search</button>
+                    <button class="searchbtn" onclick="passItems();" id="searchBtn">Search</button>
                 </div>
             </form>
             
@@ -66,8 +113,7 @@
                     <a href="#"><h2 class="nav-item nav-btn" onclick="popupsignup()"><button class="signup-nav">Signup</button></h2></a>
                     ';
                 }
-            ?>
-                
+            ?>  
             </div>
         </div>
 
@@ -238,3 +284,5 @@
 ?>
 </div>
 </div>
+</body>
+</html>

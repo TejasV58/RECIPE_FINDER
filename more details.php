@@ -48,7 +48,7 @@
             $img2 = $reciperow['img2'];
             $img3 = $reciperow['img3'];
             $img4 = $reciperow['img4'];
-
+            $authorid=$reciperow['userid'];
             $array_ingredients = explode("\n", $ingredients);
             $array_directions = explode("\n", $directions);
         }
@@ -74,8 +74,11 @@
             <div class="start-details">
                 <div class="flexdiv">
                     <?php echo "<h1 class=recipe-title>".$recipetitle."</h1>"; ?>
+                    <?php if(($authorid==$_SESSION['userid']) || ($_SESSION['emailid']=='admin@admin.com')):?>
                     <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon style='margin:0%;'><i class="fas fa-edit"></i></a>
+                <?php endif;?>
                 </div>
+                
                 <div class="reciperating">
                     <span class="rating">
                     <?php
@@ -151,7 +154,9 @@
             <div class="flexdiv">
                 <img src="images/list.png" alt="" style="height:50px;width:50px;margin:15px 5px" class="details-icon" >
                 <h1 class=greenheading>Ingredients</h1>
-                <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
+                <?php if(($authorid==$_SESSION['userid']) || ($_SESSION['emailid']=='admin@admin.com')):?>
+                    <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon style='margin:0%;'><i class="fas fa-edit"></i></a>
+                <?php endif;?>
             </div>  
 
             <?php for ($i=0; $i<count($array_ingredients); $i++){
@@ -168,7 +173,9 @@
                 <div class="flexdiv">
                     <img src="images/recipe.png" alt="" class="details-icon" >
                     <h1 class=greenheading>Directions</h1>               
-                    <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon><i class="fas fa-edit"></i></a>
+                    <?php if(($authorid==$_SESSION['userid']) || ($_SESSION['emailid']=='admin@admin.com')):?>
+                    <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon style='margin:0%;'><i class="fas fa-edit"></i></a>
+                <?php endif;?>
                 </div>
                 <?php
                     for($i=0; $i<count($array_directions); $i++){
@@ -197,11 +204,24 @@
                             mysqli_stmt_bind_param($stmt5,"s",$_SESSION['userid']);
                             mysqli_stmt_execute($stmt5);
                             $profilepicresult = mysqli_stmt_get_result($stmt5);
-                            $profilepicrow = mysqli_fetch_assoc($profilepicresult);
-                            $profileimg=$profilepicrow['profileimg'];
-                            $profileimg=$profilepicrow['profileimg'];
-                            echo"<div class=profilepicdiv>
-                                <img src='./profile-images/$profileimg' class=profilepic1>";
+                            mysqli_stmt_store_result($stmt);
+                            $resultCheck=mysqli_stmt_num_rows($stmt);
+                            if($resultCheck>0)
+                            {  
+                                $profilepicrow = mysqli_fetch_assoc($profilepicresult);
+                                $profileimg1=$profilepicrow['profileimg'];
+                            }
+                            if(isset($profileimg1))
+                            {
+                                echo"<div class=profilepicdiv>
+                                <img src='./profile-images/$profileimg1' class=profilepic1>";
+                            }
+                            else
+                            {
+                                echo"<div class=profilepicdiv>
+                                <img src='./profile-images/defaultprofilepic1.png' class=profilepic1>";
+                            }
+                            
                         }
                     }
                     if(isset($_SESSION['userid'])):?>
