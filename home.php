@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <title>Recipe Finder | Homepage</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+
     <script>
     var itemList=[];
     function addItem()
@@ -49,6 +52,7 @@
 
 <?php
     require "header.php";
+    require "includes/dbh.php";
 ?>
 
 <body>
@@ -76,14 +80,50 @@
 
 
         <!-- Search Result Start -->
-        <div class="page">
-            
+        <div class="top-page">
+            <div class="top-recipes">
+                <h1 class="toprecipehead">
+                Top recipes of Recipe Finder
+                </h1>
+                <div class="topcontainer">
+                    <?php  
+                            $sql = "SELECT * FROM recipe ORDER BY avg_ratings DESC LIMIT 5"; 
+                            $reciperesult = mysqli_query($conn,$sql);
+                            while($reciperow = mysqli_fetch_assoc($reciperesult)){
+                                $recipeid = $reciperow['recipeid'];
+                                $recipetitle = $reciperow['recipetitle'];
+                                $img1 = $reciperow['img1'];
+                                $avg_ratings=$reciperow['avg_ratings'];
+                                $total_reviews=$reciperow['total_reviews'];
+                                echo "
+                                        <a href='more details.php?recipeid=$recipeid' class=recipe-links>
+                                            <div class='results'>
+                                                <img src='recipe-images/$img1' alt='' class='image'>
+                                                <div class='recipe-desc'>
+                                                    <p class='recipe-name'>$recipetitle</p>
+                                                    <span class='rating'>";
+                                                        for($i=1;$i<=$avg_ratings;$i++)
+                                                        {
+                                                            echo "<i class='fa fa-star' aria-hidden='true'></i>";
+                                                        }
+                                                        for($i=1;$i<=5-$avg_ratings;$i++)
+                                                        {
+                                                            echo "<i class='fa fa-star star-null'  aria-hidden='true'></i>";
+                                                        }
+                                                        echo"
+                                                    </span>
+                                                    <span class=small-txt>$total_reviews Reviews</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    ";
+                                }
+                            
+                        ?>  
+                </div>
+            </div>
         </div>
         <!-- Search Result End -->
-
-<?php
-    require "footer.php";
-?>
         
 </body>
 </html>

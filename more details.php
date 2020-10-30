@@ -74,9 +74,11 @@
             <div class="start-details">
                 <div class="flexdiv">
                     <?php echo "<h1 class=recipe-title>".$recipetitle."</h1>"; ?>
-                    <?php if(($authorid==$_SESSION['userid']) || ($_SESSION['emailid']=='admin@admin.com')):?>
-                    <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon style='margin:0%;'><i class="fas fa-edit"></i></a>
-                <?php endif;?>
+                    <?php if(isset($_SESSION['userid'])): ?> 
+                        <?php if(($authorid==$_SESSION['userid']) || ($_SESSION['emailid']=='admin@admin.com')):?>
+                            <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon style='margin:0%;padding:0 2%;'><i class="fas fa-edit"></i></a>
+                        <?php endif;?>
+                    <?php endif;?>
                 </div>
                 
                 <div class="reciperating">
@@ -154,8 +156,10 @@
             <div class="flexdiv">
                 <img src="images/list.png" alt="" style="height:50px;width:50px;margin:15px 5px" class="details-icon" >
                 <h1 class=greenheading>Ingredients</h1>
-                <?php if(($authorid==$_SESSION['userid']) || ($_SESSION['emailid']=='admin@admin.com')):?>
-                    <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon style='margin:0%;'><i class="fas fa-edit"></i></a>
+                <?php if(isset($_SESSION['userid'])): ?> 
+                    <?php if(($authorid==$_SESSION['userid']) || ($_SESSION['emailid']=='admin@admin.com')):?>
+                        <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon style='margin:0%;'><i class="fas fa-edit"></i></a>
+                    <?php endif;?>
                 <?php endif;?>
             </div>  
 
@@ -173,9 +177,11 @@
                 <div class="flexdiv">
                     <img src="images/recipe.png" alt="" class="details-icon" >
                     <h1 class=greenheading>Directions</h1>               
-                    <?php if(($authorid==$_SESSION['userid']) || ($_SESSION['emailid']=='admin@admin.com')):?>
-                    <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon style='margin:0%;'><i class="fas fa-edit"></i></a>
-                <?php endif;?>
+                    <?php if(isset($_SESSION['userid'])): ?> 
+                        <?php if(($authorid==$_SESSION['userid']) || ($_SESSION['emailid']=='admin@admin.com')):?>
+                            <a href="modifyrecipe.php?recipeid=<?php echo $recipeid; ?>" class=editicon style='margin:0%;'><i class="fas fa-edit"></i></a>
+                        <?php endif;?>
+                    <?php endif;?>
                 </div>
                 <?php
                     for($i=0; $i<count($array_directions); $i++){
@@ -204,8 +210,7 @@
                             mysqli_stmt_bind_param($stmt5,"s",$_SESSION['userid']);
                             mysqli_stmt_execute($stmt5);
                             $profilepicresult = mysqli_stmt_get_result($stmt5);
-                            mysqli_stmt_store_result($stmt);
-                            $resultCheck=mysqli_stmt_num_rows($stmt);
+                            $resultCheck=mysqli_num_rows($profilepicresult);
                             if($resultCheck>0)
                             {  
                                 $profilepicrow = mysqli_fetch_assoc($profilepicresult);

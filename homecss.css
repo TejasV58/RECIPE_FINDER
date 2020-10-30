@@ -1,4 +1,7 @@
 /* Home-background */
+body{
+    padding-bottom: 0;
+}
 .navbar
 {
     z-index:2;
@@ -135,12 +138,6 @@ button.additem:focus{
 }
 /* Search Result */
 
-.page{
-    padding:0 1%;
-    background:white;
-    margin:0;
-}
-
 .search-result{
     box-sizing:border-box;
     margin:2% auto;
@@ -159,9 +156,10 @@ button.additem:focus{
     padding:1%;
 }
 
+
 .results{
-    width:21.5%;
-    height:50vh;
+    width:210px;
+    height:290px;
     margin:2% 1.2%;
     display:inline-block;
     border-radius:8px;
@@ -175,9 +173,10 @@ button.additem:focus{
 }
 
 .recipe-name{
-    margin:2px 0;
+    margin:0;
     font-size:17px;
     font-family: 'Nunito', sans-serif;
+    height:50px;
 }
 
 .rating{
@@ -186,6 +185,22 @@ button.additem:focus{
     font-size:14px;
     color:#aaa;
     margin:5px 0;
+}
+
+.image{
+    background-size:contain;
+    margin:0;
+    display:block;
+    width:100%;
+    height:210px;
+}
+
+.recipe-desc{
+    height:80px;
+    font:22px;
+    padding:2% 5%;
+    box-sizing:border-box;
+    background:white;
 }
 
 .small-txt{
@@ -203,21 +218,6 @@ button.additem:focus{
     color:#ddd;
     font-size:14px;
     margin:0;
-}
-.image{
-    background-size:contain;
-    margin:0;
-    display:block;
-    width:100%;
-    height:34vh;
-}
-
-.recipe-desc{
-    height:100px;
-    font:22px;
-    padding:5%;
-    box-sizing:border-box;
-    background:white;
 }
 
 a.results:link,a.results:visited{
@@ -337,5 +337,37 @@ button[class=popup]:hover{
 .recipe-links:visited,.recipe-links:link{
     color:black;
     text-decoration: none;
+}
+
+
+.page{
+    padding:0 1%;
+    margin:0;
+}
+
+.top-page{
+    padding:0 1%;
+    background:linear-gradient(#cceef7ab,white,white,#e8f9fdab);
+    margin:0;
+}
+
+.top-recipes{
+    width:1300px;
+    margin:2% auto;
+}
+
+.toprecipehead{
+    color:rgba(0,0,0,0.6);
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size:35px;
+    font-weight:600;
+    padding:1%;
+    margin:1% auto;
+    text-align: center;
+}
+
+.topcontainer{
+    padding:0 2%;
+    margin:0 auto;
 }
 
