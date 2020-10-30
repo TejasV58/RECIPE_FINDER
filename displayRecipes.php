@@ -33,7 +33,7 @@
         }, 3000);
     </script>
 </head>
-<body>
+<body >
         <!-- NAVBAR START -->
         <div class='navbar'>
             <div class=logotitle>
