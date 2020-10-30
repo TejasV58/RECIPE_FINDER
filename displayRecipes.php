@@ -80,7 +80,7 @@
 
     </script>
 </head>
-<body id="recipedisplay">
+<body >
         <!-- NAVBAR START -->
         <div class='navbar'>
             <div class=logotitle>
