@@ -58,8 +58,9 @@ button.additem:focus{
     background:#337279;
     color:white;
     border:none;
-    padding:0.5% 2%;
-    margin:3% 1%;
+    padding:1.5px 8px;
+    margin:15px;
+    height:32px;
     margin-bottom:3.7%;
     font-size: 170%;
     font-weight:700;
@@ -77,8 +78,8 @@ width:82%;
 
 
 .results{
-    width:21.5%;
-    height:42vh;
+    width:210px;
+    height:290px;
     margin:2% 1.2%;
     display:inline-block;
     border-radius:8px;
@@ -95,7 +96,7 @@ width:82%;
     margin:0;
     font-size:17px;
     font-family: 'Nunito', sans-serif;
-    height:7vh;
+    height:50px;
 }
 
 .rating{
@@ -111,11 +112,11 @@ width:82%;
     margin:0;
     display:block;
     width:100%;
-    height:30vh;
+    height:210px;
 }
 
 .recipe-desc{
-    height:11vh;
+    height:80px;
     font:22px;
     padding:2% 5%;
     box-sizing:border-box;
