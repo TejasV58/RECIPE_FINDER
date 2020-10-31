@@ -347,7 +347,7 @@ button[class=popup]:hover{
 
 .top-page{
     padding:0 1%;
-    background:linear-gradient(#cceef7ab,white,white,#e8f9fdab);
+    background:#e1f7fcab;
     margin:0;
 }
 
@@ -357,11 +357,11 @@ button[class=popup]:hover{
 }
 
 .toprecipehead{
-    color:rgba(0,0,0,0.6);
-    font-family: 'Gloria Hallelujah', cursive;
+    color:#408d96;
+    font-family: 'Courgette', cursive;
     font-size:35px;
     font-weight:600;
-    padding:1%;
+    padding:2%;
     margin:1% auto;
     text-align: center;
 }
