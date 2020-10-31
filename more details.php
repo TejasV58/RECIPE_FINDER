@@ -120,9 +120,19 @@
                         mysqli_stmt_bind_param($stmt4,"s",$recipeid);
                         mysqli_stmt_execute($stmt4);
                         $profilepicresult = mysqli_stmt_get_result($stmt4);
-                        $profilepicrow = mysqli_fetch_assoc($profilepicresult);
-                        $profileimg=$profilepicrow['profileimg'];
-                        echo"<img src='./profile-images/$profileimg' class=profilepic1>";
+                        $resultcheck = mysqli_num_rows($profilepicresult);
+                        if($resultcheck>0){
+                            $profilepicrow = mysqli_fetch_assoc($profilepicresult);
+                            $profileimg=$profilepicrow['profileimg'];
+                        }
+                        if(isset($profileimg))
+                            {
+                                echo"<img src='./profile-images/$profileimg' class=profilepic1>";
+                            }
+                            else
+                            {
+                                echo" <img src='./profile-images/defaultprofilepic1.png' class=profilepic1>";
+                            }
                     }
                 ?>
                     <h2 class="author-name"> <span class="small-txt2">By</span> <?php echo $name ?></h2>
