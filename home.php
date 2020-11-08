@@ -60,7 +60,7 @@
         <div class="background">
             <div class="description">
                 Recipe Finding Simplified
-                <p class="small-desc description">Lorem ipsum dolor sit amet.</p>
+                <p class="small-desc description">One stop for all tasty recipes.</p>
             </div>
         </div>
         <!-- WALLPAPER END -->

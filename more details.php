@@ -138,7 +138,7 @@
                     <h2 class="author-name"> <span class="small-txt2">By</span> <?php echo $name ?></h2>
                 </div>
                 <div class="image-time">
-                    <div class="dish-image" id=bigpicdiv style='background:url("<?php echo "./recipe-images/".$img1; ?>")'>
+                    <div class="dish-image" id=bigpicdiv style='background-image:url("<?php echo "./recipe-images/".$img1; ?>")'>
                         
                     </div>
                     <div class="time">
